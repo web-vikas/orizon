@@ -7,6 +7,21 @@ type FloatButtonComponent = typeof InternalFloatButton & {
   BackTop: typeof BackTop;
 };
 
+/**
+ * FloatButton component for floating action buttons.
+ *
+ * Sub-components: `FloatButton.Group`, `FloatButton.BackTop`.
+ *
+ * @example
+ * ```tsx
+ * <FloatButton icon={<PlusIcon />} />
+ * <FloatButton.Group trigger="click">
+ *   <FloatButton icon={<EditIcon />} />
+ *   <FloatButton icon={<ShareIcon />} />
+ * </FloatButton.Group>
+ * <FloatButton.BackTop />
+ * ```
+ */
 const FloatButton = InternalFloatButton as FloatButtonComponent;
 FloatButton.Group = FloatButtonGroup;
 FloatButton.BackTop = BackTop;

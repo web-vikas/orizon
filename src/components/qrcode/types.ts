@@ -1,3 +1,12 @@
+/**
+ * @file QRCode component type definitions.
+ *
+ * Exports props for the `<QRCode>` component including value encoding,
+ * colour customisation, status overlays, and error correction level.
+ *
+ * @see ./QRCode.tsx - component implementation
+ * @see ./index.ts   - public export
+ */
 import type { CSSProperties } from "react";
 
 export type QRCodeErrorLevel = "L" | "M" | "Q" | "H";

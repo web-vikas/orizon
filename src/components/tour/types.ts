@@ -1,3 +1,13 @@
+/**
+ * @file Tour component type definitions.
+ *
+ * Provides `TourProps` for the guided walkthrough overlay,
+ * `TourStepConfig` for individual tour step configuration,
+ * and the `TourPlacement` / `TourType` union types.
+ *
+ * @see {@link ./Tour.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { ReactNode, CSSProperties, RefObject } from "react";
 
 export type TourPlacement =

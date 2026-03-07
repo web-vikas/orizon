@@ -1,3 +1,12 @@
+/**
+ * @file Popconfirm component type definitions.
+ *
+ * Exports props for the `<Popconfirm>` confirmation popup including
+ * placement, button customisation, and controlled open state.
+ *
+ * @see ./Popconfirm.tsx - component implementation
+ * @see ./index.ts       - public export
+ */
 import type { ReactNode } from "react";
 import type { ButtonProps } from "../button";
 

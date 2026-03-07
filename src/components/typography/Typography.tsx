@@ -1,3 +1,30 @@
+/**
+ * @file Typography -- rich text display with Title, Text, Paragraph,
+ * and Link sub-components.
+ *
+ * Provides semantic text rendering with built-in copy-to-clipboard,
+ * inline editing, text ellipsis with expand, and decorative
+ * modifiers (mark, code, keyboard, underline, delete, strong, italic).
+ *
+ * Sub-components:
+ * - `Typography.Title` -- heading levels 1-5
+ * - `Typography.Text` -- inline span
+ * - `Typography.Paragraph` -- block paragraph
+ * - `Typography.Link` -- anchor link
+ *
+ * Key props: `type`, `copyable`, `editable`, `ellipsis`.
+ *
+ * @example
+ * ```tsx
+ * <Typography.Title level={2}>Heading</Typography.Title>
+ * <Typography.Text type="success">Success text</Typography.Text>
+ * <Typography.Paragraph copyable>Copy me</Typography.Paragraph>
+ * <Typography.Link href="https://example.com">Link</Typography.Link>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

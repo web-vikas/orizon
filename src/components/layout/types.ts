@@ -1,3 +1,12 @@
+/**
+ * @file Layout component type definitions.
+ *
+ * Defines props for `<Layout>`, `<Layout.Header>`, `<Layout.Content>`,
+ * `<Layout.Footer>`, and `<Layout.Sider>` — a page scaffolding system.
+ *
+ * @see {@link ./Layout.tsx} for the main layout, header, content, footer
+ * @see {@link ./Sider.tsx} for the sidebar component
+ */
 import type { ReactNode, HTMLAttributes, CSSProperties } from "react";
 
 export type SiderTheme = "light" | "dark";

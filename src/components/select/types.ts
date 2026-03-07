@@ -1,3 +1,12 @@
+/**
+ * @file Select component type definitions.
+ *
+ * Exports props for the `<Select>` dropdown including single/multiple/tags
+ * modes, search filtering, variants, sizes, and label-in-value support.
+ *
+ * @see ./Select.tsx - component implementation
+ * @see ./index.ts   - public export
+ */
 import type { ReactNode } from "react";
 import type { ComponentSize } from "@/hooks/useComponentSize";
 

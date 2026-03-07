@@ -1,3 +1,23 @@
+/**
+ * @file Message imperative API — global toast notifications.
+ *
+ * Provides a singleton `messageApi` object with methods (`success`, `error`,
+ * `info`, `warning`, `loading`, `open`, `destroy`, `config`) that display
+ * toast messages at the top of the viewport. Messages auto-close after a
+ * configurable duration and support stacking with a maximum count.
+ *
+ * @example
+ * ```tsx
+ * import { message } from '@/components/message';
+ * message.success('Saved!');
+ * message.error('Something went wrong');
+ * message.loading('Processing...', 0); // stays until manually closed
+ * ```
+ *
+ * @see {@link ./types.ts} for type definitions
+ * @see {@link ./MessageContainer.tsx} for the rendering layer
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

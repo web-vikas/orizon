@@ -1,3 +1,13 @@
+/**
+ * @file Menu component type definitions.
+ *
+ * Defines props for the `<Menu>` component that renders a navigation
+ * menu in horizontal, vertical, or inline mode. Supports sub-menus,
+ * item groups, dividers, icons, danger items, themes, and controlled
+ * selection/open states.
+ *
+ * @see {@link ./Menu.tsx} for the component implementation
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type MenuMode = "horizontal" | "vertical" | "inline";

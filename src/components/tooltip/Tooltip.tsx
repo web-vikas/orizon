@@ -1,3 +1,24 @@
+/**
+ * @file Tooltip -- pop-up hint overlay shown on hover, focus, or click.
+ *
+ * Wraps the primitive Tooltip with a simplified API offering 12
+ * placement positions, custom colours, controlled open state, and
+ * configurable delay. When `title` is empty or falsy the tooltip
+ * is not rendered and children are returned directly.
+ *
+ * Key props: `title`, `placement`, `trigger`, `color`, `arrow`,
+ * `open`, `onOpenChange`.
+ *
+ * @example
+ * ```tsx
+ * <Tooltip title="Prompt text">
+ *   <button>Hover me</button>
+ * </Tooltip>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

@@ -1,3 +1,12 @@
+/**
+ * @file Popover component type definitions.
+ *
+ * Exports props for the `<Popover>` floating content panel including
+ * trigger modes, placements, and controlled open state.
+ *
+ * @see ./Popover.tsx - component implementation
+ * @see ./index.ts    - public export
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type PopoverPlacement =

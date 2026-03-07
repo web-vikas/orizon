@@ -1,3 +1,23 @@
+/**
+ * @file Progress -- bar and circle indicators for completion status.
+ *
+ * Renders line, circle, or dashboard progress indicators with automatic
+ * status colouring, step segments, gradient strokes, and custom format
+ * functions. Supports small and custom sizes.
+ *
+ * Key props: `percent`, `type`, `status`, `strokeColor`, `steps`,
+ * `showInfo`, `size`, `format`, `success`.
+ *
+ * @example
+ * ```tsx
+ * <Progress percent={50} />
+ * <Progress type="circle" percent={75} status="active" />
+ * <Progress percent={100} /> // auto-success
+ * ```
+ *
+ * @see ./types.ts  - ProgressProps
+ * @see ./index.ts  - public export
+ */
 "use client";
 
 import * as React from "react";

@@ -1,3 +1,11 @@
+/**
+ * @file Drawer component type definitions.
+ *
+ * Defines props for the `<Drawer>` component, a panel that slides out from
+ * any edge of the viewport to show supplementary content.
+ *
+ * @see {@link ./Drawer.tsx} for the component implementation
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type DrawerPlacement = "top" | "right" | "bottom" | "left";

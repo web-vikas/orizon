@@ -1,3 +1,11 @@
+/**
+ * @file Image component type definitions.
+ *
+ * Defines props for `<Image>` and `<Image.PreviewGroup>`, which render
+ * images with preview capabilities, fallback, and placeholder support.
+ *
+ * @see {@link ./Image.tsx} for the component implementation
+ */
 import type { ReactNode, CSSProperties, ImgHTMLAttributes } from "react";
 
 export interface PreviewConfig {

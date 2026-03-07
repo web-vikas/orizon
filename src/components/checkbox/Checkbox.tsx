@@ -1,3 +1,25 @@
+/**
+ * @file Checkbox Component
+ *
+ * A styled checkbox with label support. Works standalone or inside
+ * a `Checkbox.Group` context. Supports controlled / uncontrolled
+ * `checked`, `indeterminate` visual state, and `disabled`.
+ *
+ * Key props: `checked`, `defaultChecked`, `indeterminate`,
+ * `disabled`, `onChange`, `children` (label).
+ *
+ * @example
+ * ```tsx
+ * <Checkbox onChange={(e) => console.log(e.target.checked)}>
+ *   Accept terms
+ * </Checkbox>
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./CheckboxGroup.tsx} — group component
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

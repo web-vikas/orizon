@@ -1,3 +1,25 @@
+/**
+ * @file Card Component
+ *
+ * A versatile container component with optional title, extra content,
+ * cover image, action bar, and loading skeleton. Includes `Card.Meta`
+ * for avatar + title + description layouts and `Card.Grid` for grid
+ * cells within the card body.
+ *
+ * Key props: `title`, `extra`, `cover`, `actions`, `bordered`,
+ * `hoverable`, `loading`, `size`, `type`.
+ *
+ * @example
+ * ```tsx
+ * <Card title="Card Title" extra={<a href="#">More</a>}>
+ *   <p>Card content</p>
+ * </Card>
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

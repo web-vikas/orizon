@@ -1,3 +1,12 @@
+/**
+ * @file Spin component type definitions.
+ *
+ * Exports props for the `<Spin>` loading spinner including size, delay,
+ * custom indicator, tip text, fullscreen overlay, and percent progress.
+ *
+ * @see ./Spin.tsx  - component implementation
+ * @see ./index.ts  - public export
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type SpinSize = "small" | "middle" | "large";

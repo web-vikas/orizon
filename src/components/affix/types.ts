@@ -1,3 +1,12 @@
+/**
+ * @file Affix Type Definitions
+ *
+ * Props interface for the `<Affix>` wrapper component that pins its
+ * children to the viewport when scrolling past a threshold.
+ *
+ * @see {@link ./Affix.tsx} — component implementation
+ */
+
 import type { CSSProperties, ReactNode } from "react";
 
 export interface AffixProps {

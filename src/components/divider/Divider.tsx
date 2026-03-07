@@ -1,3 +1,23 @@
+/**
+ * @file Divider component — horizontal or vertical visual separator.
+ *
+ * Renders a thin line to visually divide content. Supports embedded title
+ * text with left / center / right alignment, dashed style, and vertical
+ * orientation for inline separation.
+ *
+ * Key props: `type`, `dashed`, `orientation`, `orientationMargin`, `plain`.
+ *
+ * @example
+ * ```tsx
+ * <Divider />
+ * <Divider dashed />
+ * <Divider orientation="left">Section</Divider>
+ * <Divider type="vertical" />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

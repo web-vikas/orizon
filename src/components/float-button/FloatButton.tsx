@@ -1,3 +1,21 @@
+/**
+ * @file FloatButton component — floating action button.
+ *
+ * Renders a fixed-position circular or square button with an icon, optional
+ * description, tooltip, badge, and link support. Commonly placed at a screen
+ * corner for primary or quick-access actions.
+ *
+ * Key props: `icon`, `type`, `shape`, `tooltip`, `badge`, `href`.
+ *
+ * @example
+ * ```tsx
+ * <FloatButton icon={<PlusIcon />} />
+ * <FloatButton icon={<QuestionIcon />} type="primary" shape="square" />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

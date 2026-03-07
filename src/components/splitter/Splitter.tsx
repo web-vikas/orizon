@@ -1,3 +1,25 @@
+/**
+ * @file Splitter -- resizable split-pane layout container.
+ *
+ * Renders a horizontal or vertical container whose child panels can be
+ * resized by dragging the handles between them. Panels support min/max
+ * constraints, collapsibility, and resize event callbacks.
+ *
+ * Key props: `layout`, `onResize`, `onResizeStart`, `onResizeEnd`.
+ * Panel props: `defaultSize`, `min`, `max`, `collapsible`, `resizable`.
+ *
+ * @example
+ * ```tsx
+ * <Splitter>
+ *   <Splitter.Panel defaultSize={50}>Left</Splitter.Panel>
+ *   <Splitter.Panel defaultSize={50}>Right</Splitter.Panel>
+ * </Splitter>
+ * ```
+ *
+ * @see ./types.ts  - SplitterProps, SplitterPanelProps
+ * @see ./Panel.tsx - Panel sub-component
+ * @see ./index.ts  - public export
+ */
 "use client";
 
 import * as React from "react";

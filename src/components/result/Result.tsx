@@ -1,3 +1,21 @@
+/**
+ * @file Result -- feedback page for operation outcomes or HTTP errors.
+ *
+ * Renders a centered status icon, title, subtitle, and optional extra
+ * action area. Provides built-in presets for success, error, info, warning,
+ * 403, 404, and 500 statuses.
+ *
+ * Key props: `status`, `title`, `subTitle`, `icon`, `extra`, `children`.
+ *
+ * @example
+ * ```tsx
+ * <Result status="success" title="Done!" subTitle="Order placed." extra={<Button>Back</Button>} />
+ * <Result status={404} />
+ * ```
+ *
+ * @see ./types.ts  - ResultProps, ResultStatus
+ * @see ./index.ts  - public export
+ */
 "use client";
 
 import * as React from "react";

@@ -1,3 +1,12 @@
+/**
+ * @file Tooltip component type definitions.
+ *
+ * Provides `TooltipProps` for the pop-up hint overlay, plus the
+ * `TooltipPlacement` and `TooltipTrigger` union types.
+ *
+ * @see {@link ./Tooltip.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type TooltipPlacement =

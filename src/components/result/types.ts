@@ -1,3 +1,12 @@
+/**
+ * @file Result component type definitions.
+ *
+ * Exports props for the `<Result>` feedback page including status,
+ * custom icon, extra actions, and HTTP error code presets.
+ *
+ * @see ./Result.tsx - component implementation
+ * @see ./index.ts   - public export
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type ResultStatus =

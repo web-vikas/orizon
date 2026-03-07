@@ -1,3 +1,24 @@
+/**
+ * @file Tag -- small label / badge with optional close button.
+ *
+ * Renders a compact, coloured tag element with preset and custom colour
+ * support, an optional close icon, and a `Tag.CheckableTag` sub-component
+ * that acts as a toggleable checkbox tag.
+ *
+ * Key props: `color`, `closable`, `icon`, `bordered`, `onClose`.
+ *
+ * @example
+ * ```tsx
+ * <Tag color="blue">Info</Tag>
+ * <Tag closable onClose={() => console.log("closed")}>Removable</Tag>
+ * <Tag.CheckableTag checked={true} onChange={setChecked}>
+ *   Toggleable
+ * </Tag.CheckableTag>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

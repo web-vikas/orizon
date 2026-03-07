@@ -1,3 +1,13 @@
+/**
+ * @file Skeleton component type definitions.
+ *
+ * Exports props for the `<Skeleton>` placeholder and its sub-components
+ * (`Skeleton.Avatar`, `.Button`, `.Input`, `.Image`, `.Node`).
+ *
+ * @see ./Skeleton.tsx         - main skeleton implementation
+ * @see ./SkeletonElements.tsx - individual element skeletons
+ * @see ./index.ts             - public export
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type SkeletonAvatarShape = "circle" | "square";

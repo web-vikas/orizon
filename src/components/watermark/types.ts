@@ -1,3 +1,12 @@
+/**
+ * @file Watermark component type definitions.
+ *
+ * Provides `WatermarkProps` for the content watermark overlay and
+ * `WatermarkFont` for font styling configuration.
+ *
+ * @see {@link ./Watermark.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export interface WatermarkFont {

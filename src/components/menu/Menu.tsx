@@ -1,3 +1,27 @@
+/**
+ * @file Menu component — navigation menu.
+ *
+ * Renders a list of navigation items as a vertical sidebar, horizontal
+ * nav bar, or inline collapsible menu. Supports nested sub-menus, item
+ * groups, dividers, icons, danger-styled items, and dark/light themes.
+ * Both selected keys and open keys can be controlled or uncontrolled.
+ *
+ * Key props: `mode`, `items`, `selectedKeys`, `openKeys`, `theme`, `inlineCollapsed`.
+ *
+ * @example
+ * ```tsx
+ * <Menu
+ *   mode="inline"
+ *   items={[
+ *     { key: 'home', label: 'Home', icon: <HomeIcon /> },
+ *     { key: 'settings', label: 'Settings', icon: <SettingsIcon /> },
+ *   ]}
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

@@ -1,3 +1,30 @@
+/**
+ * @file Upload -- file upload trigger with file list display.
+ *
+ * Provides a clickable trigger zone (or card grid) that opens the
+ * native file picker. Manages upload state per file with progress
+ * tracking, supports custom request handlers, file validation via
+ * `beforeUpload`, and multiple display modes: text, picture,
+ * picture-card, and picture-circle.
+ *
+ * Key props: `action`, `fileList`, `onChange`, `listType`, `multiple`,
+ * `maxCount`, `beforeUpload`, `customRequest`.
+ *
+ * @example
+ * ```tsx
+ * <Upload action="/api/upload">
+ *   <button>Click to Upload</button>
+ * </Upload>
+ *
+ * <Upload.Dragger action="/api/upload">
+ *   <p>Drag files here</p>
+ * </Upload.Dragger>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./Dragger.tsx} for the drag-and-drop variant.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

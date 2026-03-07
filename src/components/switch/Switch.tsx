@@ -1,3 +1,25 @@
+/**
+ * @file Switch -- binary toggle control.
+ *
+ * Wraps the primitive Switch with support for loading spinner,
+ * inner checked/unchecked labels, two sizes (middle, small), and
+ * fully controlled or uncontrolled state management.
+ *
+ * Key props: `checked`, `disabled`, `loading`, `size`,
+ * `checkedChildren`, `unCheckedChildren`, `onChange`.
+ *
+ * @example
+ * ```tsx
+ * <Switch
+ *   checkedChildren="ON"
+ *   unCheckedChildren="OFF"
+ *   defaultChecked
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

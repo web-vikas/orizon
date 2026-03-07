@@ -1,3 +1,24 @@
+/**
+ * @file Modal -- dialog overlay for confirmations, forms, and content.
+ *
+ * Renders a centered (or top-offset) dialog with optional title, footer,
+ * close button, and mask backdrop. Supports controlled `open` state,
+ * loading/confirm-loading states, and custom footer rendering.
+ *
+ * Key props: `open`, `title`, `onOk`, `onCancel`, `footer`, `centered`,
+ * `confirmLoading`, `maskClosable`, `destroyOnHidden`.
+ *
+ * @example
+ * ```tsx
+ * <Modal open={visible} title="Confirm" onOk={save} onCancel={close}>
+ *   <p>Are you sure you want to proceed?</p>
+ * </Modal>
+ * ```
+ *
+ * @see ./types.ts         - ModalProps, ModalStaticConfig
+ * @see ./staticMethods.tsx - Modal.confirm / info / success / error / warning
+ * @see ./index.ts          - public export with static methods attached
+ */
 "use client";
 
 import * as React from "react";

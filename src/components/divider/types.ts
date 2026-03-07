@@ -1,3 +1,11 @@
+/**
+ * @file Divider component type definitions.
+ *
+ * Defines props for the `<Divider>` component, which renders a horizontal
+ * or vertical visual separator with optional title text.
+ *
+ * @see {@link ./Divider.tsx} for the component implementation
+ */
 import type { ReactNode, HTMLAttributes } from "react";
 
 export type DividerType = "horizontal" | "vertical";

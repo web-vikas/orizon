@@ -1,3 +1,26 @@
+/**
+ * @file Masonry layout component — CSS multi-column layout.
+ *
+ * Arranges children or an `items` array in a masonry (Pinterest-style)
+ * layout using CSS `column-count`. Supports responsive column counts via
+ * a breakpoint object, configurable column and row gutters, and a custom
+ * `itemRender` function.
+ *
+ * Key props: `columns`, `gutter`, `items`, `itemRender`.
+ *
+ * @example
+ * ```tsx
+ * <Masonry columns={3} gutter={16}>
+ *   <div>Card 1</div>
+ *   <div>Card 2</div>
+ *   <div>Card 3</div>
+ * </Masonry>
+ * <Masonry columns={{ sm: 1, md: 2, lg: 3 }} gutter={[16, 24]} items={cards} />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

@@ -1,3 +1,29 @@
+/**
+ * @file App Component
+ *
+ * Top-level provider that makes imperative `message`, `notification`,
+ * and `modal` APIs available via `App.useApp()`. Wrap your application
+ * (or a subtree) with `<App>` and call `const { message } = App.useApp()`
+ * to show feedback without prop-drilling.
+ *
+ * Key props: `children`, `component`, `className`, `style`.
+ *
+ * @example
+ * ```tsx
+ * <App>
+ *   <MyPage />
+ * </App>
+ *
+ * function MyPage() {
+ *   const { message } = App.useApp();
+ *   return <button onClick={() => message.success("Saved!")}>Save</button>;
+ * }
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

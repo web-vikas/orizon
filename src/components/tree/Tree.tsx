@@ -1,3 +1,30 @@
+/**
+ * @file Tree -- hierarchical tree view with checkboxes, expand/collapse,
+ * drag, and async data loading.
+ *
+ * Renders a tree structure from `treeData` with per-node expand,
+ * select, and check support. Includes a `Tree.DirectoryTree`
+ * sub-component that defaults to full-width, icon-enabled display
+ * suited for file-system navigation.
+ *
+ * Key props: `treeData`, `checkable`, `selectedKeys`, `checkedKeys`,
+ * `expandedKeys`, `showLine`, `showIcon`, `loadData`.
+ *
+ * @example
+ * ```tsx
+ * <Tree
+ *   treeData={[
+ *     { key: "0-0", title: "Parent", children: [
+ *       { key: "0-0-0", title: "Child" },
+ *     ]},
+ *   ]}
+ *   checkable
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

@@ -1,3 +1,13 @@
+/**
+ * @file Breadcrumb Type Definitions
+ *
+ * Props and item interfaces for the `<Breadcrumb>` navigation
+ * component. Supports linked items, dropdown menus per item,
+ * and custom separators.
+ *
+ * @see {@link ./Breadcrumb.tsx} — component implementation
+ */
+
 import type { ReactNode, MouseEventHandler } from "react";
 
 export interface BreadcrumbMenuItemType {

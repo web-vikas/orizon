@@ -1,3 +1,29 @@
+/**
+ * @file Collapse Component
+ *
+ * An accordion/collapse panel that reveals content on header click.
+ * Supports `accordion` mode (single panel), `bordered` / `ghost`
+ * styles, `expandIconPosition`, custom `expandIcon`, `size` presets,
+ * and per-item `collapsible` trigger modes.
+ *
+ * Key props: `items`, `activeKey`, `accordion`, `bordered`,
+ * `ghost`, `size`, `expandIconPosition`, `onChange`.
+ *
+ * @example
+ * ```tsx
+ * <Collapse
+ *   items={[
+ *     { key: "1", label: "Panel 1", children: <p>Content 1</p> },
+ *     { key: "2", label: "Panel 2", children: <p>Content 2</p> },
+ *   ]}
+ *   accordion
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

@@ -1,3 +1,14 @@
+/**
+ * @file DatePicker Type Definitions
+ *
+ * Props for `<DatePicker>` and `<DatePicker.RangePicker>`. Supports
+ * date selection, format strings, disabled dates, presets, size /
+ * status / variant styling, and range selection with two calendars.
+ *
+ * @see {@link ./DatePicker.tsx} — single date picker implementation
+ * @see {@link ./RangePicker.tsx} — range picker implementation
+ */
+
 import type { CSSProperties, ReactNode } from "react";
 
 export type DatePickerSize = "small" | "middle" | "large";

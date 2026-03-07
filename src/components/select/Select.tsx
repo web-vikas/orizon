@@ -1,3 +1,22 @@
+/**
+ * @file Select -- dropdown selector with single, multiple, and tags modes.
+ *
+ * Renders a select trigger that opens a dropdown of options. Supports
+ * search filtering, multiple selection with tag chips, custom tags entry,
+ * label-in-value mode, validation status, and four visual variants.
+ *
+ * Key props: `options`, `value`, `onChange`, `mode`, `showSearch`,
+ * `allowClear`, `variant`, `size`, `status`, `placeholder`.
+ *
+ * @example
+ * ```tsx
+ * <Select options={[{ label: "Apple", value: "apple" }]} />
+ * <Select mode="multiple" options={opts} allowClear />
+ * ```
+ *
+ * @see ./types.ts  - SelectProps, SelectOptionType
+ * @see ./index.ts  - public export
+ */
 "use client";
 
 import * as React from "react";

@@ -1,3 +1,13 @@
+/**
+ * @file Typography component type definitions.
+ *
+ * Provides prop interfaces for the Typography family of components:
+ * `Title`, `Text`, `Paragraph`, and `Link`. Includes shared
+ * configuration types for copyable, editable, and ellipsis behaviour.
+ *
+ * @see {@link ./Typography.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { CSSProperties, ReactNode } from "react";
 
 export type TypographyType = "secondary" | "success" | "warning" | "danger";

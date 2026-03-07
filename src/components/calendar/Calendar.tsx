@@ -1,3 +1,25 @@
+/**
+ * @file Calendar Component
+ *
+ * Full-featured calendar with two modes: a full-screen grid view
+ * and a compact mini calendar using the shadcn primitive. Supports
+ * month / year panel switching, custom cell rendering, disabled
+ * dates, and controlled / uncontrolled selection.
+ *
+ * Key props: `fullscreen`, `mode`, `value`, `disabledDate`,
+ * `cellRender`, `headerRender`, `onChange`, `onSelect`.
+ *
+ * @example
+ * ```tsx
+ * <Calendar />
+ * <Calendar fullscreen={false} />
+ * <Calendar mode="year" />
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

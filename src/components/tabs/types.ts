@@ -1,3 +1,13 @@
+/**
+ * @file Tabs component type definitions.
+ *
+ * Provides prop interfaces for the tabbed navigation component
+ * including `TabsProps`, individual `TabItem`, display type variants,
+ * size options, and tab-bar positioning.
+ *
+ * @see {@link ./Tabs.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type TabsType = "line" | "card" | "editable-card";

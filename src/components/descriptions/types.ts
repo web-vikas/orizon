@@ -1,3 +1,14 @@
+/**
+ * @file Descriptions Type Definitions
+ *
+ * Props and item interfaces for the `<Descriptions>` key-value
+ * display component. Supports horizontal / vertical layout,
+ * bordered / plain styles, size presets, column spans, and
+ * a title / extra header row.
+ *
+ * @see {@link ./Descriptions.tsx} — component implementation
+ */
+
 import type { ReactNode, CSSProperties, Key } from "react";
 
 export type DescriptionsLayout = "horizontal" | "vertical";

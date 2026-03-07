@@ -1,3 +1,12 @@
+/**
+ * @file Grid system type definitions.
+ *
+ * Defines props for `<Row>` and `<Col>` components that implement a 24-column
+ * responsive grid layout with gutter spacing and breakpoint support.
+ *
+ * @see {@link ./Row.tsx} for the row container
+ * @see {@link ./Col.tsx} for the column component
+ */
 import type { ReactNode, HTMLAttributes } from "react";
 
 export type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";

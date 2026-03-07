@@ -1,3 +1,25 @@
+/**
+ * @file Empty state component — placeholder for absent data.
+ *
+ * Renders a centered illustration with description text when there is no
+ * data to display. Ships two built-in images (`PRESENTED_IMAGE_DEFAULT`
+ * and `PRESENTED_IMAGE_SIMPLE`) and supports custom images, descriptions,
+ * and an action slot for buttons.
+ *
+ * Key props: `description`, `image`, `imageStyle`.
+ *
+ * @example
+ * ```tsx
+ * <Empty />
+ * <Empty description="Nothing here yet" />
+ * <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="No results">
+ *   <button>Create Now</button>
+ * </Empty>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

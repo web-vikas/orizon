@@ -1,3 +1,22 @@
+/**
+ * @file Rate -- star-based rating input.
+ *
+ * Renders a row of clickable star characters for scoring or feedback.
+ * Supports half-star precision, custom characters (icons or text),
+ * tooltips, keyboard navigation, and hover state tracking.
+ *
+ * Key props: `value`, `count`, `allowHalf`, `allowClear`, `character`,
+ * `disabled`, `tooltips`, `onHoverChange`.
+ *
+ * @example
+ * ```tsx
+ * <Rate defaultValue={3} />
+ * <Rate allowHalf defaultValue={2.5} />
+ * ```
+ *
+ * @see ./types.ts  - RateProps
+ * @see ./index.ts  - public export
+ */
 "use client";
 
 import * as React from "react";

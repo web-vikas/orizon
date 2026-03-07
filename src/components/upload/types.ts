@@ -1,3 +1,14 @@
+/**
+ * @file Upload component type definitions.
+ *
+ * Provides `UploadProps` for the file upload trigger and list,
+ * `DraggerProps` for the drag-and-drop variant, `UploadFile` for
+ * individual file records, and `UploadChangeInfo` for change events.
+ *
+ * @see {@link ./Upload.tsx} for the implementation.
+ * @see {@link ./Dragger.tsx} for the drag-and-drop variant.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { CSSProperties, ReactNode } from "react";
 
 export type UploadListType =

@@ -1,3 +1,26 @@
+/**
+ * @file AutoComplete Component
+ *
+ * An input field with a filterable dropdown suggestion list.
+ * Supports keyboard navigation, controlled / uncontrolled value,
+ * custom filter functions, backfill, allow-clear, and three
+ * visual variants (outlined, borderless, filled).
+ *
+ * Key props: `options`, `value`, `onChange`, `onSelect`, `onSearch`,
+ * `filterOption`, `size`, `status`, `variant`, `allowClear`.
+ *
+ * @example
+ * ```tsx
+ * <AutoComplete
+ *   options={[{ value: "React" }, { value: "Vue" }, { value: "Angular" }]}
+ *   placeholder="Search frameworks"
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

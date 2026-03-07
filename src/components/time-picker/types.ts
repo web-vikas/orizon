@@ -1,3 +1,14 @@
+/**
+ * @file TimePicker component type definitions.
+ *
+ * Provides prop interfaces for the time-picker input and its
+ * `TimePicker.RangePicker` sub-component including size, status,
+ * variant, 12-hour mode, and disabled-time configuration.
+ *
+ * @see {@link ./TimePicker.tsx} for the implementation.
+ * @see {@link ./TimeRangePicker.tsx} for the range variant.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { CSSProperties, ReactNode } from "react";
 
 export type TimePickerSize = "small" | "middle" | "large";

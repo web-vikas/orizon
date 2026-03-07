@@ -1,3 +1,27 @@
+/**
+ * @file Timeline -- vertical timeline with coloured dots and labels.
+ *
+ * Renders a list of chronological events connected by a vertical
+ * line. Supports left, right, and alternate layout modes, custom
+ * dot elements, preset and CSS colours, a pending indicator for
+ * in-progress items, and label/content positioning.
+ *
+ * Key props: `items`, `mode`, `pending`, `reverse`.
+ *
+ * @example
+ * ```tsx
+ * <Timeline
+ *   items={[
+ *     { children: "Created" },
+ *     { children: "In progress", color: "blue" },
+ *     { children: "Completed", color: "green" },
+ *   ]}
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

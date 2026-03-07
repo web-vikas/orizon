@@ -1,3 +1,12 @@
+/**
+ * @file Segmented component type definitions.
+ *
+ * Exports props for the `<Segmented>` tab-like toggle control including
+ * option objects with icons, sizes, and block mode.
+ *
+ * @see ./Segmented.tsx - component implementation
+ * @see ./index.ts      - public export
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type SegmentedSize = "large" | "middle" | "small";

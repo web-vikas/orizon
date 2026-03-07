@@ -1,3 +1,13 @@
+/**
+ * @file Switch component type definitions.
+ *
+ * Provides the `SwitchProps` interface for the binary toggle control
+ * including controlled / uncontrolled modes, loading state, sizes,
+ * and inner label content.
+ *
+ * @see {@link ./Switch.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { ReactNode, MouseEventHandler } from "react";
 
 export interface SwitchProps {

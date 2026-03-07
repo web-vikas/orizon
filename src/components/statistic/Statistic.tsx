@@ -1,3 +1,26 @@
+/**
+ * @file Statistic -- numeric value display with optional countdown.
+ *
+ * Renders a formatted numeric or string value with an optional title,
+ * prefix / suffix, group separators, and a loading skeleton state.
+ * The companion `Countdown` sub-component counts down to a target
+ * timestamp and fires `onFinish` when it reaches zero.
+ *
+ * Key props: `title`, `value`, `precision`, `prefix`, `suffix`, `loading`.
+ *
+ * @example
+ * ```tsx
+ * <Statistic title="Active Users" value={112893} />
+ * <Statistic.Countdown
+ *   title="Launch"
+ *   value={Date.now() + 1000 * 60 * 60}
+ *   onFinish={() => console.log("done")}
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

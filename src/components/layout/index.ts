@@ -8,6 +8,23 @@ type LayoutComponent = typeof InternalLayout & {
   Footer: typeof Footer;
 };
 
+/**
+ * Layout component for page scaffolding.
+ *
+ * Sub-components: `Layout.Header`, `Layout.Sider`, `Layout.Content`, `Layout.Footer`.
+ *
+ * @example
+ * ```tsx
+ * <Layout>
+ *   <Layout.Header>Header</Layout.Header>
+ *   <Layout>
+ *     <Layout.Sider>Sidebar</Layout.Sider>
+ *     <Layout.Content>Content</Layout.Content>
+ *   </Layout>
+ *   <Layout.Footer>Footer</Layout.Footer>
+ * </Layout>
+ * ```
+ */
 const Layout = InternalLayout as LayoutComponent;
 Layout.Header = Header;
 Layout.Sider = Sider;

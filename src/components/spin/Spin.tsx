@@ -1,3 +1,24 @@
+/**
+ * @file Spin -- loading spinner for indicating async operations.
+ *
+ * Renders a spinning indicator that can be used standalone, as a wrapper
+ * overlay on content, or as a fullscreen loading screen. Supports delayed
+ * appearance, custom indicators, tip text, and percent progress.
+ *
+ * Key props: `spinning`, `size`, `delay`, `indicator`, `tip`, `fullscreen`,
+ * `percent`, `children`.
+ *
+ * @example
+ * ```tsx
+ * <Spin />
+ * <Spin tip="Loading..." size="large">
+ *   <div>Content behind spinner</div>
+ * </Spin>
+ * ```
+ *
+ * @see ./types.ts  - SpinProps
+ * @see ./index.ts  - public export
+ */
 "use client";
 
 import * as React from "react";

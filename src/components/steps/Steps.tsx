@@ -1,3 +1,27 @@
+/**
+ * @file Steps -- guided navigation / progress indicator.
+ *
+ * Displays a list of step items with status indicators (wait, process,
+ * finish, error). Supports horizontal / vertical direction, navigation,
+ * dot, and inline display types, plus small and default sizes.
+ *
+ * Key props: `current`, `items`, `direction`, `type`, `status`, `size`.
+ *
+ * @example
+ * ```tsx
+ * <Steps
+ *   current={1}
+ *   items={[
+ *     { title: "Login" },
+ *     { title: "Verification" },
+ *     { title: "Done" },
+ *   ]}
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

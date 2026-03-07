@@ -1,3 +1,24 @@
+/**
+ * @file Mentions component — textarea with @-mention suggestions.
+ *
+ * Provides a textarea that detects configurable prefix triggers (default `@`)
+ * and displays a dropdown list of mention options. Supports controlled value,
+ * custom prefix triggers, auto-size, clear button, validation status, and
+ * keyboard navigation within the suggestion list.
+ *
+ * Key props: `options`, `prefix`, `onSelect`, `onSearch`, `placement`.
+ *
+ * @example
+ * ```tsx
+ * <Mentions
+ *   options={[{ value: 'alice' }, { value: 'bob' }]}
+ *   placeholder="Type @ to mention"
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

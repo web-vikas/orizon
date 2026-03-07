@@ -1,3 +1,14 @@
+/**
+ * @file Modal component type definitions.
+ *
+ * Exports the prop interfaces for the declarative `<Modal>` component,
+ * its imperative static methods (`Modal.confirm`, `Modal.info`, etc.),
+ * and the `useModal` hook API.
+ *
+ * @see ./Modal.tsx        - declarative modal implementation
+ * @see ./staticMethods.tsx - imperative confirm/info/success/error/warning
+ * @see ./useModal.tsx      - React hook returning a modal API tuple
+ */
 import type { ReactNode, CSSProperties, MouseEvent } from "react";
 import type { ButtonProps } from "../button";
 

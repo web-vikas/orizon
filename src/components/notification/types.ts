@@ -1,3 +1,13 @@
+/**
+ * @file Notification component type definitions.
+ *
+ * Exports config interfaces for individual notifications, the global
+ * config, and the imperative API used by `notification.success()` etc.
+ *
+ * @see ./notificationManager.tsx - imperative notification manager
+ * @see ./NotificationContainer.tsx - rendering layer
+ * @see ./useNotification.tsx       - hook-based API
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type NotificationType = "success" | "error" | "info" | "warning";

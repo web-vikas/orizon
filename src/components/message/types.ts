@@ -1,3 +1,13 @@
+/**
+ * @file Message component type definitions.
+ *
+ * Defines types for the imperative `message` API that displays lightweight
+ * toast-style feedback at the top of the viewport. Supports success, error,
+ * info, warning, and loading message types.
+ *
+ * @see {@link ./messageManager.tsx} for the imperative API
+ * @see {@link ./MessageContainer.tsx} for the rendering container
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type MessageType =

@@ -1,3 +1,24 @@
+/**
+ * @file DatePicker Component
+ *
+ * A date input with a calendar dropdown for selecting a single date.
+ * Supports custom date format, disabled dates, today button, presets,
+ * clearable value, and size / status / variant styling.
+ *
+ * Key props: `value`, `onChange`, `format`, `disabledDate`, `showToday`,
+ * `presets`, `allowClear`, `size`, `status`, `variant`.
+ *
+ * @example
+ * ```tsx
+ * <DatePicker placeholder="Pick a date" />
+ * <DatePicker format="MM/DD/YYYY" allowClear />
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./RangePicker.tsx} — range picker sub-component
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

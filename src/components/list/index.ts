@@ -11,6 +11,24 @@ type ListComponent = typeof InternalList & {
   Item: typeof ListItemWithMeta;
 };
 
+/**
+ * List component for rendering data source items with pagination.
+ *
+ * Sub-components: `List.Item`, `List.Item.Meta`.
+ *
+ * @example
+ * ```tsx
+ * <List
+ *   dataSource={data}
+ *   renderItem={(item) => (
+ *     <List.Item>
+ *       <List.Item.Meta title={item.title} description={item.desc} />
+ *     </List.Item>
+ *   )}
+ *   bordered
+ * />
+ * ```
+ */
 const List = InternalList as unknown as ListComponent;
 (List as unknown as Record<string, unknown>).Item = ListItemWithMeta;
 

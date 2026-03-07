@@ -1,3 +1,13 @@
+/**
+ * @file Anchor Type Definitions
+ *
+ * Props and item interfaces for the `<Anchor>` scroll-spy navigation
+ * component. Supports vertical and horizontal layout, affix mode,
+ * nested anchor items, and custom scroll containers.
+ *
+ * @see {@link ./Anchor.tsx} — component implementation
+ */
+
 import type { ReactNode, CSSProperties } from "react";
 
 export type AnchorDirection = "horizontal" | "vertical";

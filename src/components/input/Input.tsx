@@ -1,3 +1,26 @@
+/**
+ * @file Input component — text input field.
+ *
+ * Renders a styled text input with support for prefix/suffix icons, addons,
+ * clear button, character count, validation status indicators, and multiple
+ * visual variants. Also available as `Input.Password`, `Input.TextArea`,
+ * `Input.Search`, and `Input.OTP`.
+ *
+ * Key props: `size`, `variant`, `status`, `prefix`, `suffix`, `addonBefore`,
+ * `addonAfter`, `allowClear`, `showCount`.
+ *
+ * @example
+ * ```tsx
+ * <Input placeholder="Basic input" />
+ * <Input prefix={<UserIcon />} allowClear />
+ * <Input addonBefore="https://" addonAfter=".com" />
+ * <Input.Password />
+ * <Input.Search enterButton onSearch={console.log} />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

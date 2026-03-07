@@ -1,3 +1,14 @@
+/**
+ * @file Alert Error Boundary
+ *
+ * A React class-based error boundary that catches render errors
+ * in its children and displays them as an error `<Alert>`. Used
+ * via `Alert.ErrorBoundary`.
+ *
+ * @see {@link ./Alert.tsx} — main Alert component
+ * @see {@link ./types.ts} — prop definitions
+ */
+
 "use client";
 
 import * as React from "react";

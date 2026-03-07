@@ -1,3 +1,11 @@
+/**
+ * @file Masonry layout component type definitions.
+ *
+ * Defines props for the `<Masonry>` component, which arranges items in a
+ * CSS multi-column masonry layout with responsive column counts and gutters.
+ *
+ * @see {@link ./Masonry.tsx} for the component implementation
+ */
 import type { CSSProperties, ReactNode } from "react";
 
 export interface MasonryProps {

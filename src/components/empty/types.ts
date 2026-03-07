@@ -1,3 +1,11 @@
+/**
+ * @file Empty state component type definitions.
+ *
+ * Defines props for the `<Empty>` component, which displays a placeholder
+ * illustration with optional description and action area.
+ *
+ * @see {@link ./Empty.tsx} for the component implementation
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export interface EmptyProps {

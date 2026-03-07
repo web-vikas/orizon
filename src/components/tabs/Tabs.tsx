@@ -1,3 +1,27 @@
+/**
+ * @file Tabs -- tabbed content navigation.
+ *
+ * Renders a tab bar with associated content panels. Supports line,
+ * card, and editable-card types, four tab-bar positions
+ * (top / bottom / left / right), responsive sizing, extra content
+ * slots, and closable / addable tabs for the editable-card variant.
+ *
+ * Key props: `items`, `activeKey`, `type`, `tabPosition`, `size`,
+ * `centered`, `onEdit`.
+ *
+ * @example
+ * ```tsx
+ * <Tabs
+ *   items={[
+ *     { key: "1", label: "Tab 1", children: "Content 1" },
+ *     { key: "2", label: "Tab 2", children: "Content 2" },
+ *   ]}
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

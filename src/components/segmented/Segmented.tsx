@@ -1,3 +1,21 @@
+/**
+ * @file Segmented -- tab-like toggle control for switching between options.
+ *
+ * Renders a row of mutually exclusive options with an animated indicator
+ * that slides to the active item. Options can be simple strings/numbers
+ * or objects with labels, icons, and disabled state.
+ *
+ * Key props: `options`, `value`, `onChange`, `size`, `block`, `disabled`.
+ *
+ * @example
+ * ```tsx
+ * <Segmented options={["Daily", "Weekly", "Monthly"]} />
+ * <Segmented options={[{ label: "List", value: "list", icon: <ListIcon /> }]} />
+ * ```
+ *
+ * @see ./types.ts  - SegmentedProps, SegmentedOption
+ * @see ./index.ts  - public export
+ */
 "use client";
 
 import * as React from "react";

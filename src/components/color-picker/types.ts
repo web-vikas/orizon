@@ -1,3 +1,13 @@
+/**
+ * @file ColorPicker Type Definitions
+ *
+ * Props and config interfaces for the `<ColorPicker>` component.
+ * Supports hex / rgb / hsb formats, alpha channel, preset colours,
+ * trigger modes, and custom size.
+ *
+ * @see {@link ./ColorPicker.tsx} — component implementation
+ */
+
 import type { CSSProperties, ReactNode } from "react";
 
 export type ColorFormat = "hex" | "rgb" | "hsb";

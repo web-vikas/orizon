@@ -1,3 +1,14 @@
+/**
+ * @file Tree component type definitions.
+ *
+ * Provides `TreeProps` for the hierarchical tree view, `TreeDataNode`
+ * for individual nodes, and `DirectoryTreeProps` for the
+ * file-system-style variant. Supports checkable, draggable,
+ * async-loaded, and filterable trees.
+ *
+ * @see {@link ./Tree.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { ReactNode, CSSProperties, Key } from "react";
 
 export interface TreeDataNode {

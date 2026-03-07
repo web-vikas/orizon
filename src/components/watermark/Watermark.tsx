@@ -1,3 +1,23 @@
+/**
+ * @file Watermark -- canvas-generated repeating watermark overlay.
+ *
+ * Wraps child content with a semi-transparent, pointer-events-none
+ * watermark layer rendered via an off-screen canvas. Supports text
+ * (single or multi-line) and image watermarks with configurable
+ * rotation, gap, offset, font properties, and z-index.
+ *
+ * Key props: `content`, `image`, `rotate`, `gap`, `font`, `zIndex`.
+ *
+ * @example
+ * ```tsx
+ * <Watermark content="Confidential">
+ *   <div style={{ height: 300 }}>Protected content</div>
+ * </Watermark>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

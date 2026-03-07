@@ -1,3 +1,28 @@
+/**
+ * @file Form component — data entry container with validation.
+ *
+ * Wraps react-hook-form with an antd-compatible API. Provides `<Form>`,
+ * `<Form.Item>`, `<Form.List>`, and `<Form.ErrorList>` along with
+ * `Form.useForm` and `Form.useWatch` hooks. Supports horizontal, vertical,
+ * and inline layouts, antd-style validation rules, Zod schema validation,
+ * and size/variant/disabled propagation.
+ *
+ * Key props: `form`, `layout`, `onFinish`, `onFinishFailed`, `initialValues`.
+ *
+ * @example
+ * ```tsx
+ * const form = Form.useForm();
+ * <Form form={form} onFinish={(values) => console.log(values)}>
+ *   <Form.Item name="username" label="Username" rules={[{ required: true }]}>
+ *     <Input />
+ *   </Form.Item>
+ *   <button type="submit">Submit</button>
+ * </Form>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

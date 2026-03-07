@@ -1,3 +1,13 @@
+/**
+ * @file Timeline component type definitions.
+ *
+ * Provides `TimelineProps` for the vertical timeline container and
+ * `TimelineItem` for individual timeline entries, plus mode and
+ * position enums.
+ *
+ * @see {@link ./Timeline.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type TimelineMode = "left" | "right" | "alternate";

@@ -1,3 +1,14 @@
+/**
+ * @file FloatButton component type definitions.
+ *
+ * Defines props for `<FloatButton>`, `<FloatButton.Group>`, and
+ * `<FloatButton.BackTop>` for floating action buttons positioned at
+ * screen edges.
+ *
+ * @see {@link ./FloatButton.tsx} for the main button
+ * @see {@link ./FloatButtonGroup.tsx} for the expandable group
+ * @see {@link ./BackTop.tsx} for the back-to-top button
+ */
 import type { CSSProperties, ReactNode } from "react";
 
 export type FloatButtonShape = "circle" | "square";

@@ -1,3 +1,26 @@
+/**
+ * @file Image component — enhanced image with preview overlay.
+ *
+ * Extends the native `<img>` element with a click-to-preview modal that
+ * supports zoom, rotation, and keyboard navigation. Also provides an
+ * `Image.PreviewGroup` for browsing a gallery of images. Includes fallback
+ * and placeholder support for loading states.
+ *
+ * Key props: `src`, `preview`, `fallback`, `placeholder`.
+ *
+ * @example
+ * ```tsx
+ * <Image src="/photo.jpg" width={200} />
+ * <Image src="/photo.jpg" preview={false} />
+ * <Image.PreviewGroup items={['/a.jpg', '/b.jpg']}>
+ *   <Image src="/a.jpg" />
+ *   <Image src="/b.jpg" />
+ * </Image.PreviewGroup>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

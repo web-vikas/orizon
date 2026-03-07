@@ -1,3 +1,27 @@
+/**
+ * @file Flex layout component — CSS flexbox wrapper.
+ *
+ * Provides a convenient component API for flexbox layouts. Supports
+ * vertical/horizontal direction, named or numeric gap sizes, wrap, justify,
+ * and align props. Can render as any HTML element via `component`.
+ *
+ * Key props: `vertical`, `gap`, `wrap`, `justify`, `align`, `component`.
+ *
+ * @example
+ * ```tsx
+ * <Flex gap="middle" wrap>
+ *   <div>Item 1</div>
+ *   <div>Item 2</div>
+ * </Flex>
+ * <Flex vertical gap={16} align="center">
+ *   <div>Stacked 1</div>
+ *   <div>Stacked 2</div>
+ * </Flex>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

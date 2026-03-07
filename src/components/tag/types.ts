@@ -1,3 +1,13 @@
+/**
+ * @file Tag component type definitions.
+ *
+ * Provides `TagProps` for the label/badge tag, `CheckableTagProps` for
+ * the togglable checkable variant, and the `PresetColor` union covering
+ * all built-in colour presets.
+ *
+ * @see {@link ./Tag.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { ReactNode, CSSProperties, HTMLAttributes, MouseEvent } from "react";
 
 export type PresetColor =

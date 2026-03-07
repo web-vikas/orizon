@@ -1,3 +1,14 @@
+/**
+ * @file CheckboxGroup Component
+ *
+ * Provides group context for multiple `<Checkbox>` children.
+ * Manages a shared list of selected values and can render
+ * checkboxes from an `options` array or from child composition.
+ *
+ * @see {@link ./Checkbox.tsx} — individual checkbox
+ * @see {@link ./types.ts} — prop definitions
+ */
+
 "use client";
 
 import * as React from "react";

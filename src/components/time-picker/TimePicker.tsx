@@ -1,3 +1,26 @@
+/**
+ * @file TimePicker -- time selection input with scrollable hour,
+ * minute, and second columns.
+ *
+ * Renders a trigger input that opens a dropdown panel with separate
+ * scrollable columns for hours, minutes, seconds, and optionally
+ * AM/PM. Supports 12-hour mode, step increments, disabled times,
+ * and multiple input variants (outlined, borderless, filled).
+ *
+ * Key props: `value`, `onChange`, `format`, `use12Hours`, `size`,
+ * `variant`, `status`, `allowClear`.
+ *
+ * @example
+ * ```tsx
+ * <TimePicker
+ *   placeholder="Select time"
+ *   onChange={(time, str) => console.log(str)}
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

@@ -1,3 +1,13 @@
+/**
+ * @file Transfer component type definitions.
+ *
+ * Provides `TransferProps` for the dual-panel list component and
+ * `TransferItem` for individual data records that can be moved
+ * between source and target panels.
+ *
+ * @see {@link ./Transfer.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { CSSProperties, ReactNode } from "react";
 
 export interface TransferItem {

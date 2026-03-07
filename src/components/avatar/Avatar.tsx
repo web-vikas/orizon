@@ -1,3 +1,28 @@
+/**
+ * @file Avatar Component
+ *
+ * Renders a user avatar as an image, icon, or auto-scaled text
+ * initials. Supports circle / square shapes, three preset sizes
+ * (plus custom numeric), and grouped display via `Avatar.Group`.
+ *
+ * Key props: `src`, `size`, `shape`, `icon`, `alt`, `gap`.
+ *
+ * @example
+ * ```tsx
+ * <Avatar src="/user.jpg" alt="Jane" />
+ * <Avatar icon={<UserIcon />} shape="square" size="large" />
+ * <Avatar.Group max={{ count: 3 }}>
+ *   <Avatar src="/a.jpg" />
+ *   <Avatar src="/b.jpg" />
+ *   <Avatar src="/c.jpg" />
+ *   <Avatar src="/d.jpg" />
+ * </Avatar.Group>
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

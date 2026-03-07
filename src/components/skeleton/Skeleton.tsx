@@ -1,3 +1,23 @@
+/**
+ * @file Skeleton -- placeholder loading indicator for content areas.
+ *
+ * Renders a configurable skeleton with optional avatar, title bar, and
+ * paragraph rows. When `loading` is false, renders children instead.
+ * Supports animated pulse mode and rounded borders.
+ *
+ * Key props: `loading`, `active`, `avatar`, `title`, `paragraph`, `round`.
+ *
+ * @example
+ * ```tsx
+ * <Skeleton loading={isLoading} active avatar>
+ *   <ActualContent />
+ * </Skeleton>
+ * ```
+ *
+ * @see ./types.ts             - SkeletonProps
+ * @see ./SkeletonElements.tsx - Skeleton.Avatar, .Button, .Input, .Image
+ * @see ./index.ts             - public export
+ */
 "use client";
 
 import * as React from "react";

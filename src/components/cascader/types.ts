@@ -1,3 +1,14 @@
+/**
+ * @file Cascader Type Definitions
+ *
+ * Props and option interfaces for the `<Cascader>` hierarchical
+ * selection component. Supports single / multiple selection,
+ * expand on click or hover, search filtering, lazy loading,
+ * and various size / status / variant styles.
+ *
+ * @see {@link ./Cascader.tsx} — component implementation
+ */
+
 import type { CSSProperties, ReactNode } from "react";
 
 export interface CascaderOption {

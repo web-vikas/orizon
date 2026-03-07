@@ -1,3 +1,27 @@
+/**
+ * @file Anchor Component
+ *
+ * A scroll-spy navigation component that highlights the current
+ * section in view and smooth-scrolls to anchor targets on click.
+ * Supports vertical / horizontal layout, nested items, affix
+ * (sticky) positioning, and a sliding active indicator.
+ *
+ * Key props: `items`, `direction`, `affix`, `targetOffset`, `onChange`.
+ *
+ * @example
+ * ```tsx
+ * <Anchor
+ *   items={[
+ *     { key: "1", href: "#section-1", title: "Introduction" },
+ *     { key: "2", href: "#section-2", title: "Usage" },
+ *   ]}
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

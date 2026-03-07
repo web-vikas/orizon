@@ -1,3 +1,12 @@
+/**
+ * @file Mentions component type definitions.
+ *
+ * Defines props for the `<Mentions>` component, a textarea with @-mention
+ * auto-complete support, configurable prefix triggers, and dropdown
+ * suggestion list.
+ *
+ * @see {@link ./Mentions.tsx} for the component implementation
+ */
 import type { CSSProperties, ReactNode } from "react";
 
 export interface MentionOption {

@@ -1,3 +1,25 @@
+/**
+ * @file Alert Component
+ *
+ * Renders a feedback alert banner with semantic colouring for
+ * success, info, warning, and error states. Supports closable
+ * behaviour (with animation), an action slot, custom icons,
+ * and a full-width banner mode.
+ *
+ * Key props: `type`, `message`, `description`, `closable`, `showIcon`,
+ * `banner`, `action`.
+ *
+ * @example
+ * ```tsx
+ * <Alert type="success" message="Saved!" showIcon />
+ * <Alert type="error" message="Failed" description="Details..." closable />
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./ErrorBoundary.tsx} — error boundary sub-component
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

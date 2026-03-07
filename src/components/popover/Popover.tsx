@@ -1,3 +1,21 @@
+/**
+ * @file Popover -- floating content panel triggered by a child element.
+ *
+ * Renders rich content in a positioned popup with optional title and arrow.
+ * Supports hover, click, and focus triggers with 12 placement options.
+ *
+ * Key props: `content`, `title`, `trigger`, `placement`, `open`, `arrow`.
+ *
+ * @example
+ * ```tsx
+ * <Popover content="Hello world" title="Greeting">
+ *   <Button>Hover me</Button>
+ * </Popover>
+ * ```
+ *
+ * @see ./types.ts  - PopoverProps
+ * @see ./index.ts  - public export
+ */
 "use client";
 
 import * as React from "react";

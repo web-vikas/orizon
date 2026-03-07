@@ -1,3 +1,25 @@
+/**
+ * @file Radio -- single-choice input within a group.
+ *
+ * Renders a radio indicator with label. Works standalone or within a
+ * `Radio.Group` context for managed single-selection. Supports controlled
+ * and uncontrolled checked state, disabled mode, and custom IDs.
+ *
+ * Key props: `checked`, `value`, `onChange`, `disabled`, `children`.
+ *
+ * @example
+ * ```tsx
+ * <Radio value="a">Option A</Radio>
+ * <Radio.Group value={val} onChange={handleChange}>
+ *   <Radio value="a">A</Radio>
+ *   <Radio value="b">B</Radio>
+ * </Radio.Group>
+ * ```
+ *
+ * @see ./types.ts       - RadioProps, RadioGroupProps
+ * @see ./RadioGroup.tsx - group wrapper
+ * @see ./index.ts       - public export
+ */
 "use client";
 
 import * as React from "react";

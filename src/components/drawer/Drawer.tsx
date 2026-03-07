@@ -1,3 +1,23 @@
+/**
+ * @file Drawer component — sliding panel overlay.
+ *
+ * Renders a panel that slides in from top, right, bottom, or left. Includes
+ * a header with title and close button, a scrollable body, and an optional
+ * footer. Supports controlled open state, preset sizes, loading state, and
+ * destroy-on-close behaviour.
+ *
+ * Key props: `open`, `onClose`, `placement`, `title`, `footer`, `size`, `loading`.
+ *
+ * @example
+ * ```tsx
+ * <Drawer open={open} onClose={() => setOpen(false)} title="Details">
+ *   <p>Drawer body content</p>
+ * </Drawer>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

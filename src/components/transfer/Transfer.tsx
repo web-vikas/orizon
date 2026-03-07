@@ -1,3 +1,29 @@
+/**
+ * @file Transfer -- dual-panel list for moving items between
+ * a source and target collection.
+ *
+ * Renders two side-by-side panels with checkbox selection, optional
+ * search filtering, pagination, and one-way or bidirectional
+ * transfer buttons.
+ *
+ * Key props: `dataSource`, `targetKeys`, `onChange`, `showSearch`,
+ * `pagination`, `oneWay`, `titles`, `operations`.
+ *
+ * @example
+ * ```tsx
+ * <Transfer
+ *   dataSource={[
+ *     { key: "1", title: "Item 1" },
+ *     { key: "2", title: "Item 2" },
+ *   ]}
+ *   targetKeys={["2"]}
+ *   onChange={(keys, dir, moveKeys) => console.log(keys)}
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

@@ -1,3 +1,14 @@
+/**
+ * @file Form component type definitions.
+ *
+ * Defines props for `<Form>`, `<Form.Item>`, `<Form.List>`,
+ * `<Form.ErrorList>`, and the `Form.useForm` hook. Built on top of
+ * react-hook-form with antd-compatible validation rules and Zod support.
+ *
+ * @see {@link ./Form.tsx} for the form wrapper
+ * @see {@link ./FormItem.tsx} for the field wrapper
+ * @see {@link ./FormList.tsx} for dynamic field arrays
+ */
 import type { ReactNode, HTMLAttributes } from "react";
 import type {
   UseFormReturn,

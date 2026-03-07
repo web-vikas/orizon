@@ -1,3 +1,12 @@
+/**
+ * @file Progress component type definitions.
+ *
+ * Exports props for the `<Progress>` component covering line, circle,
+ * and dashboard types, status colours, step segments, and custom formatting.
+ *
+ * @see ./Progress.tsx - component implementation
+ * @see ./index.ts     - public export
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type ProgressType = "line" | "circle" | "dashboard";

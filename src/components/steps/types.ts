@@ -1,3 +1,13 @@
+/**
+ * @file Steps component type definitions.
+ *
+ * Exports prop interfaces for the step-by-step navigation / progress
+ * component including `StepsProps`, individual `StepItem`, direction,
+ * type, size, and status enums.
+ *
+ * @see {@link ./Steps.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type StepsDirection = "horizontal" | "vertical";

@@ -1,3 +1,13 @@
+/**
+ * @file Badge Type Definitions
+ *
+ * Props for `<Badge>` and `<Badge.Ribbon>`. Supports count display,
+ * dot mode, status indicators, preset / custom colours, overflow
+ * count, and ribbon decorations.
+ *
+ * @see {@link ./Badge.tsx} — component implementation
+ */
+
 import type { ReactNode, CSSProperties, HTMLAttributes } from "react";
 
 export type BadgeStatus = "success" | "processing" | "default" | "error" | "warning";

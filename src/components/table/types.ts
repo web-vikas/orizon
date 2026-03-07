@@ -1,3 +1,13 @@
+/**
+ * @file Table component type definitions.
+ *
+ * Comprehensive type system for the data-table component including
+ * column definitions, pagination, row selection, expandable rows,
+ * scroll configuration, sorting, and filtering.
+ *
+ * @see {@link ./Table.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { ReactNode, Key, CSSProperties } from "react";
 
 // ---------------------------------------------------------------------------

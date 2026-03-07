@@ -1,3 +1,30 @@
+/**
+ * @file Cascader Component
+ *
+ * Hierarchical dropdown selector that drills into nested option
+ * columns. Supports single and multiple selection, expand on
+ * click or hover, search filtering, lazy loading via `loadData`,
+ * allow-clear, and custom display rendering.
+ *
+ * Key props: `options`, `value`, `onChange`, `multiple`,
+ * `expandTrigger`, `showSearch`, `changeOnSelect`, `placeholder`.
+ *
+ * @example
+ * ```tsx
+ * <Cascader
+ *   options={[
+ *     { value: "zhejiang", label: "Zhejiang", children: [
+ *       { value: "hangzhou", label: "Hangzhou" },
+ *     ]},
+ *   ]}
+ *   placeholder="Select location"
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

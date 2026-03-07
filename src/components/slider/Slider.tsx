@@ -1,3 +1,22 @@
+/**
+ * @file Slider -- draggable range input for numeric value selection.
+ *
+ * Renders a horizontal or vertical slider track with one or two thumbs,
+ * optional marks, step dots, and tooltips. Supports keyboard navigation,
+ * mouse and touch dragging, and controlled/uncontrolled modes.
+ *
+ * Key props: `value`, `range`, `min`, `max`, `step`, `marks`, `dots`,
+ * `vertical`, `tooltip`, `disabled`, `reverse`.
+ *
+ * @example
+ * ```tsx
+ * <Slider defaultValue={30} />
+ * <Slider range defaultValue={[20, 50]} marks={{ 0: "0", 50: "50", 100: "100" }} />
+ * ```
+ *
+ * @see ./types.ts  - SliderProps, SliderMarks
+ * @see ./index.ts  - public export
+ */
 "use client";
 
 import * as React from "react";

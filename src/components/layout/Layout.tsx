@@ -1,3 +1,25 @@
+/**
+ * @file Layout component — page structure scaffolding.
+ *
+ * Provides the main `<Layout>` wrapper and its sub-components `Header`,
+ * `Content`, and `Footer`. When a `Sider` child is detected, Layout
+ * automatically switches to a horizontal flex direction.
+ *
+ * Key props: `hasSider`.
+ *
+ * @example
+ * ```tsx
+ * <Layout>
+ *   <Layout.Header>Header</Layout.Header>
+ *   <Layout.Content>Main content</Layout.Content>
+ *   <Layout.Footer>Footer</Layout.Footer>
+ * </Layout>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./Sider.tsx} for the sidebar sub-component
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

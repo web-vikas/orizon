@@ -1,3 +1,20 @@
+/**
+ * @file Col component — grid column.
+ *
+ * Occupies a fraction of the 24-column grid. Supports responsive breakpoints
+ * (xs through xxl), flex shorthand, offset, push/pull, and ordering.
+ *
+ * Key props: `span`, `offset`, `xs`..`xxl`, `flex`.
+ *
+ * @example
+ * ```tsx
+ * <Col span={8}>One third</Col>
+ * <Col xs={24} md={12} lg={8}>Responsive</Col>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./Row.tsx} for the row container
+ */
 "use client";
 
 import * as React from "react";

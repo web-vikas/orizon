@@ -1,3 +1,29 @@
+/**
+ * @file TreeSelect -- dropdown selector with a hierarchical tree menu.
+ *
+ * Renders a combobox-style trigger that opens a dropdown containing
+ * a tree of selectable nodes. Supports single and multiple selection,
+ * checkable nodes, search filtering, async data loading, and
+ * custom field name mapping.
+ *
+ * Key props: `treeData`, `value`, `onChange`, `treeCheckable`,
+ * `showSearch`, `multiple`, `placeholder`, `allowClear`.
+ *
+ * @example
+ * ```tsx
+ * <TreeSelect
+ *   treeData={[
+ *     { value: "parent", title: "Parent", children: [
+ *       { value: "child", title: "Child" },
+ *     ]},
+ *   ]}
+ *   placeholder="Select node"
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

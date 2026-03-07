@@ -1,3 +1,13 @@
+/**
+ * @file AutoComplete Type Definitions
+ *
+ * Props and option interfaces for the `<AutoComplete>` input component.
+ * Supports controlled / uncontrolled value, custom filtering, size,
+ * status validation, and variant styling.
+ *
+ * @see {@link ./AutoComplete.tsx} — component implementation
+ */
+
 import type { CSSProperties, ReactNode } from "react";
 
 export type AutoCompleteSize = "small" | "middle" | "large";

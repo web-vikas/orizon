@@ -1,3 +1,12 @@
+/**
+ * @file Statistic component type definitions.
+ *
+ * Provides prop interfaces for the Statistic value display and the
+ * Statistic.Countdown timer sub-component.
+ *
+ * @see {@link ./Statistic.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export interface StatisticProps {

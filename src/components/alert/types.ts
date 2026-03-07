@@ -1,3 +1,14 @@
+/**
+ * @file Alert Type Definitions
+ *
+ * All public prop interfaces for `<Alert>` and `<Alert.ErrorBoundary>`.
+ * Supports four semantic types (success, info, warning, error),
+ * closable behaviour, banner mode, custom icons, and action slots.
+ *
+ * @see {@link ./Alert.tsx} — component implementation
+ * @see {@link ./ErrorBoundary.tsx} — error boundary wrapper
+ */
+
 import type { ReactNode } from "react";
 
 export type AlertType = "success" | "info" | "warning" | "error";

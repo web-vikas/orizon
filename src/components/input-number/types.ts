@@ -1,3 +1,11 @@
+/**
+ * @file InputNumber component type definitions.
+ *
+ * Defines props for the `<InputNumber>` component, a numeric input with
+ * stepper controls, min/max clamping, precision, formatting, and addons.
+ *
+ * @see {@link ./InputNumber.tsx} for the component implementation
+ */
 import type { CSSProperties, ReactNode } from "react";
 
 export type InputNumberSize = "small" | "middle" | "large";

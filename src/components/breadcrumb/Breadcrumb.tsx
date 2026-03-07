@@ -1,3 +1,28 @@
+/**
+ * @file Breadcrumb Component
+ *
+ * Renders a breadcrumb trail from an `items` array. Each item can
+ * optionally include an `href` for linking, a dropdown `menu` for
+ * sub-navigation, and an `onClick` handler. The last item is
+ * automatically rendered as the current page.
+ *
+ * Key props: `items`, `separator`.
+ *
+ * @example
+ * ```tsx
+ * <Breadcrumb
+ *   items={[
+ *     { title: "Home", href: "/" },
+ *     { title: "Products", href: "/products" },
+ *     { title: "Widget" },
+ *   ]}
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

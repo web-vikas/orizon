@@ -1,3 +1,14 @@
+/**
+ * @file Checkbox Type Definitions
+ *
+ * Props for `<Checkbox>` and `<Checkbox.Group>`. Supports
+ * controlled / uncontrolled checked state, indeterminate visual,
+ * and group selection with options array or child composition.
+ *
+ * @see {@link ./Checkbox.tsx} — component implementation
+ * @see {@link ./CheckboxGroup.tsx} — group implementation
+ */
+
 import type { ReactNode } from "react";
 
 export interface CheckboxChangeEvent {

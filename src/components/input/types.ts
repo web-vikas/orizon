@@ -1,3 +1,16 @@
+/**
+ * @file Input component type definitions.
+ *
+ * Defines props for `<Input>`, `<Input.Password>`, `<Input.TextArea>`,
+ * `<Input.Search>`, and `<Input.OTP>`. Covers size, variant, status,
+ * prefix/suffix, addons, clear button, and character counting.
+ *
+ * @see {@link ./Input.tsx} for the base input
+ * @see {@link ./Password.tsx} for the password variant
+ * @see {@link ./TextArea.tsx} for the textarea variant
+ * @see {@link ./Search.tsx} for the search variant
+ * @see {@link ./OTP.tsx} for the OTP input
+ */
 import type {
   ReactNode,
   InputHTMLAttributes,

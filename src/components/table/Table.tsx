@@ -1,3 +1,33 @@
+/**
+ * @file Table -- structured data display with sorting, pagination,
+ * row selection, and expandable rows.
+ *
+ * Renders tabular data from `columns` and `dataSource` with built-in
+ * pagination controls, column sorting, row checkbox / radio selection,
+ * expandable row panels, fixed-column scrolling, and multiple size
+ * variants (large, middle, small).
+ *
+ * Key props: `columns`, `dataSource`, `pagination`, `rowSelection`,
+ * `bordered`, `loading`, `expandable`, `scroll`.
+ *
+ * @example
+ * ```tsx
+ * <Table
+ *   columns={[
+ *     { title: "Name", dataIndex: "name", sorter: true },
+ *     { title: "Age", dataIndex: "age" },
+ *   ]}
+ *   dataSource={[
+ *     { key: "1", name: "John", age: 32 },
+ *     { key: "2", name: "Jane", age: 28 },
+ *   ]}
+ *   pagination={{ pageSize: 10 }}
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

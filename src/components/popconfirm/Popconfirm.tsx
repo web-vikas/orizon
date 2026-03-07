@@ -1,3 +1,23 @@
+/**
+ * @file Popconfirm -- confirmation popup triggered by a child element.
+ *
+ * Wraps a trigger element and shows a popover with a title, optional
+ * description, confirm/cancel buttons, and a customisable icon.
+ * Useful for destructive action confirmations.
+ *
+ * Key props: `title`, `description`, `onConfirm`, `onCancel`, `placement`,
+ * `okText`, `cancelText`, `icon`, `disabled`.
+ *
+ * @example
+ * ```tsx
+ * <Popconfirm title="Delete this item?" onConfirm={handleDelete}>
+ *   <Button danger>Delete</Button>
+ * </Popconfirm>
+ * ```
+ *
+ * @see ./types.ts  - PopconfirmProps
+ * @see ./index.ts  - public export
+ */
 "use client";
 
 import * as React from "react";

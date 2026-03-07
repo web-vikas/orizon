@@ -1,3 +1,23 @@
+/**
+ * @file Row component — grid row container.
+ *
+ * Provides a flex-based row that distributes its children into columns with
+ * configurable gutter spacing (horizontal + vertical), alignment, and
+ * justification. Supports responsive gutter values via breakpoint objects.
+ *
+ * Key props: `gutter`, `align`, `justify`, `wrap`.
+ *
+ * @example
+ * ```tsx
+ * <Row gutter={[16, 16]}>
+ *   <Col span={12}>Left</Col>
+ *   <Col span={12}>Right</Col>
+ * </Row>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./Col.tsx} for the column component
+ */
 "use client";
 
 import * as React from "react";

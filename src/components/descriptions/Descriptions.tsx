@@ -1,3 +1,29 @@
+/**
+ * @file Descriptions Component
+ *
+ * A key-value display component that renders labelled description
+ * items in rows and columns. Supports horizontal / vertical layout,
+ * bordered table style, size presets, column spans, colon toggle,
+ * and a title / extra header row.
+ *
+ * Key props: `items`, `bordered`, `column`, `layout`, `size`,
+ * `title`, `extra`, `colon`.
+ *
+ * @example
+ * ```tsx
+ * <Descriptions
+ *   title="User Info"
+ *   items={[
+ *     { label: "Name", children: "Jane Doe" },
+ *     { label: "Email", children: "jane@example.com" },
+ *   ]}
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

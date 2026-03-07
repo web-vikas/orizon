@@ -1,3 +1,23 @@
+/**
+ * @file Dropdown component — contextual overlay menu.
+ *
+ * Wraps a trigger element with a dropdown menu that appears on hover, click,
+ * or context-menu. The menu supports items, groups, dividers, disabled items,
+ * and danger-styled items.
+ *
+ * Key props: `menu`, `trigger`, `placement`, `open`, `disabled`.
+ *
+ * @example
+ * ```tsx
+ * <Dropdown menu={{ items: [{ key: '1', label: 'Edit' }] }}>
+ *   <a>Hover me</a>
+ * </Dropdown>
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./DropdownButton.tsx} for the split-button variant
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

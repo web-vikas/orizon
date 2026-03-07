@@ -1,3 +1,23 @@
+/**
+ * @file QRCode -- QR code generator with status overlays.
+ *
+ * Renders a QR code pattern (placeholder) with configurable colours,
+ * size, center icon, bordered frame, and status overlays for loading,
+ * expired, and scanned states. Replace the placeholder SVG with a real
+ * QR library (`qrcode.react`, `qrcode`, etc.) for production use.
+ *
+ * Key props: `value`, `size`, `color`, `bgColor`, `status`, `icon`,
+ * `bordered`, `onRefresh`.
+ *
+ * @example
+ * ```tsx
+ * <QRCode value="https://example.com" />
+ * <QRCode value="https://example.com" status="expired" onRefresh={refresh} />
+ * ```
+ *
+ * @see ./types.ts  - QRCodeProps
+ * @see ./index.ts  - public export
+ */
 "use client";
 
 import * as React from "react";

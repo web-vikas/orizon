@@ -1,3 +1,12 @@
+/**
+ * @file Dropdown component type definitions.
+ *
+ * Defines props for `<Dropdown>` and `<Dropdown.Button>`, which render
+ * a contextual overlay menu triggered by hover, click, or right-click.
+ *
+ * @see {@link ./Dropdown.tsx} for the component implementation
+ * @see {@link ./DropdownButton.tsx} for the split-button variant
+ */
 import type { ReactNode, MouseEventHandler } from "react";
 
 export type DropdownTrigger = "hover" | "click" | "contextMenu";

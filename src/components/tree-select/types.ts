@@ -1,3 +1,13 @@
+/**
+ * @file TreeSelect component type definitions.
+ *
+ * Provides `TreeSelectProps` for the tree-based dropdown selector,
+ * `TreeSelectDataNode` for individual tree nodes, and size / status /
+ * variant union types.
+ *
+ * @see {@link ./TreeSelect.tsx} for the implementation.
+ * @see {@link ./index.ts} for the public export.
+ */
 import type { CSSProperties, ReactNode } from "react";
 
 export interface TreeSelectDataNode {

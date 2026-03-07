@@ -1,3 +1,23 @@
+/**
+ * @file Space -- inline flex layout helper for spacing child elements.
+ *
+ * Renders children in a horizontal or vertical flex container with
+ * configurable gap size, alignment, wrapping, and optional split separators.
+ *
+ * Key props: `size`, `direction`, `align`, `wrap`, `split`.
+ *
+ * @example
+ * ```tsx
+ * <Space size="middle">
+ *   <Button>A</Button>
+ *   <Button>B</Button>
+ * </Space>
+ * ```
+ *
+ * @see ./types.ts   - SpaceProps
+ * @see ./Compact.tsx - Space.Compact sub-component
+ * @see ./index.ts    - public export
+ */
 "use client";
 
 import * as React from "react";

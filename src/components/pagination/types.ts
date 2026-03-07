@@ -1,3 +1,12 @@
+/**
+ * @file Pagination component type definitions.
+ *
+ * Exports props for the `<Pagination>` component including controlled/
+ * uncontrolled page state, size changer, quick jumper, and show-total.
+ *
+ * @see ./Pagination.tsx - component implementation
+ * @see ./index.ts       - public export
+ */
 import type { ReactNode } from "react";
 
 export type PaginationSize = "small" | "default";

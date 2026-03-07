@@ -1,3 +1,12 @@
+/**
+ * @file Slider component type definitions.
+ *
+ * Exports props for the `<Slider>` range input including single/range
+ * mode, marks, dots, vertical orientation, and tooltip config.
+ *
+ * @see ./Slider.tsx - component implementation
+ * @see ./index.ts   - public export
+ */
 import type { CSSProperties, ReactNode } from "react";
 
 export type SliderMarks = Record<

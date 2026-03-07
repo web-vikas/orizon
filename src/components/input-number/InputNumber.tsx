@@ -1,3 +1,22 @@
+/**
+ * @file InputNumber component — numeric input with stepper controls.
+ *
+ * Renders a text input restricted to numeric values with increment/decrement
+ * buttons, min/max clamping, precision control, custom formatting/parsing,
+ * keyboard arrow support, and scroll-to-change. Supports prefix, suffix,
+ * addons, size, variant, and status.
+ *
+ * Key props: `min`, `max`, `step`, `precision`, `controls`, `formatter`, `parser`.
+ *
+ * @example
+ * ```tsx
+ * <InputNumber min={0} max={100} defaultValue={50} />
+ * <InputNumber prefix="$" step={0.01} precision={2} />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

@@ -1,3 +1,23 @@
+/**
+ * @file Badge Component
+ *
+ * Displays a numeric count, dot, or status indicator on its children.
+ * Includes `Badge.Ribbon` for corner ribbon decorations on cards.
+ *
+ * Key props: `count`, `dot`, `status`, `color`, `size`, `overflowCount`,
+ * `showZero`, `offset`.
+ *
+ * @example
+ * ```tsx
+ * <Badge count={5}><Avatar /></Badge>
+ * <Badge dot status="success" />
+ * <Badge.Ribbon text="New"><Card>...</Card></Badge.Ribbon>
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

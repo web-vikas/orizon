@@ -1,3 +1,13 @@
+/**
+ * @file Space component type definitions.
+ *
+ * Exports props for `<Space>` and `<Space.Compact>` layout helpers
+ * including size, direction, wrap, alignment, and split separators.
+ *
+ * @see ./Space.tsx   - space implementation
+ * @see ./Compact.tsx - compact group implementation
+ * @see ./index.ts    - public export
+ */
 import type { ReactNode, HTMLAttributes } from "react";
 
 export type SpaceSize = "small" | "middle" | "large" | number;

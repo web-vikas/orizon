@@ -1,3 +1,24 @@
+/**
+ * @file Notification manager -- imperative API for toast-style notifications.
+ *
+ * Provides `notification.success()`, `notification.error()`, etc. that render
+ * floating notifications at configurable placements. Manages auto-close timers,
+ * maxCount limits, and per-placement React render roots.
+ *
+ * Key API: `notification.success(config)`, `notification.error(config)`,
+ * `notification.info(config)`, `notification.warning(config)`,
+ * `notification.open(config)`, `notification.destroy(key?)`.
+ *
+ * @example
+ * ```tsx
+ * notification.success({ message: "Saved!", description: "Your changes were saved." });
+ * notification.error({ message: "Error", duration: 0 }); // stays until closed
+ * ```
+ *
+ * @see ./types.ts                 - NotificationConfig, NotificationAPI
+ * @see ./NotificationContainer.tsx - UI rendering
+ * @see ./index.ts                  - public export
+ */
 "use client";
 
 import { createRoot, type Root } from "react-dom/client";

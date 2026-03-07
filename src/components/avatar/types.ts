@@ -1,3 +1,13 @@
+/**
+ * @file Avatar Type Definitions
+ *
+ * Props for `<Avatar>` and `<Avatar.Group>`. Supports image source,
+ * icon fallback, text children with auto-scaling, custom numeric
+ * sizing, and grouped display with overflow count.
+ *
+ * @see {@link ./Avatar.tsx} — component implementation
+ */
+
 import type { ReactNode, CSSProperties, HTMLAttributes } from "react";
 
 export type AvatarSize = number | "small" | "middle" | "large";

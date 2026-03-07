@@ -1,3 +1,27 @@
+/**
+ * @file Carousel Component
+ *
+ * A slideshow component that cycles through child slides with
+ * scroll or fade transitions. Supports autoplay with pause-on-hover,
+ * navigation arrows, dot indicators at any position, and an
+ * imperative ref for programmatic control.
+ *
+ * Key props: `autoplay`, `effect`, `dots`, `dotPosition`, `arrows`,
+ * `slidesToShow`, `infinite`, `beforeChange`, `afterChange`.
+ *
+ * @example
+ * ```tsx
+ * <Carousel autoplay arrows>
+ *   <div>Slide 1</div>
+ *   <div>Slide 2</div>
+ *   <div>Slide 3</div>
+ * </Carousel>
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

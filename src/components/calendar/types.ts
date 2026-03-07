@@ -1,3 +1,13 @@
+/**
+ * @file Calendar Type Definitions
+ *
+ * Props for the `<Calendar>` component. Supports full-screen and
+ * mini modes, month / year views, custom cell rendering, disabled
+ * dates, and controlled selection.
+ *
+ * @see {@link ./Calendar.tsx} — component implementation
+ */
+
 import type { ReactNode, CSSProperties } from "react";
 
 export type CalendarMode = "month" | "year";

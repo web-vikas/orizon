@@ -1,3 +1,25 @@
+/**
+ * @file List component — data display list with pagination.
+ *
+ * Renders a vertical list of items from a `dataSource` with support for
+ * custom `renderItem`, header/footer, bordered and split styles, loading
+ * skeleton, grid layout, and built-in pagination. Includes `List.Item`
+ * and `List.Item.Meta` sub-components.
+ *
+ * Key props: `dataSource`, `renderItem`, `bordered`, `loading`, `pagination`, `grid`.
+ *
+ * @example
+ * ```tsx
+ * <List
+ *   dataSource={['Item 1', 'Item 2', 'Item 3']}
+ *   renderItem={(item) => <List.Item>{item}</List.Item>}
+ *   bordered
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop type definitions
+ * @see {@link ./index.ts} for the public export
+ */
 "use client";
 
 import * as React from "react";

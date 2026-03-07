@@ -1,3 +1,13 @@
+/**
+ * @file Collapse Type Definitions
+ *
+ * Props and item interfaces for the `<Collapse>` accordion
+ * component. Supports accordion mode, bordered / ghost styles,
+ * custom expand icons, collapsible trigger modes, and size presets.
+ *
+ * @see {@link ./Collapse.tsx} — component implementation
+ */
+
 import type { ReactNode, CSSProperties, Key } from "react";
 
 export type CollapsibleType = "header" | "icon" | "disabled";

@@ -1,3 +1,16 @@
+/**
+ * @file RangePicker Component
+ *
+ * A date range input with two side-by-side calendar panels.
+ * Used via `DatePicker.RangePicker`. Supports hover-preview of
+ * the range, disabled dates, presets, clearable value, and all
+ * DatePicker sizing / variant / status options.
+ *
+ * @see {@link ./DatePicker.tsx} — single date picker
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

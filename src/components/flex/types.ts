@@ -1,3 +1,11 @@
+/**
+ * @file Flex layout component type definitions.
+ *
+ * Defines props for the `<Flex>` component, a thin wrapper around CSS flexbox
+ * with convenience props for direction, gap, alignment, and wrapping.
+ *
+ * @see {@link ./Flex.tsx} for the component implementation
+ */
 import type { ReactNode, HTMLAttributes, ElementType } from "react";
 
 export type FlexGap = "small" | "middle" | "large" | number | string;

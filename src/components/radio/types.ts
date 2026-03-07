@@ -1,3 +1,15 @@
+/**
+ * @file Radio component type definitions.
+ *
+ * Exports props for `<Radio>`, `<Radio.Group>`, and `<Radio.Button>`
+ * including controlled/uncontrolled value, option rendering, sizes,
+ * and button-style variants.
+ *
+ * @see ./Radio.tsx       - individual radio
+ * @see ./RadioGroup.tsx  - group wrapper
+ * @see ./RadioButton.tsx - button-style radio
+ * @see ./index.ts        - public export
+ */
 import type { ReactNode } from "react";
 
 export type ComponentSize = "small" | "middle" | "large";

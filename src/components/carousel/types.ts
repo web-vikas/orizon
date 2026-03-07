@@ -1,3 +1,13 @@
+/**
+ * @file Carousel Type Definitions
+ *
+ * Props and config interfaces for the `<Carousel>` slideshow
+ * component. Supports scroll / fade effects, autoplay, navigation
+ * arrows, dot indicators, and an imperative ref API.
+ *
+ * @see {@link ./Carousel.tsx} — component implementation
+ */
+
 import type { ReactNode, CSSProperties } from "react";
 
 export type DotPosition = "top" | "bottom" | "left" | "right";

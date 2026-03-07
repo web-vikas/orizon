@@ -1,3 +1,26 @@
+/**
+ * @file ColorPicker Component
+ *
+ * A colour selection panel with saturation canvas, hue slider,
+ * optional alpha slider, format switching (hex / rgb / hsb),
+ * and preset colour swatches. Opens as a popover triggered by
+ * click or hover on a colour swatch.
+ *
+ * Key props: `value`, `onChange`, `format`, `showText`, `presets`,
+ * `disabledAlpha`, `size`, `trigger`.
+ *
+ * @example
+ * ```tsx
+ * <ColorPicker defaultValue="#1677ff" showText />
+ * <ColorPicker
+ *   presets={[{ label: "Brand", colors: ["#f00", "#0f0", "#00f"] }]}
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

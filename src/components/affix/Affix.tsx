@@ -1,3 +1,23 @@
+/**
+ * @file Affix Component
+ *
+ * Pins its children to the viewport when the scroll position crosses
+ * a configurable offset. Supports both top and bottom pinning, and
+ * a custom scroll container via the `target` prop.
+ *
+ * Key props: `offsetTop`, `offsetBottom`, `target`, `onChange`.
+ *
+ * @example
+ * ```tsx
+ * <Affix offsetTop={80}>
+ *   <nav>Sticky toolbar</nav>
+ * </Affix>
+ * ```
+ *
+ * @see {@link ./types.ts} — prop definitions
+ * @see {@link ./index.ts} — barrel export
+ */
+
 "use client";
 
 import * as React from "react";

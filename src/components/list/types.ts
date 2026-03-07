@@ -1,3 +1,12 @@
+/**
+ * @file List component type definitions.
+ *
+ * Defines props for `<List>`, `<List.Item>`, and `<List.Item.Meta>`.
+ * Supports data source rendering, pagination, grid layout, loading state,
+ * and bordered/split styling.
+ *
+ * @see {@link ./List.tsx} for the component implementation
+ */
 import type { ReactNode, CSSProperties } from "react";
 
 export type ListSize = "default" | "large" | "small";

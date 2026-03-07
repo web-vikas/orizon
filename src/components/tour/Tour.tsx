@@ -1,3 +1,30 @@
+/**
+ * @file Tour -- guided product walkthrough with mask and popover.
+ *
+ * Renders a step-by-step tour overlay that highlights DOM elements
+ * with a spotlight cutout mask. Each step can show a title,
+ * description, cover image, and prev/next navigation buttons.
+ * Supports controlled and uncontrolled open state, custom
+ * indicators, and "default" or "primary" styling.
+ *
+ * Key props: `steps`, `open`, `current`, `onChange`, `onClose`,
+ * `onFinish`, `mask`, `type`.
+ *
+ * @example
+ * ```tsx
+ * <Tour
+ *   open={open}
+ *   onClose={() => setOpen(false)}
+ *   steps={[
+ *     { target: ref1, title: "Step 1", description: "Welcome!" },
+ *     { target: ref2, title: "Step 2", description: "Try this." },
+ *   ]}
+ * />
+ * ```
+ *
+ * @see {@link ./types.ts} for prop definitions.
+ * @see {@link ./index.ts} for the public export.
+ */
 "use client";
 
 import * as React from "react";

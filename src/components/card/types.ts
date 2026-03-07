@@ -1,3 +1,13 @@
+/**
+ * @file Card Type Definitions
+ *
+ * Props for `<Card>`, `<Card.Meta>`, and `<Card.Grid>`. Supports
+ * title, extra slot, cover image, action bar, loading skeleton,
+ * bordered / hoverable variants, and inner card nesting.
+ *
+ * @see {@link ./Card.tsx} — component implementation
+ */
+
 import type { ReactNode, CSSProperties, HTMLAttributes } from "react";
 
 export type CardSize = "default" | "small";

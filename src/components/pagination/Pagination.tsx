@@ -1,3 +1,21 @@
+/**
+ * @file Pagination -- page navigation with size changer and quick jumper.
+ *
+ * Renders numbered page links with prev/next navigation, optional page-size
+ * selector, quick-jump input, and total display. Supports controlled and
+ * uncontrolled modes plus simple (compact) mode.
+ *
+ * Key props: `total`, `current`, `pageSize`, `showSizeChanger`,
+ * `showQuickJumper`, `showTotal`, `simple`, `size`, `disabled`.
+ *
+ * @example
+ * ```tsx
+ * <Pagination total={100} current={1} pageSize={10} onChange={handleChange} />
+ * ```
+ *
+ * @see ./types.ts  - PaginationProps
+ * @see ./index.ts  - public export
+ */
 "use client";
 
 import * as React from "react";
