@@ -1,6 +1,6 @@
 {
   "name": "orizon",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Ant Design API on shadcn/ui primitives — 68 components for React with Tailwind CSS",
   "type": "module",
   "license": "MIT",
