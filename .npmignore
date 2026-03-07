@@ -1,0 +1,8 @@
+src/
+scripts/
+public/
+*.map
+dist/vite.svg
+.claude/
+node_modules/
+*.tgz
