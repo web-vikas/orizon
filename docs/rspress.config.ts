@@ -14,7 +14,7 @@ export default defineConfig({
       { text: "Playground", link: "/playground" },
       {
         text: "GitHub",
-        link: "https://github.com/nicepkg/orizon",
+        link: "https://github.com/web-vikas/orizon",
       },
     ],
     sidebar: {
@@ -131,7 +131,7 @@ export default defineConfig({
       {
         icon: "github",
         mode: "link",
-        content: "https://github.com/nicepkg/orizon",
+        content: "https://github.com/web-vikas/orizon",
       },
     ],
   },

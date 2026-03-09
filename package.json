@@ -30,7 +30,8 @@
       "import": "./dist/orizon.es.js",
       "require": "./dist/orizon.cjs.js"
     },
-    "./preset.css": "./dist/preset.css"
+    "./preset.css": "./dist/preset.css",
+    "./themes/*.css": "./dist/themes/*.css"
   },
   "files": [
     "dist",
