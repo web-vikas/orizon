@@ -1,5 +1,4 @@
 [build]
-  base = "orizon"
   command = "npm install && npm run build && cd docs && npm install && npm run build"
   publish = "docs/doc_build"
 
