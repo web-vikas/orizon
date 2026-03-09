@@ -1,6 +1,10 @@
 # Orizon
 
-Ant Design API on shadcn/ui primitives. 68 React components with full TypeScript support.
+Ant Design API on shadcn/ui primitives. 68 production-ready React components with full TypeScript support, built with Tailwind CSS v4.
+
+> **Note:** I'm a junior developer and started this as a side project to learn React component architecture. Currently Orizon works with **Vite** only. Support for Next.js and other frameworks may come in the future.
+
+[Documentation](https://ui-orizon.netlify.app/) | [GitHub](https://github.com/web-vikas/orizon)
 
 ## Install
 
@@ -11,7 +15,7 @@ npm install orizon
 **Peer dependencies** — your project needs:
 
 ```bash
-npm install react react-dom tailwindcss
+npm install react react-dom tailwindcss @tailwindcss/vite
 ```
 
 For the **Form** component (optional):
@@ -20,9 +24,19 @@ For the **Form** component (optional):
 npm install react-hook-form @hookform/resolvers zod
 ```
 
-## Setup
+## Setup (Vite)
 
-Add these 3 lines to your app's CSS file:
+1. Add the Tailwind plugin to `vite.config.ts`:
+
+```ts
+import tailwindcss from "@tailwindcss/vite";
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+});
+```
+
+2. Add these 3 lines to your app's CSS file:
 
 ```css
 @import "tailwindcss";
@@ -77,7 +91,17 @@ notification.open({ message: "Done" });
 
 ## Theming
 
-Override CSS variables in your CSS:
+Swap the CSS import to completely change the look of all components:
+
+```css
+/* Default theme */
+@import "orizon/preset.css";
+
+/* Corporate theme — teal primary, large radius */
+@import "orizon/themes/corporate.css";
+```
+
+Or override individual CSS variables:
 
 ```css
 :root {
@@ -86,16 +110,30 @@ Override CSS variables in your CSS:
 }
 ```
 
-Or use the ConfigProvider:
+Or use the ConfigProvider at runtime:
 
 ```tsx
 import { ConfigProvider } from "orizon";
 
-<ConfigProvider theme={{ algorithm: "dark" }}>
+<ConfigProvider theme={{ algorithm: "dark", token: { colorPrimary: "#1890ff" } }}>
   <App />
 </ConfigProvider>
+```
+
+## CLI
+
+Orizon includes a CLI to help you get started:
+
+```bash
+npx orizon init        # scaffold a new Vite + Orizon project
+npx orizon add button  # show usage info for a component
+npx orizon list        # list all 68 components
 ```
 
 ## License
 
 MIT
+
+## Author
+
+[Vikas Patel](https://github.com/web-vikas) — Junior Developer, learning by building.

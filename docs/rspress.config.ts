@@ -6,6 +6,8 @@ export default defineConfig({
   title: "Orizon",
   description:
     "Ant Design API on shadcn/ui primitives. 68 components for React with Tailwind CSS.",
+  icon: "/favicon.svg",
+  logo: "/logo.svg",
   globalStyles: path.join(__dirname, "styles/index.css"),
   themeConfig: {
     darkMode: true,
