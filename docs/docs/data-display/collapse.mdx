@@ -1,0 +1,124 @@
+---
+title: Collapse
+---
+
+import { Collapse } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Collapse
+
+Expandable panels for toggling visibility of grouped content.
+
+## When to Use
+
+- For FAQ sections or help pages
+- To hide secondary content behind expandable headers
+- For accordion-style navigation
+
+## Import
+
+```tsx
+import { Collapse } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Collapse
+    items={[
+      { key: "1", label: "Panel 1", children: "Content of panel 1" },
+      { key: "2", label: "Panel 2", children: "Content of panel 2" },
+      { key: "3", label: "Panel 3", children: "Content of panel 3" },
+    ]}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Collapse
+  items={[
+    { key: "1", label: "Panel 1", children: "Content of panel 1" },
+    { key: "2", label: "Panel 2", children: "Content of panel 2" },
+    { key: "3", label: "Panel 3", children: "Content of panel 3" },
+  ]}
+/>
+```
+
+### Accordion
+
+Only one panel open at a time.
+
+<ComponentPreview>
+  <Collapse
+    accordion
+    items={[
+      { key: "1", label: "Section A", children: "Content A" },
+      { key: "2", label: "Section B", children: "Content B" },
+      { key: "3", label: "Section C", children: "Content C" },
+    ]}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Collapse
+  accordion
+  items={[
+    { key: "1", label: "Section A", children: "Content A" },
+    { key: "2", label: "Section B", children: "Content B" },
+    { key: "3", label: "Section C", children: "Content C" },
+  ]}
+/>
+```
+
+### Bordered & Ghost
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%" }}>
+    <Collapse
+      bordered={false}
+      items={[
+        { key: "1", label: "Borderless", children: "No border style" },
+      ]}
+    />
+    <Collapse
+      ghost
+      items={[
+        { key: "1", label: "Ghost Panel", children: "Transparent background" },
+      ]}
+    />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Collapse bordered={false} items={[...]} />
+<Collapse ghost items={[...]} />
+```
+
+## API
+
+### CollapseProps
+
+- `items` — `CollapseItem[]` — Panel configuration array
+- `activeKey` — `string | string[]` — Currently open panel keys (controlled)
+- `defaultActiveKey` — `string | string[]` — Initially open panels
+- `accordion` — `boolean` — Only one panel open at a time (default: `false`)
+- `bordered` — `boolean` — Show borders (default: `true`)
+- `ghost` — `boolean` — Transparent background (default: `false`)
+- `expandIconPosition` — `"start" | "end"` — Icon position (default: `"start"`)
+- `size` — `"large" | "middle" | "small"` — Panel size
+- `collapsible` — `"header" | "icon" | "disabled"` — Collapsible trigger area
+- `expandIcon` — `(panelProps) => ReactNode` — Custom expand icon
+- `destroyInactivePanel` — `boolean` — Unmount hidden panels (default: `false`)
+- `onChange` — `(key: string | string[]) => void` — Open state callback
+
+### CollapseItem
+
+- `key` — `string` — Unique panel identifier
+- `label` — `ReactNode` — Panel header text
+- `children` — `ReactNode` — Panel content
+- `extra` — `ReactNode` — Extra element in header
+- `showArrow` — `boolean` — Show expand arrow (default: `true`)
+- `forceRender` — `boolean` — Force render even when collapsed

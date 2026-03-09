@@ -1,0 +1,90 @@
+---
+title: Skeleton
+---
+
+import { Skeleton } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Skeleton
+
+Placeholder loading indicators that mirror content layout.
+
+## When to Use
+
+- While content is loading to prevent layout shift
+- To give users a sense of the upcoming content structure
+- As an alternative to spinners for card/list loading states
+
+## Import
+
+```tsx
+import { Skeleton } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Skeleton style={{ width: "100%" }} />
+</ComponentPreview>
+
+```tsx
+<Skeleton />
+```
+
+### Active Animation
+
+<ComponentPreview>
+  <Skeleton active style={{ width: "100%" }} />
+</ComponentPreview>
+
+```tsx
+<Skeleton active />
+```
+
+### With Avatar
+
+<ComponentPreview>
+  <Skeleton avatar active style={{ width: "100%" }} />
+</ComponentPreview>
+
+```tsx
+<Skeleton avatar active />
+```
+
+### Sub-components
+
+<ComponentPreview>
+  <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+    <Skeleton.Avatar active />
+    <Skeleton.Button active />
+    <Skeleton.Input active />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Skeleton.Avatar active />
+<Skeleton.Button active />
+<Skeleton.Input active />
+<Skeleton.Image />
+```
+
+## API
+
+### SkeletonProps
+
+- `loading` — `boolean` — Show skeleton (hides children when true)
+- `active` — `boolean` — Show animation (default: `false`)
+- `avatar` — `boolean | AvatarProps` — Show avatar placeholder
+- `title` — `boolean | { width }` — Show title placeholder (default: `true`)
+- `paragraph` — `boolean | { rows, width }` — Show paragraph lines (default: `true`)
+- `round` — `boolean` — Round corners (default: `false`)
+
+### Sub-components
+
+- `Skeleton.Avatar` — Avatar placeholder (`size`, `shape`, `active`)
+- `Skeleton.Button` — Button placeholder (`size`, `shape`, `active`, `block`)
+- `Skeleton.Input` — Input placeholder (`size`, `active`)
+- `Skeleton.Image` — Image placeholder (`active`)
+- `Skeleton.Node` — Custom node placeholder (`active`, `children`)

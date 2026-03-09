@@ -1,0 +1,140 @@
+---
+title: Pagination
+---
+
+import { Pagination } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Pagination
+
+Navigate through paged data with page numbers, size changers, and quick jumpers.
+
+## When to Use
+
+- To split large data sets across multiple pages
+- When users need to navigate between pages of content
+- For tables, lists, or search results with many items
+
+## Import
+
+```tsx
+import { Pagination } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+Simple pagination with total item count.
+
+<ComponentPreview>
+  <Pagination defaultCurrent={1} total={50} />
+</ComponentPreview>
+
+```tsx
+<Pagination defaultCurrent={1} total={50} />
+```
+
+### With Size Changer
+
+Allow users to change the number of items per page.
+
+<ComponentPreview>
+  <Pagination defaultCurrent={1} total={100} showSizeChanger />
+</ComponentPreview>
+
+```tsx
+<Pagination
+  defaultCurrent={1}
+  total={100}
+  showSizeChanger
+/>
+```
+
+### With Quick Jumper
+
+Jump directly to a specific page number.
+
+<ComponentPreview>
+  <Pagination defaultCurrent={1} total={200} showQuickJumper />
+</ComponentPreview>
+
+```tsx
+<Pagination
+  defaultCurrent={1}
+  total={200}
+  showQuickJumper
+/>
+```
+
+### Show Total
+
+Display the total number of items.
+
+<ComponentPreview>
+  <Pagination
+    defaultCurrent={1}
+    total={85}
+    showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
+  />
+</ComponentPreview>
+
+```tsx
+<Pagination
+  total={85}
+  showTotal={(total, range) =>
+    `${range[0]}-${range[1]} of ${total} items`
+  }
+/>
+```
+
+### Simple Mode
+
+A compact pagination for limited space.
+
+<ComponentPreview>
+  <Pagination simple defaultCurrent={1} total={50} />
+</ComponentPreview>
+
+```tsx
+<Pagination simple defaultCurrent={1} total={50} />
+```
+
+### Small Size
+
+<ComponentPreview>
+  <Pagination size="small" defaultCurrent={1} total={50} />
+</ComponentPreview>
+
+```tsx
+<Pagination size="small" defaultCurrent={1} total={50} />
+```
+
+### Disabled
+
+<ComponentPreview>
+  <Pagination disabled defaultCurrent={1} total={50} />
+</ComponentPreview>
+
+```tsx
+<Pagination disabled defaultCurrent={1} total={50} />
+```
+
+## API
+
+### PaginationProps
+
+- `current` — `number` — Current page number (controlled)
+- `defaultCurrent` — `number` — Default page number (default: `1`)
+- `pageSize` — `number` — Items per page (controlled)
+- `defaultPageSize` — `number` — Default items per page (default: `10`)
+- `total` — `number` — Total number of data items
+- `showSizeChanger` — `boolean` — Show page size selector
+- `pageSizeOptions` — `number[]` — Options for page size selector (default: `[10, 20, 50, 100]`)
+- `showQuickJumper` — `boolean` — Show quick page jump input
+- `showTotal` — `(total: number, range: [number, number]) => ReactNode` — Display total info
+- `simple` — `boolean` — Simple mode with only prev/next (default: `false`)
+- `size` — `"small" | "default"` — Pagination size (default: `"default"`)
+- `disabled` — `boolean` — Disable all controls (default: `false`)
+- `onChange` — `(page: number, pageSize: number) => void` — Page change callback
+- `onShowSizeChange` — `(current: number, size: number) => void` — Page size change callback

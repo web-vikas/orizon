@@ -1,0 +1,237 @@
+---
+title: Typography
+---
+
+import { Typography } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Typography
+
+Foundational text components for titles, paragraphs, inline text, and links with rich formatting options.
+
+## When to Use
+
+- To render headings at different levels (h1-h5)
+- For inline text with semantic variants (success, warning, danger)
+- To display copyable or editable text
+- For text with decorations like code, keyboard, mark, underline, or strikethrough
+- To truncate long text with ellipsis and expand capability
+
+## Import
+
+```tsx
+import { Typography } from "orizon";
+
+const { Title, Text, Paragraph, Link } = Typography;
+```
+
+## Examples
+
+### Title Levels
+
+Title supports five heading levels corresponding to h1-h5.
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "4px", width: "100%" }}>
+    <Typography.Title level={1}>h1. Orizon Design</Typography.Title>
+    <Typography.Title level={2}>h2. Orizon Design</Typography.Title>
+    <Typography.Title level={3}>h3. Orizon Design</Typography.Title>
+    <Typography.Title level={4}>h4. Orizon Design</Typography.Title>
+    <Typography.Title level={5}>h5. Orizon Design</Typography.Title>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Typography.Title level={1}>h1. Orizon Design</Typography.Title>
+<Typography.Title level={2}>h2. Orizon Design</Typography.Title>
+<Typography.Title level={3}>h3. Orizon Design</Typography.Title>
+<Typography.Title level={4}>h4. Orizon Design</Typography.Title>
+<Typography.Title level={5}>h5. Orizon Design</Typography.Title>
+```
+
+### Text Variants
+
+Text comes in semantic color variants for different contexts.
+
+<ComponentPreview>
+  <Typography.Text>Default text</Typography.Text>
+  <Typography.Text type="secondary">Secondary text</Typography.Text>
+  <Typography.Text type="success">Success text</Typography.Text>
+  <Typography.Text type="warning">Warning text</Typography.Text>
+  <Typography.Text type="danger">Danger text</Typography.Text>
+  <Typography.Text disabled>Disabled text</Typography.Text>
+</ComponentPreview>
+
+```tsx
+<Typography.Text>Default text</Typography.Text>
+<Typography.Text type="secondary">Secondary text</Typography.Text>
+<Typography.Text type="success">Success text</Typography.Text>
+<Typography.Text type="warning">Warning text</Typography.Text>
+<Typography.Text type="danger">Danger text</Typography.Text>
+<Typography.Text disabled>Disabled text</Typography.Text>
+```
+
+### Text Decorations
+
+Apply inline formatting to emphasize or annotate text.
+
+<ComponentPreview>
+  <Typography.Text mark>Highlighted</Typography.Text>
+  <Typography.Text code>Code snippet</Typography.Text>
+  <Typography.Text keyboard>Ctrl + S</Typography.Text>
+  <Typography.Text underline>Underlined</Typography.Text>
+  <Typography.Text delete>Strikethrough</Typography.Text>
+  <Typography.Text strong>Bold text</Typography.Text>
+  <Typography.Text italic>Italic text</Typography.Text>
+</ComponentPreview>
+
+```tsx
+<Typography.Text mark>Highlighted</Typography.Text>
+<Typography.Text code>Code snippet</Typography.Text>
+<Typography.Text keyboard>Ctrl + S</Typography.Text>
+<Typography.Text underline>Underlined</Typography.Text>
+<Typography.Text delete>Strikethrough</Typography.Text>
+<Typography.Text strong>Bold text</Typography.Text>
+<Typography.Text italic>Italic text</Typography.Text>
+```
+
+### Copyable Paragraph
+
+Enable copy-to-clipboard functionality on text content.
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "8px", width: "100%" }}>
+    <Typography.Paragraph copyable>
+      Click the copy icon to copy this text to clipboard.
+    </Typography.Paragraph>
+    <Typography.Paragraph copyable={{ text: "Custom copied text" }}>
+      This copies a custom string instead.
+    </Typography.Paragraph>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Typography.Paragraph copyable>
+  Click the copy icon to copy this text to clipboard.
+</Typography.Paragraph>
+
+<Typography.Paragraph copyable={{ text: "Custom copied text" }}>
+  This copies a custom string instead.
+</Typography.Paragraph>
+```
+
+### Editable Text
+
+Allow users to edit text inline.
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Typography.Paragraph editable>
+      Click the edit icon to modify this text.
+    </Typography.Paragraph>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Typography.Paragraph editable>
+  Click the edit icon to modify this text.
+</Typography.Paragraph>
+```
+
+### Link
+
+Render styled anchor links with optional external behavior.
+
+<ComponentPreview>
+  <Typography.Link href="https://example.com" target="_blank">External Link</Typography.Link>
+  <Typography.Link href="/docs">Internal Link</Typography.Link>
+</ComponentPreview>
+
+```tsx
+<Typography.Link href="https://example.com" target="_blank">
+  External Link
+</Typography.Link>
+<Typography.Link href="/docs">Internal Link</Typography.Link>
+```
+
+### Ellipsis
+
+Truncate long text with configurable row limits and expand toggle.
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "8px", width: "100%" }}>
+    <Typography.Paragraph ellipsis>
+      This is a very long text that will be truncated to a single line with an ellipsis at the end when it overflows the container width.
+    </Typography.Paragraph>
+    <Typography.Paragraph ellipsis={{ rows: 2, expandable: true }}>
+      This longer text will show two lines before being truncated. Users can click the expand toggle to reveal the full content. It supports multi-line ellipsis with a configurable number of rows.
+    </Typography.Paragraph>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Typography.Paragraph ellipsis>
+  This is a very long text that will be truncated to a single line
+  with an ellipsis at the end when it overflows.
+</Typography.Paragraph>
+
+<Typography.Paragraph ellipsis={{ rows: 2, expandable: true }}>
+  This longer text will show two lines before being truncated.
+  Users can click the expand toggle to reveal the full content.
+  It supports multi-line ellipsis with a configurable number of rows.
+</Typography.Paragraph>
+```
+
+## API
+
+### Typography.Title
+
+- `level` — `1 | 2 | 3 | 4 | 5` — Heading level h1-h5 (default: `1`)
+- `type` — `"secondary" | "success" | "warning" | "danger"` — Color variant
+- `disabled` — `boolean` — Muted, non-interactive styling (default: `false`)
+- `mark` — `boolean` — Highlight background (default: `false`)
+- `code` — `boolean` — Inline code styling (default: `false`)
+- `underline` — `boolean` — Underline decoration (default: `false`)
+- `delete` — `boolean` — Strikethrough decoration (default: `false`)
+- `strong` — `boolean` — Bold weight (default: `false`)
+- `italic` — `boolean` — Italic style (default: `false`)
+- `copyable` — `boolean | CopyableConfig` — Enable copy functionality (default: `false`)
+- `editable` — `boolean | EditableConfig` — Enable inline editing (default: `false`)
+
+### Typography.Text
+
+- `type` — `"secondary" | "success" | "warning" | "danger"` — Color variant
+- `disabled` — `boolean` — Muted styling (default: `false`)
+- `mark` — `boolean` — Highlight background (default: `false`)
+- `code` — `boolean` — Inline code styling (default: `false`)
+- `keyboard` — `boolean` — Keyboard key styling (default: `false`)
+- `underline` — `boolean` — Underline decoration (default: `false`)
+- `delete` — `boolean` — Strikethrough (default: `false`)
+- `strong` — `boolean` — Bold weight (default: `false`)
+- `italic` — `boolean` — Italic style (default: `false`)
+- `ellipsis` — `boolean | EllipsisConfig` — Truncate with ellipsis (default: `false`)
+- `copyable` — `boolean | CopyableConfig` — Enable copy (default: `false`)
+- `editable` — `boolean | EditableConfig` — Enable editing (default: `false`)
+
+### Typography.Paragraph
+
+Same props as `Typography.Text`, rendered as a block element.
+
+### Typography.Link
+
+- `href` — `string` — Link URL
+- `target` — `string` — Link target (`_blank`, etc.)
+- `type` — `"secondary" | "success" | "warning" | "danger"` — Color variant
+- All text decoration props from Typography.Text
+
+### CopyableConfig
+
+- `text` — `string` — Custom text to copy (overrides children)
+- `onCopy` — `() => void` — Callback after copy
+- `tooltips` — `[string, string]` — Tooltip text before and after copy (default: `["Copy", "Copied!"]`)
+
+### EllipsisConfig
+
+- `rows` — `number` — Number of visible rows (default: `1`)
+- `expandable` — `boolean` — Show expand/collapse toggle (default: `false`)
+- `symbol` — `ReactNode` — Custom ellipsis symbol

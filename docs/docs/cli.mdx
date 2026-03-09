@@ -1,0 +1,158 @@
+---
+title: CLI
+---
+
+# CLI
+
+Orizon includes a command-line tool to quickly set up new projects or add Orizon to existing React + Vite apps.
+
+## Installation
+
+The CLI ships with the `orizon` package. No separate install needed.
+
+```bash
+npx orizon init
+```
+
+## What It Does
+
+The `init` command is an interactive setup wizard that:
+
+1. **Detects your project** — finds your `package.json` and Vite config
+2. **Scaffolds if needed** — creates a new React + Vite + TypeScript project if no project exists
+3. **Installs Tailwind CSS** — adds `tailwindcss` and `@tailwindcss/vite`
+4. **Installs Form deps** — adds `react-hook-form`, `@hookform/resolvers`, and `zod`
+5. **Configures Vite** — adds the Tailwind CSS plugin to your Vite config
+6. **Sets up CSS** — adds required imports to your stylesheet
+7. **Links stylesheet** — adds the CSS link to `index.html`
+
+## Commands
+
+### `init`
+
+Set up Orizon in your React + Vite project.
+
+```bash
+npx orizon init
+```
+
+**In an existing Vite project:**
+
+```
+  ⬡ Orizon — project setup wizard
+
+  ──────────────────────────────────────────────────────
+  ✔ Detected existing Vite project
+  Package manager: npm
+  Config file: vite.config.ts
+
+  [1/5] Tailwind CSS dependencies
+  ✔ Installed tailwindcss
+  ✔ Installed @tailwindcss/vite
+
+  [2/5] Form & validation dependencies
+  ✔ Installed react-hook-form
+  ✔ Installed @hookform/resolvers
+  ✔ Installed zod
+
+  [3/5] Configure Vite
+  ✔ Added tailwindcss import
+  ✔ Added tailwindcss() to plugins
+
+  [4/5] Set up CSS
+  ✔ Added 3 lines to index.css
+
+  [5/5] Link stylesheet in HTML
+  ✔ Added stylesheet link to index.html
+
+  ──────────────────────────────────────────────────────
+
+  ✓ Orizon setup complete!
+```
+
+**In an empty directory (scaffolds a new project):**
+
+```
+  ⬡ Orizon — project setup wizard
+
+  ──────────────────────────────────────────────────────
+  No project detected in this directory.
+
+  ? Create a new project? [Y/n] y
+  ? What is your project name? (my-app) my-dashboard
+
+  Creating my-dashboard with React + Vite + TypeScript...
+  ✔ Created Vite + React + TypeScript project
+  ✔ Installed base dependencies & Orizon
+
+  [1/6] Create project
+  ✔ Created my-dashboard with React + Vite + TypeScript
+  ...setup continues automatically...
+
+  ✓ Orizon setup complete!
+
+  Get started:
+    cd my-dashboard
+    npm run dev
+```
+
+### `--version`
+
+Show the installed version.
+
+```bash
+npx orizon --version
+```
+
+### `--help`
+
+Show available commands and options.
+
+```bash
+npx orizon --help
+```
+
+## Package Manager Detection
+
+The CLI auto-detects your package manager based on lock files:
+
+| Lock file | Package manager |
+|-----------|----------------|
+| `bun.lock` / `bun.lockb` | bun |
+| `pnpm-lock.yaml` | pnpm |
+| `yarn.lock` | yarn |
+| `package-lock.json` | npm (default) |
+
+## What Gets Installed
+
+### Required dependencies
+
+| Package | Purpose |
+|---------|---------|
+| `orizon` | The component library |
+| `tailwindcss` | Tailwind CSS v4 core |
+| `@tailwindcss/vite` | Tailwind CSS Vite plugin |
+
+### Optional (Form) dependencies
+
+| Package | Purpose |
+|---------|---------|
+| `react-hook-form` | Form state management |
+| `@hookform/resolvers` | Schema validation adapters |
+| `zod` | Schema validation library |
+
+These are needed for the `Form`, `Form.Item`, `Form.useForm`, and `Form.List` components.
+
+## CSS Configuration
+
+The CLI adds these three lines to the top of your main CSS file:
+
+```css
+@import "tailwindcss";
+@import "orizon/preset.css";
+@source "../node_modules/orizon/dist";
+```
+
+- `@import "tailwindcss"` — loads Tailwind CSS v4
+- `@import "orizon/preset.css"` — loads Orizon's design tokens (colors, radii, shadows)
+- `@source` — tells Tailwind to scan Orizon's component classes for tree-shaking

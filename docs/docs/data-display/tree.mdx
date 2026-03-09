@@ -1,0 +1,147 @@
+---
+title: Tree
+---
+
+import { Tree } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Tree
+
+A hierarchical tree structure for displaying and selecting nested data.
+
+## When to Use
+
+- For file system or folder navigation
+- To display organizational hierarchies
+- When users need to select items from a nested structure
+
+## Import
+
+```tsx
+import { Tree } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Tree
+    defaultExpandedKeys={["parent"]}
+    treeData={[
+      {
+        title: "Parent Node",
+        key: "parent",
+        children: [
+          { title: "Child 1", key: "child-1" },
+          { title: "Child 2", key: "child-2" },
+          {
+            title: "Child 3",
+            key: "child-3",
+            children: [
+              { title: "Grandchild", key: "grandchild" },
+            ],
+          },
+        ],
+      },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Tree
+  defaultExpandedKeys={["parent"]}
+  treeData={[
+    {
+      title: "Parent Node",
+      key: "parent",
+      children: [
+        { title: "Child 1", key: "child-1" },
+        { title: "Child 2", key: "child-2" },
+      ],
+    },
+  ]}
+/>
+```
+
+### Checkable
+
+<ComponentPreview>
+  <Tree
+    checkable
+    defaultExpandedKeys={["docs"]}
+    treeData={[
+      {
+        title: "Documents",
+        key: "docs",
+        children: [
+          { title: "report.pdf", key: "report" },
+          { title: "notes.txt", key: "notes" },
+          { title: "image.png", key: "image" },
+        ],
+      },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Tree
+  checkable
+  treeData={treeData}
+  onCheck={(checkedKeys) => console.log(checkedKeys)}
+/>
+```
+
+### Show Line
+
+<ComponentPreview>
+  <Tree
+    showLine
+    defaultExpandedKeys={["root"]}
+    treeData={[
+      {
+        title: "Root",
+        key: "root",
+        children: [
+          { title: "Branch A", key: "a", children: [{ title: "Leaf", key: "leaf-a" }] },
+          { title: "Branch B", key: "b", children: [{ title: "Leaf", key: "leaf-b" }] },
+        ],
+      },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Tree showLine treeData={treeData} />
+```
+
+## API
+
+### TreeProps
+
+- `treeData` — `TreeNode[]` — Tree structure data
+- `checkable` — `boolean` — Show checkboxes (default: `false`)
+- `selectedKeys` — `string[]` — Selected node keys (controlled)
+- `checkedKeys` — `string[]` — Checked node keys (controlled)
+- `expandedKeys` — `string[]` — Expanded node keys (controlled)
+- `defaultExpandedKeys` — `string[]` — Initially expanded keys
+- `draggable` — `boolean` — Enable drag and drop (default: `false`)
+- `showLine` — `boolean` — Show connecting lines (default: `false`)
+- `showIcon` — `boolean` — Show node icons (default: `false`)
+- `multiple` — `boolean` — Allow multi-selection (default: `false`)
+- `checkStrictly` — `boolean` — Disable cascading check (default: `false`)
+- `blockNode` — `boolean` — Full-width clickable nodes (default: `false`)
+- `height` — `number` — Virtual scroll height
+- `loadData` — `(node) => Promise` — Async data loading
+- `filterTreeNode` — `(node) => boolean` — Filter function
+
+### TreeNode
+
+- `title` — `ReactNode` — Node display text
+- `key` — `string` — Unique identifier
+- `children` — `TreeNode[]` — Child nodes
+- `disabled` — `boolean` — Disable the node
+- `selectable` — `boolean` — Whether node is selectable
+- `checkable` — `boolean` — Override checkable for this node
+- `isLeaf` — `boolean` — Mark as leaf (no expand icon)
+- `icon` — `ReactNode` — Custom icon

@@ -1,0 +1,78 @@
+---
+title: AutoComplete
+---
+
+import { AutoComplete } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# AutoComplete
+
+An input with suggestion dropdown that filters as you type.
+
+## When to Use
+
+- For search inputs with suggestions
+- When autocompleting from a known list of options
+- For email or URL inputs with common suffix suggestions
+
+## Import
+
+```tsx
+import { AutoComplete } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <AutoComplete
+    options={[
+      { value: "React" },
+      { value: "Vue" },
+      { value: "Angular" },
+      { value: "Svelte" },
+    ]}
+    placeholder="Type to search"
+    style={{ width: "250px" }}
+  />
+</ComponentPreview>
+
+```tsx
+<AutoComplete
+  options={[
+    { value: "React" },
+    { value: "Vue" },
+    { value: "Angular" },
+  ]}
+  placeholder="Type to search"
+  style={{ width: 250 }}
+/>
+```
+
+### Custom Filter
+
+```tsx
+<AutoComplete
+  options={options}
+  filterOption={(inputValue, option) =>
+    option.value.toUpperCase().includes(inputValue.toUpperCase())
+  }
+/>
+```
+
+## API
+
+### AutoCompleteProps
+
+- `options` — `{ value: string; label?: ReactNode }[]` — Suggestion list
+- `value` — `string` — Input value (controlled)
+- `defaultValue` — `string` — Default value
+- `onChange` — `(value: string) => void` — Value change handler
+- `onSearch` — `(value: string) => void` — Search input handler
+- `onSelect` — `(value: string, option) => void` — Selection handler
+- `filterOption` — `(input, option) => boolean` — Custom filter logic
+- `allowClear` — `boolean` — Show clear button
+- `placeholder` — `string` — Placeholder text
+- `disabled` — `boolean` — Disable the input
+- `status` — `"error" | "warning"` — Validation status

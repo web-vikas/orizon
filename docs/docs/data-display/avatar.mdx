@@ -1,0 +1,106 @@
+---
+title: Avatar
+---
+
+import { Avatar } from "orizon";
+import { User } from "lucide-react";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Avatar
+
+Display user profile images, icons, or initials in a circular or square shape.
+
+## When to Use
+
+- To represent users in lists, cards, or comments
+- For user profile displays
+- To show a group of users with overflow count
+
+## Import
+
+```tsx
+import { Avatar } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Avatar size="large" icon={<User size={20} />} />
+  <Avatar size="large">U</Avatar>
+  <Avatar size="large" src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
+</ComponentPreview>
+
+```tsx
+<Avatar size="large" icon={<User />} />
+<Avatar size="large">U</Avatar>
+<Avatar size="large" src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
+```
+
+### Sizes
+
+<ComponentPreview>
+  <Avatar size="small" icon={<User size={14} />} />
+  <Avatar icon={<User size={16} />} />
+  <Avatar size="large" icon={<User size={20} />} />
+  <Avatar size={64} icon={<User size={32} />} />
+</ComponentPreview>
+
+```tsx
+<Avatar size="small" icon={<User />} />
+<Avatar icon={<User />} />
+<Avatar size="large" icon={<User />} />
+<Avatar size={64} icon={<User />} />
+```
+
+### Shapes
+
+<ComponentPreview>
+  <Avatar shape="circle" size="large" icon={<User size={20} />} />
+  <Avatar shape="square" size="large" icon={<User size={20} />} />
+</ComponentPreview>
+
+```tsx
+<Avatar shape="circle" icon={<User />} />
+<Avatar shape="square" icon={<User />} />
+```
+
+### Group
+
+<ComponentPreview>
+  <Avatar.Group>
+    <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
+    <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=2" />
+    <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=3" />
+    <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=4" />
+  </Avatar.Group>
+</ComponentPreview>
+
+```tsx
+<Avatar.Group>
+  <Avatar src="avatar1.png" />
+  <Avatar src="avatar2.png" />
+  <Avatar src="avatar3.png" />
+</Avatar.Group>
+```
+
+## API
+
+### AvatarProps
+
+- `src` — `string` — Image source URL
+- `size` — `"small" | "middle" | "large" | number` — Avatar size (default: `"middle"`)
+- `shape` — `"circle" | "square"` — Avatar shape (default: `"circle"`)
+- `icon` — `ReactNode` — Fallback icon
+- `alt` — `string` — Image alt text
+- `gap` — `number` — Gap for text resizing (default: `4`)
+- `srcSet` — `string` — Image srcSet attribute
+- `onError` — `() => boolean` — Error handler, return false to fallback
+
+### Avatar.Group Props
+
+- `maxCount` — `number` — Max avatars to show
+- `maxPopoverPlacement` — `"top" | "bottom"` — Overflow popover position
+- `maxStyle` — `CSSProperties` — Style for the overflow indicator
+- `size` — `"small" | "middle" | "large" | number` — Size for all avatars

@@ -1,0 +1,88 @@
+---
+title: InputNumber
+---
+
+import { InputNumber } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# InputNumber
+
+A numeric input with stepper controls for precise value entry.
+
+## When to Use
+
+- For quantity inputs or numeric settings
+- When users need increment/decrement controls
+- For precise numeric values with min/max constraints
+
+## Import
+
+```tsx
+import { InputNumber } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <InputNumber defaultValue={3} min={1} max={10} />
+</ComponentPreview>
+
+```tsx
+<InputNumber defaultValue={3} min={1} max={10} onChange={(value) => console.log(value)} />
+```
+
+### Sizes
+
+<ComponentPreview>
+  <InputNumber size="large" defaultValue={10} />
+  <InputNumber defaultValue={10} />
+  <InputNumber size="small" defaultValue={10} />
+</ComponentPreview>
+
+```tsx
+<InputNumber size="large" defaultValue={10} />
+<InputNumber defaultValue={10} />
+<InputNumber size="small" defaultValue={10} />
+```
+
+### With Step
+
+<ComponentPreview>
+  <InputNumber defaultValue={0} step={0.1} min={0} max={1} />
+</ComponentPreview>
+
+```tsx
+<InputNumber defaultValue={0} step={0.1} min={0} max={1} />
+```
+
+### Disabled
+
+<ComponentPreview>
+  <InputNumber disabled defaultValue={5} />
+</ComponentPreview>
+
+```tsx
+<InputNumber disabled defaultValue={5} />
+```
+
+## API
+
+### InputNumberProps
+
+- `value` — `number` — Current value (controlled)
+- `defaultValue` — `number` — Default value
+- `onChange` — `(value: number | null) => void` — Change handler
+- `min` — `number` — Minimum value
+- `max` — `number` — Maximum value
+- `step` — `number` — Increment step (default: `1`)
+- `precision` — `number` — Decimal precision
+- `controls` — `boolean` — Show +/- buttons (default: `true`)
+- `disabled` — `boolean` — Disable the input
+- `size` — `"small" | "middle" | "large"` — Size
+- `status` — `"error" | "warning"` — Validation status
+- `parser` — `(displayValue: string) => number` — Parse display value
+- `formatter` — `(value: number) => string` — Format display value
+- `keyboard` — `boolean` — Enable keyboard arrows (default: `true`)
+- `placeholder` — `string` — Placeholder text

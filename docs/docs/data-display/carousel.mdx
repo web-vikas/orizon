@@ -1,0 +1,103 @@
+---
+title: Carousel
+---
+
+import { Carousel } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Carousel
+
+A rotating set of slides for showcasing images or content.
+
+## When to Use
+
+- For image slideshows or banners
+- To cycle through featured content
+- For onboarding or tutorial slides
+
+## Import
+
+```tsx
+import { Carousel } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Carousel>
+      <div><div style={{ height: "160px", background: "#0d9488", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px" }}>Slide 1</div></div>
+      <div><div style={{ height: "160px", background: "#14b8a6", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px" }}>Slide 2</div></div>
+      <div><div style={{ height: "160px", background: "#0f766e", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px" }}>Slide 3</div></div>
+    </Carousel>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Carousel>
+  <div><h3>Slide 1</h3></div>
+  <div><h3>Slide 2</h3></div>
+  <div><h3>Slide 3</h3></div>
+</Carousel>
+```
+
+### Autoplay
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Carousel autoplay>
+      <div><div style={{ height: "160px", background: "#0d9488", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px" }}>Auto 1</div></div>
+      <div><div style={{ height: "160px", background: "#14b8a6", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px" }}>Auto 2</div></div>
+      <div><div style={{ height: "160px", background: "#0f766e", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px" }}>Auto 3</div></div>
+    </Carousel>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Carousel autoplay>
+  <div><h3>Slide 1</h3></div>
+  <div><h3>Slide 2</h3></div>
+  <div><h3>Slide 3</h3></div>
+</Carousel>
+```
+
+### Fade Effect
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Carousel effect="fade">
+      <div><div style={{ height: "160px", background: "#0d9488", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px" }}>Fade 1</div></div>
+      <div><div style={{ height: "160px", background: "#14b8a6", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px" }}>Fade 2</div></div>
+    </Carousel>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Carousel effect="fade">
+  <div><h3>Slide 1</h3></div>
+  <div><h3>Slide 2</h3></div>
+</Carousel>
+```
+
+## API
+
+### CarouselProps
+
+- `autoplay` — `boolean` — Auto-advance slides (default: `false`)
+- `dots` — `boolean` — Show dot indicators (default: `true`)
+- `dotPosition` — `"top" | "bottom" | "left" | "right"` — Dot position (default: `"bottom"`)
+- `effect` — `"scrollx" | "fade"` — Transition effect (default: `"scrollx"`)
+- `slidesToShow` — `number` — Visible slides at once (default: `1`)
+- `arrows` — `boolean` — Show navigation arrows (default: `false`)
+- `initialSlide` — `number` — Starting slide index (default: `0`)
+- `infinite` — `boolean` — Loop slides (default: `true`)
+- `beforeChange` — `(from: number, to: number) => void` — Before slide change
+- `afterChange` — `(current: number) => void` — After slide change
+
+### Ref Methods
+
+- `goTo(slideNumber)` — Navigate to specific slide
+- `next()` — Go to next slide
+- `prev()` — Go to previous slide

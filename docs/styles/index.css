@@ -1,0 +1,8 @@
+:root {
+  --rp-c-brand: #0d9488;
+  --rp-c-brand-light: #14b8a6;
+  --rp-c-brand-lighter: #99f6e4;
+  --rp-c-brand-dark: #0f766e;
+  --rp-c-brand-darker: #115e59;
+  --rp-c-brand-tint: rgba(13, 148, 136, 0.16);
+}

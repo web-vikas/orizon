@@ -1,0 +1,103 @@
+---
+title: Segmented
+---
+
+import { Segmented } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Segmented
+
+A toggle control for switching between options, similar to a button group or radio tabs.
+
+## When to Use
+
+- To switch between views or filter modes
+- As an alternative to radio buttons or tabs
+- For compact option selection controls
+
+## Import
+
+```tsx
+import { Segmented } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Segmented options={["Daily", "Weekly", "Monthly"]} />
+</ComponentPreview>
+
+```tsx
+<Segmented options={["Daily", "Weekly", "Monthly"]} />
+```
+
+### Block
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Segmented block options={["Map", "Satellite", "Terrain"]} />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Segmented block options={["Map", "Satellite", "Terrain"]} />
+```
+
+### Sizes
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+    <Segmented size="large" options={["Large", "Options"]} />
+    <Segmented options={["Default", "Options"]} />
+    <Segmented size="small" options={["Small", "Options"]} />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Segmented size="large" options={["Large", "Options"]} />
+<Segmented options={["Default", "Options"]} />
+<Segmented size="small" options={["Small", "Options"]} />
+```
+
+### Disabled
+
+<ComponentPreview>
+  <Segmented
+    options={[
+      { label: "Active", value: "active" },
+      { label: "Disabled", value: "disabled", disabled: true },
+      { label: "Also Active", value: "also" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Segmented
+  options={[
+    { label: "Active", value: "active" },
+    { label: "Disabled", value: "disabled", disabled: true },
+    { label: "Also Active", value: "also" },
+  ]}
+/>
+```
+
+## API
+
+### SegmentedProps
+
+- `options` — `(string | SegmentedOption)[]` — Option list
+- `value` — `string | number` — Selected value (controlled)
+- `defaultValue` — `string | number` — Default selected value
+- `onChange` — `(value: string | number) => void` — Selection callback
+- `block` — `boolean` — Full-width mode (default: `false`)
+- `disabled` — `boolean` — Disable all options (default: `false`)
+- `size` — `"large" | "middle" | "small"` — Control size (default: `"middle"`)
+
+### SegmentedOption
+
+- `label` — `ReactNode` — Display text
+- `value` — `string | number` — Option value
+- `icon` — `ReactNode` — Option icon
+- `disabled` — `boolean` — Disable this option

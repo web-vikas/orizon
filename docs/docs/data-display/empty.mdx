@@ -1,0 +1,77 @@
+---
+title: Empty
+---
+
+import { Empty, Button } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Empty
+
+A placeholder for when there is no data to display.
+
+## When to Use
+
+- For empty states in lists, tables, or search results
+- When content has been cleared or filtered to nothing
+- To prompt users to take action when a section is empty
+
+## Import
+
+```tsx
+import { Empty } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Empty />
+</ComponentPreview>
+
+```tsx
+<Empty />
+```
+
+### Custom Description
+
+<ComponentPreview>
+  <Empty description="No results found" />
+</ComponentPreview>
+
+```tsx
+<Empty description="No results found" />
+```
+
+### With Action
+
+<ComponentPreview>
+  <Empty description="No data yet">
+    <Button type="primary">Create Now</Button>
+  </Empty>
+</ComponentPreview>
+
+```tsx
+<Empty description="No data yet">
+  <Button type="primary">Create Now</Button>
+</Empty>
+```
+
+### No Description
+
+<ComponentPreview>
+  <Empty description={false} />
+</ComponentPreview>
+
+```tsx
+<Empty description={false} />
+```
+
+## API
+
+### EmptyProps
+
+- `description` — `ReactNode | false` — Description text (set `false` to hide)
+- `image` — `ReactNode` — Custom empty illustration
+- `imageStyle` — `CSSProperties` — Image container styles
+- `children` — `ReactNode` — Action area below description

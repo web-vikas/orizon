@@ -1,0 +1,138 @@
+---
+title: Timeline
+---
+
+import { Timeline } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Timeline
+
+A vertical timeline for displaying chronological events or activity logs.
+
+## When to Use
+
+- To display a series of events in order
+- For activity logs or change histories
+- For process tracking with status indicators
+
+## Import
+
+```tsx
+import { Timeline } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Timeline
+    items={[
+      { children: "Created project 2024-01-01" },
+      { children: "Initial commit 2024-01-02" },
+      { children: "First release 2024-02-15" },
+      { children: "Major update 2024-06-01" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Timeline
+  items={[
+    { children: "Created project 2024-01-01" },
+    { children: "Initial commit 2024-01-02" },
+    { children: "First release 2024-02-15" },
+    { children: "Major update 2024-06-01" },
+  ]}
+/>
+```
+
+### With Colors
+
+<ComponentPreview>
+  <Timeline
+    items={[
+      { children: "Success step", color: "green" },
+      { children: "Current step", color: "blue" },
+      { children: "Error step", color: "red" },
+      { children: "Pending step", color: "gray" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Timeline
+  items={[
+    { children: "Success step", color: "green" },
+    { children: "Current step", color: "blue" },
+    { children: "Error step", color: "red" },
+    { children: "Pending step", color: "gray" },
+  ]}
+/>
+```
+
+### Alternate Mode
+
+<ComponentPreview>
+  <Timeline
+    mode="alternate"
+    items={[
+      { children: "Left item 1" },
+      { children: "Right item 2" },
+      { children: "Left item 3" },
+      { children: "Right item 4" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Timeline
+  mode="alternate"
+  items={[
+    { children: "Left item 1" },
+    { children: "Right item 2" },
+    { children: "Left item 3" },
+  ]}
+/>
+```
+
+### With Pending
+
+<ComponentPreview>
+  <Timeline
+    pending="Recording..."
+    items={[
+      { children: "Step 1 completed" },
+      { children: "Step 2 completed" },
+      { children: "Step 3 in progress" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Timeline
+  pending="Recording..."
+  items={[
+    { children: "Step 1 completed" },
+    { children: "Step 2 completed" },
+  ]}
+/>
+```
+
+## API
+
+### TimelineProps
+
+- `items` — `TimelineItem[]` — Timeline item data
+- `mode` — `"left" | "right" | "alternate"` — Item position mode (default: `"left"`)
+- `pending` — `ReactNode` — Show a pending indicator at the end
+- `pendingDot` — `ReactNode` — Custom pending dot
+- `reverse` — `boolean` — Reverse the order (default: `false`)
+
+### TimelineItem
+
+- `children` — `ReactNode` — Item content
+- `color` — `string` — Dot color (default: `"blue"`)
+- `dot` — `ReactNode` — Custom dot element
+- `label` — `ReactNode` — Label text (shown on opposite side in alternate mode)
+- `position` — `"left" | "right"` — Override position in alternate mode

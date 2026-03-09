@@ -1,0 +1,200 @@
+---
+title: Tabs
+---
+
+import { Tabs } from "orizon";
+import { Home, Settings, User } from "lucide-react";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Tabs
+
+Organize content into switchable panels with tab navigation.
+
+## When to Use
+
+- To group related content into separate views
+- For settings pages or dashboards with distinct sections
+- When users need to switch between different content areas
+
+## Import
+
+```tsx
+import { Tabs } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+Simple line-style tabs.
+
+<ComponentPreview>
+  <Tabs
+    defaultActiveKey="1"
+    items={[
+      { key: "1", label: "Tab 1", children: "Content of Tab 1" },
+      { key: "2", label: "Tab 2", children: "Content of Tab 2" },
+      { key: "3", label: "Tab 3", children: "Content of Tab 3" },
+    ]}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Tabs
+  defaultActiveKey="1"
+  items={[
+    { key: "1", label: "Tab 1", children: "Content of Tab 1" },
+    { key: "2", label: "Tab 2", children: "Content of Tab 2" },
+    { key: "3", label: "Tab 3", children: "Content of Tab 3" },
+  ]}
+/>
+```
+
+### Card Type
+
+Tabs styled as cards.
+
+<ComponentPreview>
+  <Tabs
+    type="card"
+    defaultActiveKey="1"
+    items={[
+      { key: "1", label: "Tab 1", children: "Content of Tab 1" },
+      { key: "2", label: "Tab 2", children: "Content of Tab 2" },
+      { key: "3", label: "Tab 3", children: "Content of Tab 3" },
+    ]}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Tabs
+  type="card"
+  defaultActiveKey="1"
+  items={[
+    { key: "1", label: "Tab 1", children: "Content of Tab 1" },
+    { key: "2", label: "Tab 2", children: "Content of Tab 2" },
+    { key: "3", label: "Tab 3", children: "Content of Tab 3" },
+  ]}
+/>
+```
+
+### Centered
+
+Center-align the tab bar.
+
+<ComponentPreview>
+  <Tabs
+    centered
+    defaultActiveKey="1"
+    items={[
+      { key: "1", label: "Tab 1", children: "Content of Tab 1" },
+      { key: "2", label: "Tab 2", children: "Content of Tab 2" },
+      { key: "3", label: "Tab 3", children: "Content of Tab 3" },
+    ]}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Tabs
+  centered
+  items={[
+    { key: "1", label: "Tab 1", children: "Content of Tab 1" },
+    { key: "2", label: "Tab 2", children: "Content of Tab 2" },
+    { key: "3", label: "Tab 3", children: "Content of Tab 3" },
+  ]}
+/>
+```
+
+### With Icons
+
+Add icons to tab labels.
+
+<ComponentPreview>
+  <Tabs
+    defaultActiveKey="1"
+    items={[
+      { key: "1", label: "Home", icon: <Home size={14} />, children: "Home content" },
+      { key: "2", label: "Profile", icon: <User size={14} />, children: "Profile content" },
+      { key: "3", label: "Settings", icon: <Settings size={14} />, children: "Settings content" },
+    ]}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+import { Home, User, Settings } from "lucide-react";
+
+<Tabs
+  items={[
+    { key: "1", label: "Home", icon: <Home size={14} />, children: "Home content" },
+    { key: "2", label: "Profile", icon: <User size={14} />, children: "Profile content" },
+    { key: "3", label: "Settings", icon: <Settings size={14} />, children: "Settings content" },
+  ]}
+/>
+```
+
+### Sizes
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%" }}>
+    <Tabs
+      size="small"
+      defaultActiveKey="1"
+      items={[
+        { key: "1", label: "Small", children: "Small tab content" },
+        { key: "2", label: "Tab 2", children: "Tab 2 content" },
+      ]}
+    />
+    <Tabs
+      size="middle"
+      defaultActiveKey="1"
+      items={[
+        { key: "1", label: "Middle", children: "Middle tab content" },
+        { key: "2", label: "Tab 2", children: "Tab 2 content" },
+      ]}
+    />
+    <Tabs
+      size="large"
+      defaultActiveKey="1"
+      items={[
+        { key: "1", label: "Large", children: "Large tab content" },
+        { key: "2", label: "Tab 2", children: "Tab 2 content" },
+      ]}
+    />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Tabs size="small" items={[...]} />
+<Tabs size="middle" items={[...]} />
+<Tabs size="large" items={[...]} />
+```
+
+## API
+
+### TabsProps
+
+- `activeKey` — `string` — Currently active tab key (controlled)
+- `defaultActiveKey` — `string` — Initially active tab key
+- `items` — `TabItem[]` — Tab configuration array
+- `type` — `"line" | "card" | "editable-card"` — Tab style (default: `"line"`)
+- `size` — `"small" | "middle" | "large"` — Tab size (default: `"middle"`)
+- `tabPosition` — `"top" | "bottom" | "left" | "right"` — Tab bar position (default: `"top"`)
+- `centered` — `boolean` — Center-align tab bar (default: `false`)
+- `tabBarExtraContent` — `ReactNode | { left?: ReactNode; right?: ReactNode }` — Extra content in tab bar
+- `destroyInactiveTabPane` — `boolean` — Unmount hidden tab panes (default: `false`)
+- `onChange` — `(activeKey: string) => void` — Tab change callback
+- `onEdit` — `(targetKey: string, action: "add" | "remove") => void` — Edit callback for editable-card
+
+### TabItem
+
+- `key` — `string` — Unique tab identifier
+- `label` — `ReactNode` — Tab title
+- `children` — `ReactNode` — Tab content
+- `icon` — `ReactNode` — Tab icon
+- `disabled` — `boolean` — Disable the tab
+- `closable` — `boolean` — Show close button (editable-card only)
+- `forceRender` — `boolean` — Force render even when inactive

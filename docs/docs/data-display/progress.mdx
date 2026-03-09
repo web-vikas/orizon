@@ -1,0 +1,109 @@
+---
+title: Progress
+---
+
+import { Progress } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Progress
+
+Display the completion status of a task or process.
+
+## When to Use
+
+- To show upload or download progress
+- For task completion indicators
+- For dashboard metrics and KPIs
+
+## Import
+
+```tsx
+import { Progress } from "orizon";
+```
+
+## Examples
+
+### Line
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
+    <Progress percent={30} />
+    <Progress percent={50} status="active" />
+    <Progress percent={70} status="exception" />
+    <Progress percent={100} />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Progress percent={30} />
+<Progress percent={50} status="active" />
+<Progress percent={70} status="exception" />
+<Progress percent={100} />
+```
+
+### Circle
+
+<ComponentPreview>
+  <Progress type="circle" percent={75} />
+  <Progress type="circle" percent={100} />
+  <Progress type="circle" percent={30} status="exception" />
+</ComponentPreview>
+
+```tsx
+<Progress type="circle" percent={75} />
+<Progress type="circle" percent={100} />
+<Progress type="circle" percent={30} status="exception" />
+```
+
+### Dashboard
+
+<ComponentPreview>
+  <Progress type="dashboard" percent={75} />
+</ComponentPreview>
+
+```tsx
+<Progress type="dashboard" percent={75} />
+```
+
+### Steps
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Progress percent={60} steps={5} />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Progress percent={60} steps={5} />
+```
+
+### Small Size
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "12px", width: "100%" }}>
+    <Progress percent={50} size="small" />
+    <Progress type="circle" percent={50} size="small" />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Progress percent={50} size="small" />
+<Progress type="circle" percent={50} size="small" />
+```
+
+## API
+
+### ProgressProps
+
+- `percent` — `number` — Completion percentage (0-100)
+- `type` — `"line" | "circle" | "dashboard"` — Visual type (default: `"line"`)
+- `status` — `"success" | "exception" | "normal" | "active"` — Status color
+- `strokeColor` — `string | { from: string; to: string }` — Bar/stroke color
+- `showInfo` — `boolean` — Show percentage text (default: `true`)
+- `size` — `"default" | "small" | [number, number]` — Progress size
+- `steps` — `number` — Segmented steps count
+- `format` — `(percent) => ReactNode` — Custom text format
+- `strokeLinecap` — `"round" | "butt" | "square"` — Stroke end style (default: `"round"`)
+- `success` — `{ percent: number; strokeColor?: string }` — Success segment config
+- `railColor` — `string` — Background track color
+- `strokeWidth` — `number` — Stroke thickness (circle/dashboard only)

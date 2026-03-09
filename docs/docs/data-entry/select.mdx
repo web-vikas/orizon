@@ -1,0 +1,124 @@
+---
+title: Select
+---
+
+import { Select } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Select
+
+A dropdown selector for choosing from a list of options.
+
+## When to Use
+
+- For selecting one or more items from a predefined list
+- When a dropdown is more appropriate than radio buttons
+- For searchable or taggable selection
+
+## Import
+
+```tsx
+import { Select } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Select
+    defaultValue="option1"
+    options={[
+      { value: "option1", label: "Option 1" },
+      { value: "option2", label: "Option 2" },
+      { value: "option3", label: "Option 3" },
+    ]}
+    style={{ width: "200px" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Select
+  defaultValue="option1"
+  options={[
+    { value: "option1", label: "Option 1" },
+    { value: "option2", label: "Option 2" },
+    { value: "option3", label: "Option 3" },
+  ]}
+  style={{ width: 200 }}
+/>
+```
+
+### Multiple Selection
+
+<ComponentPreview>
+  <Select
+    mode="multiple"
+    placeholder="Select items"
+    options={[
+      { value: "react", label: "React" },
+      { value: "vue", label: "Vue" },
+      { value: "angular", label: "Angular" },
+      { value: "svelte", label: "Svelte" },
+    ]}
+    style={{ width: "300px" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Select
+  mode="multiple"
+  placeholder="Select items"
+  options={options}
+  style={{ width: 300 }}
+/>
+```
+
+### Searchable
+
+<ComponentPreview>
+  <Select
+    showSearch
+    placeholder="Search and select"
+    options={[
+      { value: "us", label: "United States" },
+      { value: "uk", label: "United Kingdom" },
+      { value: "ca", label: "Canada" },
+      { value: "au", label: "Australia" },
+    ]}
+    style={{ width: "250px" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Select showSearch placeholder="Search and select" options={options} />
+```
+
+### Disabled
+
+<ComponentPreview>
+  <Select disabled defaultValue="disabled" options={[{ value: "disabled", label: "Disabled" }]} style={{ width: "200px" }} />
+</ComponentPreview>
+
+```tsx
+<Select disabled defaultValue="disabled" options={options} />
+```
+
+## API
+
+### SelectProps
+
+- `options` — `{ value, label, disabled? }[]` — Option list
+- `value` — `string | string[]` — Selected value (controlled)
+- `defaultValue` — `string | string[]` — Default value
+- `onChange` — `(value, option) => void` — Change handler
+- `mode` — `"multiple" | "tags"` — Selection mode
+- `showSearch` — `boolean` — Enable search (default: `false`)
+- `filterOption` — `(input, option) => boolean` — Custom search filter
+- `placeholder` — `string` — Placeholder text
+- `disabled` — `boolean` — Disable selector
+- `allowClear` — `boolean` — Show clear button
+- `size` — `"small" | "middle" | "large"` — Size
+- `status` — `"error" | "warning"` — Validation status
+- `loading` — `boolean` — Loading state
+- `maxTagCount` — `number | "responsive"` — Max tags to show in multiple mode

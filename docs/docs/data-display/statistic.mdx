@@ -1,0 +1,89 @@
+---
+title: Statistic
+---
+
+import { Statistic } from "orizon";
+import { ArrowUp, ArrowDown } from "lucide-react";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Statistic
+
+Display numeric values with labels, prefixes, and formatting.
+
+## When to Use
+
+- For dashboard KPIs and metrics
+- To highlight important numbers
+- For countdown timers
+
+## Import
+
+```tsx
+import { Statistic } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Statistic title="Active Users" value={112893} />
+  <Statistic title="Revenue" value={112893} precision={2} />
+</ComponentPreview>
+
+```tsx
+<Statistic title="Active Users" value={112893} />
+<Statistic title="Revenue" value={112893} precision={2} />
+```
+
+### With Prefix/Suffix
+
+<ComponentPreview>
+  <Statistic title="Growth" value={11.28} precision={2} prefix={<ArrowUp size={16} />} suffix="%" valueStyle={{ color: "#0d9488" }} />
+  <Statistic title="Decline" value={9.3} precision={2} prefix={<ArrowDown size={16} />} suffix="%" valueStyle={{ color: "#ef4444" }} />
+</ComponentPreview>
+
+```tsx
+import { ArrowUp } from "lucide-react";
+
+<Statistic
+  title="Growth"
+  value={11.28}
+  precision={2}
+  prefix={<ArrowUp />}
+  suffix="%"
+  valueStyle={{ color: "#0d9488" }}
+/>
+```
+
+### Countdown
+
+```tsx
+<Statistic.Countdown
+  title="Event Starts"
+  value={Date.now() + 1000 * 60 * 60 * 24}
+  onFinish={() => console.log("Done!")}
+/>
+```
+
+## API
+
+### StatisticProps
+
+- `title` — `ReactNode` — Statistic label
+- `value` — `string | number` — Numeric value
+- `precision` — `number` — Decimal precision
+- `prefix` — `ReactNode` — Element before value
+- `suffix` — `ReactNode` — Element after value
+- `valueStyle` — `CSSProperties` — Value text styles
+- `formatter` — `(value) => ReactNode` — Custom format function
+- `groupSeparator` — `string` — Thousands separator (default: `","`)
+- `decimalSeparator` — `string` — Decimal separator (default: `"."`)
+- `loading` — `boolean` — Show skeleton
+
+### Statistic.Countdown Props
+
+- `value` — `number` — Target timestamp (ms)
+- `format` — `string` — Display format (default: `"HH:mm:ss"`)
+- `onFinish` — `() => void` — Callback when countdown reaches zero
+- `onChange` — `(value: number) => void` — Callback on each tick

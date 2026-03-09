@@ -1,0 +1,162 @@
+---
+title: FloatButton
+---
+
+import { FloatButton } from "orizon";
+import { MessageCircle, Settings, Bell, Plus, HelpCircle } from "lucide-react";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# FloatButton
+
+Floating action buttons for quick access to common actions, with group and back-to-top support.
+
+## When to Use
+
+- To provide quick access to frequently used actions (e.g., help, feedback)
+- As a floating back-to-top button for long pages
+- To group multiple floating actions that expand on click or hover
+
+## Import
+
+```tsx
+import { FloatButton } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+A simple floating action button.
+
+<ComponentPreview>
+  <div style={{ position: "relative", height: "100px", width: "100%" }}>
+    <FloatButton icon={<MessageCircle size={20} />} style={{ position: "absolute" }} />
+    <FloatButton type="primary" icon={<MessageCircle size={20} />} style={{ position: "absolute", right: "60px" }} />
+  </div>
+</ComponentPreview>
+
+```tsx
+import { MessageCircle } from "lucide-react";
+
+<FloatButton icon={<MessageCircle />} />
+<FloatButton type="primary" icon={<MessageCircle />} />
+```
+
+### Shapes
+
+FloatButton supports `circle` (default) and `square` shapes.
+
+<ComponentPreview>
+  <div style={{ position: "relative", height: "100px", width: "100%" }}>
+    <FloatButton icon={<Settings size={20} />} shape="circle" style={{ position: "absolute" }} />
+    <FloatButton icon={<Settings size={20} />} shape="square" style={{ position: "absolute", right: "60px" }} />
+  </div>
+</ComponentPreview>
+
+```tsx
+import { Settings } from "lucide-react";
+
+<FloatButton icon={<Settings />} shape="circle" />
+<FloatButton icon={<Settings />} shape="square" />
+```
+
+### With Tooltip
+
+Show a tooltip on hover with the `tooltip` prop.
+
+<ComponentPreview>
+  <div style={{ position: "relative", height: "100px", width: "100%" }}>
+    <FloatButton icon={<MessageCircle size={20} />} tooltip="Send feedback" style={{ position: "absolute" }} />
+  </div>
+</ComponentPreview>
+
+```tsx
+import { MessageCircle } from "lucide-react";
+
+<FloatButton
+  icon={<MessageCircle />}
+  tooltip="Send feedback"
+/>
+```
+
+### With Badge
+
+Display a notification badge with a count or dot indicator.
+
+<ComponentPreview>
+  <div style={{ position: "relative", height: "100px", width: "100%" }}>
+    <FloatButton icon={<Bell size={20} />} badge={{ count: 5 }} style={{ position: "absolute" }} />
+    <FloatButton icon={<Bell size={20} />} badge={{ dot: true }} style={{ position: "absolute", right: "60px" }} />
+  </div>
+</ComponentPreview>
+
+```tsx
+import { Bell } from "lucide-react";
+
+<FloatButton icon={<Bell />} badge={{ count: 5 }} />
+<FloatButton icon={<Bell />} badge={{ dot: true }} />
+```
+
+### Group
+
+Group multiple floating buttons that expand on click or hover.
+
+<ComponentPreview>
+  <div style={{ position: "relative", height: "200px", width: "100%" }}>
+    <FloatButton.Group trigger="click" icon={<Plus size={20} />} style={{ position: "absolute" }}>
+      <FloatButton icon={<MessageCircle size={20} />} tooltip="Chat" />
+      <FloatButton icon={<Settings size={20} />} tooltip="Settings" />
+      <FloatButton icon={<HelpCircle size={20} />} tooltip="Help" />
+    </FloatButton.Group>
+  </div>
+</ComponentPreview>
+
+```tsx
+import { Plus, MessageCircle, Settings, HelpCircle } from "lucide-react";
+
+<FloatButton.Group trigger="click" icon={<Plus />}>
+  <FloatButton icon={<MessageCircle />} tooltip="Chat" />
+  <FloatButton icon={<Settings />} tooltip="Settings" />
+  <FloatButton icon={<HelpCircle />} tooltip="Help" />
+</FloatButton.Group>
+```
+
+### Back to Top
+
+A specialized button that scrolls to the top of the page when clicked.
+
+```tsx
+<FloatButton.BackTop />
+<FloatButton.BackTop visibilityHeight={200} />
+```
+
+:::note
+`FloatButton.BackTop` is visibility-based — it only appears after scrolling past the `visibilityHeight` threshold. It is best demonstrated in a full-page context rather than a preview.
+:::
+
+## API
+
+### FloatButtonProps
+
+- `icon` — `ReactNode` — Button icon
+- `type` — `"primary" | "default"` — Visual style (default: `"default"`)
+- `shape` — `"circle" | "square"` — Button shape (default: `"circle"`)
+- `description` — `ReactNode` — Text below the icon
+- `tooltip` — `string` — Hover tooltip text
+- `badge` — `{ count?: number; dot?: boolean }` — Badge indicator
+- `href` — `string` — Navigate to URL on click
+- `onClick` — `() => void` — Click handler
+
+### FloatButton.Group Props
+
+- `trigger` — `"click" | "hover"` — How the group expands
+- `open` — `boolean` — Controlled open state
+- `onOpenChange` — `(open: boolean) => void` — Open state callback
+- `icon` — `ReactNode` — Icon for the trigger button
+- `shape` — `"circle" | "square"` — Shape for all buttons (default: `"circle"`)
+
+### FloatButton.BackTop Props
+
+- `visibilityHeight` — `number` — Scroll distance before showing (default: `400`)
+- `duration` — `number` — Scroll animation duration in ms (default: `450`)
+- Inherits all FloatButtonProps

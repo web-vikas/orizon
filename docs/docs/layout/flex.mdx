@@ -1,0 +1,173 @@
+---
+title: Flex
+---
+
+import { Flex, Button } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Flex
+
+A flexbox layout component for arranging children with flexible alignment and spacing.
+
+## When to Use
+
+- For quick horizontal or vertical layouts with gap control
+- As a simpler alternative to CSS flexbox for common patterns
+- To wrap or distribute items with justify and align options
+
+## Import
+
+```tsx
+import { Flex } from "orizon";
+```
+
+## Examples
+
+### Horizontal Row
+
+The default direction is horizontal.
+
+<ComponentPreview>
+  <Flex gap="middle">
+    <Button type="primary">Primary</Button>
+    <Button>Default</Button>
+    <Button type="dashed">Dashed</Button>
+  </Flex>
+</ComponentPreview>
+
+```tsx
+import { Flex, Button } from "orizon";
+
+<Flex gap="middle">
+  <Button type="primary">Primary</Button>
+  <Button>Default</Button>
+  <Button type="dashed">Dashed</Button>
+</Flex>
+```
+
+### Vertical Column
+
+Set `vertical` for a column layout.
+
+<ComponentPreview>
+  <Flex vertical gap="middle">
+    <Button type="primary">First</Button>
+    <Button>Second</Button>
+    <Button type="dashed">Third</Button>
+  </Flex>
+</ComponentPreview>
+
+```tsx
+<Flex vertical gap="middle">
+  <Button type="primary">First</Button>
+  <Button>Second</Button>
+  <Button type="dashed">Third</Button>
+</Flex>
+```
+
+### Gap Sizes
+
+Choose from preset sizes: `small`, `middle`, or `large`.
+
+<ComponentPreview>
+  <Flex vertical gap="large" style={{ width: "100%" }}>
+    <Flex gap="small">
+      <Button>Small</Button>
+      <Button>Gap</Button>
+      <Button>Items</Button>
+    </Flex>
+    <Flex gap="middle">
+      <Button>Middle</Button>
+      <Button>Gap</Button>
+      <Button>Items</Button>
+    </Flex>
+    <Flex gap="large">
+      <Button>Large</Button>
+      <Button>Gap</Button>
+      <Button>Items</Button>
+    </Flex>
+  </Flex>
+</ComponentPreview>
+
+```tsx
+<Flex gap="small">
+  <Button>Small</Button>
+  <Button>Gap</Button>
+</Flex>
+<Flex gap="middle">
+  <Button>Middle</Button>
+  <Button>Gap</Button>
+</Flex>
+<Flex gap="large">
+  <Button>Large</Button>
+  <Button>Gap</Button>
+</Flex>
+```
+
+### Justify Content
+
+Distribute items along the main axis.
+
+<ComponentPreview>
+  <Flex vertical gap="middle" style={{ width: "100%" }}>
+    <Flex justify="center" style={{ background: "var(--rp-c-bg-soft)", padding: "8px", borderRadius: "4px" }}>
+      <Button>Center</Button>
+      <Button>Center</Button>
+    </Flex>
+    <Flex justify="space-between" style={{ background: "var(--rp-c-bg-soft)", padding: "8px", borderRadius: "4px" }}>
+      <Button>Start</Button>
+      <Button>End</Button>
+    </Flex>
+    <Flex justify="space-evenly" style={{ background: "var(--rp-c-bg-soft)", padding: "8px", borderRadius: "4px" }}>
+      <Button>Even</Button>
+      <Button>Even</Button>
+      <Button>Even</Button>
+    </Flex>
+  </Flex>
+</ComponentPreview>
+
+```tsx
+<Flex justify="center">...</Flex>
+<Flex justify="space-between">...</Flex>
+<Flex justify="space-evenly">...</Flex>
+```
+
+### Wrap
+
+Enable wrapping for items that overflow.
+
+<ComponentPreview>
+  <Flex wrap="wrap" gap="small">
+    <Button>A</Button>
+    <Button>B</Button>
+    <Button>C</Button>
+    <Button>D</Button>
+    <Button>E</Button>
+    <Button>F</Button>
+    <Button>G</Button>
+    <Button>H</Button>
+  </Flex>
+</ComponentPreview>
+
+```tsx
+<Flex wrap="wrap" gap="small">
+  <Button>A</Button>
+  <Button>B</Button>
+  <Button>C</Button>
+  ...
+</Flex>
+```
+
+## API
+
+### FlexProps
+
+- `vertical` — `boolean` — Use column direction (default: `false`)
+- `wrap` — `boolean | "wrap" | "nowrap" | "wrap-reverse"` — Flex wrap behavior
+- `justify` — `"flex-start" | "center" | "flex-end" | "space-between" | "space-around" | "space-evenly" | "start" | "end" | "normal"` — Main axis alignment
+- `align` — `"flex-start" | "center" | "flex-end" | "stretch" | "baseline" | "start" | "end" | "normal"` — Cross axis alignment
+- `gap` — `"small" | "middle" | "large" | string | number` — Gap between items
+- `flex` — `string | number` — CSS flex shorthand
+- `component` — `string` — Custom HTML element (default: `"div"`)
+- `className` — `string` — Custom CSS class
+- `style` — `CSSProperties` — Inline styles

@@ -1,0 +1,234 @@
+---
+title: Menu
+---
+
+import { Menu } from "orizon";
+import { Home, Settings, User, Mail, FileText } from "lucide-react";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Menu
+
+A versatile navigation menu supporting horizontal, vertical, and inline modes with sub-menus.
+
+## When to Use
+
+- For top-level site navigation (horizontal mode)
+- For sidebar navigation (vertical or inline mode)
+- When you need nested sub-menu support with collapsible groups
+
+## Import
+
+```tsx
+import { Menu } from "orizon";
+```
+
+## Examples
+
+### Horizontal Menu
+
+A top navigation bar with inline items.
+
+<ComponentPreview>
+  <Menu
+    mode="horizontal"
+    defaultSelectedKeys={["home"]}
+    items={[
+      { key: "home", label: "Home", icon: <Home size={16} /> },
+      { key: "mail", label: "Messages", icon: <Mail size={16} /> },
+      { key: "settings", label: "Settings", icon: <Settings size={16} /> },
+    ]}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+import { Home, Mail, Settings } from "lucide-react";
+
+<Menu
+  mode="horizontal"
+  defaultSelectedKeys={["home"]}
+  items={[
+    { key: "home", label: "Home", icon: <Home size={16} /> },
+    { key: "mail", label: "Messages", icon: <Mail size={16} /> },
+    { key: "settings", label: "Settings", icon: <Settings size={16} /> },
+  ]}
+/>
+```
+
+### Vertical Menu
+
+A sidebar-style menu.
+
+<ComponentPreview>
+  <Menu
+    mode="vertical"
+    defaultSelectedKeys={["profile"]}
+    items={[
+      { key: "profile", label: "Profile", icon: <User size={16} /> },
+      { key: "documents", label: "Documents", icon: <FileText size={16} /> },
+      { key: "settings", label: "Settings", icon: <Settings size={16} /> },
+    ]}
+    style={{ width: "240px" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Menu
+  mode="vertical"
+  defaultSelectedKeys={["profile"]}
+  items={[
+    { key: "profile", label: "Profile", icon: <User size={16} /> },
+    { key: "documents", label: "Documents", icon: <FileText size={16} /> },
+    { key: "settings", label: "Settings", icon: <Settings size={16} /> },
+  ]}
+  style={{ width: "240px" }}
+/>
+```
+
+### Inline Menu with Sub-menus
+
+Collapsible sub-menus for nested navigation.
+
+<ComponentPreview>
+  <Menu
+    mode="inline"
+    defaultOpenKeys={["navigation"]}
+    defaultSelectedKeys={["menu"]}
+    items={[
+      {
+        key: "navigation",
+        label: "Navigation",
+        icon: <Home size={16} />,
+        children: [
+          { key: "menu", label: "Menu" },
+          { key: "breadcrumb", label: "Breadcrumb" },
+          { key: "tabs", label: "Tabs" },
+        ],
+      },
+      {
+        key: "settings-group",
+        label: "Settings",
+        icon: <Settings size={16} />,
+        children: [
+          { key: "general", label: "General" },
+          { key: "account", label: "Account" },
+        ],
+      },
+    ]}
+    style={{ width: "240px" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Menu
+  mode="inline"
+  defaultOpenKeys={["navigation"]}
+  defaultSelectedKeys={["menu"]}
+  items={[
+    {
+      key: "navigation",
+      label: "Navigation",
+      icon: <Home size={16} />,
+      children: [
+        { key: "menu", label: "Menu" },
+        { key: "breadcrumb", label: "Breadcrumb" },
+        { key: "tabs", label: "Tabs" },
+      ],
+    },
+    {
+      key: "settings-group",
+      label: "Settings",
+      icon: <Settings size={16} />,
+      children: [
+        { key: "general", label: "General" },
+        { key: "account", label: "Account" },
+      ],
+    },
+  ]}
+  style={{ width: "240px" }}
+/>
+```
+
+### Dark Theme
+
+<ComponentPreview>
+  <Menu
+    mode="inline"
+    theme="dark"
+    defaultSelectedKeys={["home"]}
+    items={[
+      { key: "home", label: "Home", icon: <Home size={16} /> },
+      { key: "mail", label: "Messages", icon: <Mail size={16} /> },
+      { key: "settings", label: "Settings", icon: <Settings size={16} /> },
+    ]}
+    style={{ width: "240px" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Menu
+  mode="inline"
+  theme="dark"
+  defaultSelectedKeys={["home"]}
+  items={[
+    { key: "home", label: "Home", icon: <Home size={16} /> },
+    { key: "mail", label: "Messages", icon: <Mail size={16} /> },
+    { key: "settings", label: "Settings", icon: <Settings size={16} /> },
+  ]}
+  style={{ width: "240px" }}
+/>
+```
+
+### Disabled & Danger Items
+
+<ComponentPreview>
+  <Menu
+    mode="vertical"
+    items={[
+      { key: "active", label: "Active Item" },
+      { key: "disabled", label: "Disabled Item", disabled: true },
+      { key: "danger", label: "Delete Account", danger: true },
+    ]}
+    style={{ width: "240px" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Menu
+  mode="vertical"
+  items={[
+    { key: "active", label: "Active Item" },
+    { key: "disabled", label: "Disabled Item", disabled: true },
+    { key: "danger", label: "Delete Account", danger: true },
+  ]}
+  style={{ width: "240px" }}
+/>
+```
+
+## API
+
+### MenuProps
+
+- `mode` — `"horizontal" | "vertical" | "inline"` — Menu layout mode (default: `"vertical"`)
+- `theme` — `"light" | "dark"` — Color theme (default: `"light"`)
+- `items` — `MenuItemType[]` — Menu item data array
+- `selectedKeys` — `string[]` — Currently selected keys (controlled)
+- `defaultSelectedKeys` — `string[]` — Initially selected keys
+- `openKeys` — `string[]` — Currently open sub-menu keys (controlled)
+- `defaultOpenKeys` — `string[]` — Initially open sub-menu keys
+- `multiple` — `boolean` — Allow multiple selections (default: `false`)
+- `inlineIndent` — `number` — Indent width for inline sub-menus (default: `24`)
+- `inlineCollapsed` — `boolean` — Collapse inline menu
+- `onClick` — `(info: MenuInfo) => void` — Click handler
+- `onOpenChange` — `(openKeys: string[]) => void` — Sub-menu open state callback
+- `onSelect` — `(info: MenuInfo) => void` — Selection callback
+
+### MenuItemType
+
+- `key` — `string` — Unique identifier
+- `label` — `ReactNode` — Item display text
+- `icon` — `ReactNode` — Item icon
+- `children` — `MenuItemType[]` — Sub-menu items
+- `disabled` — `boolean` — Disable the item
+- `danger` — `boolean` — Danger/destructive styling
+- `type` — `"group" | "divider"` — Special item types

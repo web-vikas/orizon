@@ -1,0 +1,92 @@
+---
+title: Switch
+---
+
+import { Switch } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Switch
+
+A toggle control for switching between on and off states.
+
+## When to Use
+
+- For boolean settings (enable/disable)
+- As a more visual alternative to checkboxes
+- For instant-apply toggles
+
+## Import
+
+```tsx
+import { Switch } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Switch defaultChecked />
+  <Switch />
+</ComponentPreview>
+
+```tsx
+<Switch defaultChecked onChange={(checked) => console.log(checked)} />
+```
+
+### With Text
+
+<ComponentPreview>
+  <Switch checkedChildren="ON" unCheckedChildren="OFF" defaultChecked />
+</ComponentPreview>
+
+```tsx
+<Switch checkedChildren="ON" unCheckedChildren="OFF" defaultChecked />
+```
+
+### Sizes
+
+<ComponentPreview>
+  <Switch defaultChecked />
+  <Switch size="small" defaultChecked />
+</ComponentPreview>
+
+```tsx
+<Switch defaultChecked />
+<Switch size="small" defaultChecked />
+```
+
+### Loading
+
+<ComponentPreview>
+  <Switch loading defaultChecked />
+  <Switch loading />
+</ComponentPreview>
+
+```tsx
+<Switch loading defaultChecked />
+```
+
+### Disabled
+
+<ComponentPreview>
+  <Switch disabled defaultChecked />
+  <Switch disabled />
+</ComponentPreview>
+
+```tsx
+<Switch disabled defaultChecked />
+```
+
+## API
+
+### SwitchProps
+
+- `checked` — `boolean` — On state (controlled)
+- `defaultChecked` — `boolean` — Default state
+- `onChange` — `(checked: boolean) => void` — Toggle callback
+- `disabled` — `boolean` — Disable toggle
+- `loading` — `boolean` — Show loading spinner
+- `size` — `"default" | "small"` — Switch size (default: `"default"`)
+- `checkedChildren` — `ReactNode` — Content when on
+- `unCheckedChildren` — `ReactNode` — Content when off

@@ -1,0 +1,133 @@
+---
+title: Table
+---
+
+import { Table } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Table
+
+Display structured data in rows and columns with sorting, filtering, and pagination.
+
+## When to Use
+
+- To display structured data sets
+- When users need to sort, filter, or paginate data
+- For CRUD interfaces with row selection
+
+## Import
+
+```tsx
+import { Table } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Table
+    dataSource={[
+      { key: "1", name: "John Brown", age: 32, address: "New York" },
+      { key: "2", name: "Jim Green", age: 42, address: "London" },
+      { key: "3", name: "Joe Black", age: 28, address: "Sydney" },
+    ]}
+    columns={[
+      { title: "Name", dataIndex: "name", key: "name" },
+      { title: "Age", dataIndex: "age", key: "age" },
+      { title: "Address", dataIndex: "address", key: "address" },
+    ]}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+const dataSource = [
+  { key: "1", name: "John Brown", age: 32, address: "New York" },
+  { key: "2", name: "Jim Green", age: 42, address: "London" },
+  { key: "3", name: "Joe Black", age: 28, address: "Sydney" },
+];
+
+const columns = [
+  { title: "Name", dataIndex: "name", key: "name" },
+  { title: "Age", dataIndex: "age", key: "age" },
+  { title: "Address", dataIndex: "address", key: "address" },
+];
+
+<Table dataSource={dataSource} columns={columns} />
+```
+
+### Bordered
+
+<ComponentPreview>
+  <Table
+    bordered
+    dataSource={[
+      { key: "1", name: "Alice", age: 25, role: "Developer" },
+      { key: "2", name: "Bob", age: 30, role: "Designer" },
+    ]}
+    columns={[
+      { title: "Name", dataIndex: "name" },
+      { title: "Age", dataIndex: "age" },
+      { title: "Role", dataIndex: "role" },
+    ]}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Table bordered dataSource={dataSource} columns={columns} />
+```
+
+### Small Size
+
+<ComponentPreview>
+  <Table
+    size="small"
+    dataSource={[
+      { key: "1", name: "Alice", age: 25, role: "Developer" },
+      { key: "2", name: "Bob", age: 30, role: "Designer" },
+      { key: "3", name: "Charlie", age: 35, role: "Manager" },
+    ]}
+    columns={[
+      { title: "Name", dataIndex: "name" },
+      { title: "Age", dataIndex: "age" },
+      { title: "Role", dataIndex: "role" },
+    ]}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Table size="small" dataSource={dataSource} columns={columns} />
+```
+
+## API
+
+### TableProps
+
+- `dataSource` — `object[]` — Data array to display
+- `columns` — `ColumnType[]` — Column configuration array
+- `rowKey` — `string | (record) => string` — Row key field (default: `"key"`)
+- `pagination` — `false | PaginationProps` — Pagination config or disable
+- `rowSelection` — `{ type, selectedRowKeys, onChange }` — Row selection config
+- `scroll` — `{ x?: number; y?: number }` — Scrollable area dimensions
+- `bordered` — `boolean` — Show borders (default: `false`)
+- `loading` — `boolean` — Show loading spinner
+- `size` — `"large" | "middle" | "small"` — Table density (default: `"large"`)
+- `showHeader` — `boolean` — Show table header (default: `true`)
+- `sticky` — `boolean` — Sticky header
+- `expandable` — `ExpandableConfig` — Expandable row config
+- `onChange` — `(pagination, filters, sorter) => void` — Change handler
+
+### ColumnType
+
+- `title` — `ReactNode` — Column header
+- `dataIndex` — `string` — Data field key
+- `key` — `string` — Unique column key
+- `sorter` — `boolean | (a, b) => number` — Sorting config
+- `filters` — `{ text, value }[]` — Filter options
+- `render` — `(value, record, index) => ReactNode` — Custom cell render
+- `width` — `string | number` — Column width
+- `fixed` — `"left" | "right"` — Fixed column position
+- `align` — `"left" | "center" | "right"` — Text alignment

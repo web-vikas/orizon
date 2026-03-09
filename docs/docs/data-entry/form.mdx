@@ -1,0 +1,122 @@
+---
+title: Form
+---
+
+import { Form, Input, Button, Checkbox, Select } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Form
+
+Collect and validate user input with integrated form state management.
+
+## When to Use
+
+- For login, registration, and settings forms
+- When inputs need validation and error messages
+- To collect structured data from users
+
+## Import
+
+```tsx
+import { Form } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Form layout="vertical" style={{ width: "100%", maxWidth: "400px" }}>
+    <Form.Item label="Username" name="username" rules={[{ required: true }]}>
+      <Input placeholder="Enter username" />
+    </Form.Item>
+    <Form.Item label="Password" name="password" rules={[{ required: true }]}>
+      <Input.Password placeholder="Enter password" />
+    </Form.Item>
+    <Form.Item>
+      <Button type="primary" htmlType="submit">Submit</Button>
+    </Form.Item>
+  </Form>
+</ComponentPreview>
+
+```tsx
+<Form layout="vertical" onFinish={(values) => console.log(values)}>
+  <Form.Item label="Username" name="username" rules={[{ required: true }]}>
+    <Input placeholder="Enter username" />
+  </Form.Item>
+  <Form.Item label="Password" name="password" rules={[{ required: true }]}>
+    <Input.Password placeholder="Enter password" />
+  </Form.Item>
+  <Form.Item>
+    <Button type="primary" htmlType="submit">Submit</Button>
+  </Form.Item>
+</Form>
+```
+
+### Horizontal Layout
+
+<ComponentPreview>
+  <Form layout="horizontal" style={{ width: "100%" }}>
+    <Form.Item label="Email" name="email">
+      <Input placeholder="user@example.com" />
+    </Form.Item>
+    <Form.Item label="Role" name="role">
+      <Select options={[{ label: "Admin", value: "admin" }, { label: "User", value: "user" }]} placeholder="Select role" />
+    </Form.Item>
+  </Form>
+</ComponentPreview>
+
+```tsx
+<Form layout="horizontal">
+  <Form.Item label="Email" name="email">
+    <Input placeholder="user@example.com" />
+  </Form.Item>
+</Form>
+```
+
+### Inline Layout
+
+<ComponentPreview>
+  <Form layout="inline">
+    <Form.Item name="search">
+      <Input placeholder="Search..." />
+    </Form.Item>
+    <Form.Item>
+      <Button type="primary">Search</Button>
+    </Form.Item>
+  </Form>
+</ComponentPreview>
+
+```tsx
+<Form layout="inline">
+  <Form.Item name="search">
+    <Input placeholder="Search..." />
+  </Form.Item>
+  <Form.Item>
+    <Button type="primary">Search</Button>
+  </Form.Item>
+</Form>
+```
+
+## API
+
+### FormProps
+
+- `layout` — `"horizontal" | "vertical" | "inline"` — Form layout (default: `"horizontal"`)
+- `form` — `FormInstance` — Form control instance from `Form.useForm()`
+- `initialValues` — `object` — Default form values
+- `onFinish` — `(values) => void` — Submit handler (after validation passes)
+- `onFinishFailed` — `(errorInfo) => void` — Failed validation handler
+- `disabled` — `boolean` — Disable all form fields (default: `false`)
+- `size` — `"small" | "middle" | "large"` — Size for all fields
+- `variant` — `"outlined" | "filled" | "borderless"` — Input variant
+
+### Form.Item Props
+
+- `label` — `ReactNode` — Field label
+- `name` — `string | string[]` — Field name for form state
+- `rules` — `Rule[]` — Validation rules
+- `required` — `boolean` — Mark as required
+- `tooltip` — `string` — Help tooltip text
+- `extra` — `ReactNode` — Extra hint below field
+- `valuePropName` — `string` — Prop name for child value (default: `"value"`)

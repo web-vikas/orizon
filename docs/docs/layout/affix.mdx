@@ -1,0 +1,75 @@
+---
+title: Affix
+---
+
+import { Affix, Button } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Affix
+
+Pin an element to the viewport when scrolling past a threshold.
+
+## When to Use
+
+- To keep a toolbar or action bar visible while scrolling
+- For sticky navigation that pins to the top or bottom of the viewport
+- To ensure important controls remain accessible during scroll
+
+## Import
+
+```tsx
+import { Affix } from "orizon";
+```
+
+## Examples
+
+### Offset Top
+
+Pin an element when scrolling past `offsetTop` pixels from the top.
+
+<ComponentPreview>
+  <Affix offsetTop={0}>
+    <Button type="primary">Pinned to Top</Button>
+  </Affix>
+</ComponentPreview>
+
+```tsx
+<Affix offsetTop={120}>
+  <Button type="primary">Pinned to Top</Button>
+</Affix>
+```
+
+### Offset Bottom
+
+Pin an element relative to the bottom of the viewport.
+
+```tsx
+<Affix offsetBottom={20}>
+  <Button>Pinned to Bottom</Button>
+</Affix>
+```
+
+:::note
+`Affix` with `offsetBottom` is best demonstrated in a full-page context where scrolling activates the pinning behavior.
+:::
+
+### On Change Callback
+
+Listen for when the affix state changes.
+
+```tsx
+<Affix offsetTop={100} onChange={(affixed) => console.log("Affixed:", affixed)}>
+  <Button type="primary">Watch Console</Button>
+</Affix>
+```
+
+## API
+
+### AffixProps
+
+- `offsetTop` — `number` — Pixels from top of viewport to trigger affix
+- `offsetBottom` — `number` — Pixels from bottom of viewport to trigger affix
+- `target` — `() => HTMLElement` — Custom scroll container (default: `window`)
+- `onChange` — `(affixed: boolean) => void` — Callback when affix state changes
+- `className` — `string` — Custom CSS class
+- `style` — `CSSProperties` — Inline styles

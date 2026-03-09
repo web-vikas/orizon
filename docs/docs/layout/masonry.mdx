@@ -1,0 +1,140 @@
+---
+title: Masonry
+---
+
+import { Masonry } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Masonry
+
+A Pinterest-style multi-column layout that arranges items to minimize vertical gaps.
+
+## When to Use
+
+- For image galleries or card grids with varying heights
+- When items have different sizes and you want a dense layout
+- For responsive multi-column content without fixed row heights
+
+## Import
+
+```tsx
+import { Masonry } from "orizon";
+```
+
+## Examples
+
+### Basic Masonry
+
+Items flow into columns, filling vertical space efficiently.
+
+<ComponentPreview>
+  <Masonry columns={3} gutter={8}>
+    <div style={{ background: "#0d9488", color: "white", padding: "16px", borderRadius: "4px", height: "80px" }}>Item 1</div>
+    <div style={{ background: "#14b8a6", color: "white", padding: "16px", borderRadius: "4px", height: "120px" }}>Item 2</div>
+    <div style={{ background: "#0f766e", color: "white", padding: "16px", borderRadius: "4px", height: "60px" }}>Item 3</div>
+    <div style={{ background: "#0d9488", color: "white", padding: "16px", borderRadius: "4px", height: "100px" }}>Item 4</div>
+    <div style={{ background: "#14b8a6", color: "white", padding: "16px", borderRadius: "4px", height: "140px" }}>Item 5</div>
+    <div style={{ background: "#0f766e", color: "white", padding: "16px", borderRadius: "4px", height: "90px" }}>Item 6</div>
+  </Masonry>
+</ComponentPreview>
+
+```tsx
+<Masonry columns={3} gutter={8}>
+  <div style={{ height: "80px" }}>Item 1</div>
+  <div style={{ height: "120px" }}>Item 2</div>
+  <div style={{ height: "60px" }}>Item 3</div>
+  <div style={{ height: "100px" }}>Item 4</div>
+  <div style={{ height: "140px" }}>Item 5</div>
+  <div style={{ height: "90px" }}>Item 6</div>
+</Masonry>
+```
+
+### Column Counts
+
+Control the number of columns.
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%" }}>
+    <div>
+      <p style={{ marginBottom: "4px", fontWeight: 500 }}>2 Columns</p>
+      <Masonry columns={2} gutter={8}>
+        <div style={{ background: "#0d9488", color: "white", padding: "12px", borderRadius: "4px", height: "60px" }}>A</div>
+        <div style={{ background: "#14b8a6", color: "white", padding: "12px", borderRadius: "4px", height: "90px" }}>B</div>
+        <div style={{ background: "#0f766e", color: "white", padding: "12px", borderRadius: "4px", height: "70px" }}>C</div>
+        <div style={{ background: "#0d9488", color: "white", padding: "12px", borderRadius: "4px", height: "50px" }}>D</div>
+      </Masonry>
+    </div>
+    <div>
+      <p style={{ marginBottom: "4px", fontWeight: 500 }}>4 Columns</p>
+      <Masonry columns={4} gutter={8}>
+        <div style={{ background: "#0d9488", color: "white", padding: "12px", borderRadius: "4px", height: "60px" }}>A</div>
+        <div style={{ background: "#14b8a6", color: "white", padding: "12px", borderRadius: "4px", height: "90px" }}>B</div>
+        <div style={{ background: "#0f766e", color: "white", padding: "12px", borderRadius: "4px", height: "70px" }}>C</div>
+        <div style={{ background: "#0d9488", color: "white", padding: "12px", borderRadius: "4px", height: "50px" }}>D</div>
+      </Masonry>
+    </div>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Masonry columns={2} gutter={8}>
+  <div>A</div>
+  <div>B</div>
+  <div>C</div>
+</Masonry>
+
+<Masonry columns={4} gutter={8}>
+  <div>A</div>
+  <div>B</div>
+  <div>C</div>
+  <div>D</div>
+</Masonry>
+```
+
+### Custom Gutter
+
+Set different horizontal and vertical gaps.
+
+<ComponentPreview>
+  <Masonry columns={3} gutter={[16, 8]}>
+    <div style={{ background: "#0d9488", color: "white", padding: "16px", borderRadius: "4px", height: "80px" }}>Item 1</div>
+    <div style={{ background: "#14b8a6", color: "white", padding: "16px", borderRadius: "4px", height: "100px" }}>Item 2</div>
+    <div style={{ background: "#0f766e", color: "white", padding: "16px", borderRadius: "4px", height: "60px" }}>Item 3</div>
+    <div style={{ background: "#0d9488", color: "white", padding: "16px", borderRadius: "4px", height: "120px" }}>Item 4</div>
+    <div style={{ background: "#14b8a6", color: "white", padding: "16px", borderRadius: "4px", height: "70px" }}>Item 5</div>
+    <div style={{ background: "#0f766e", color: "white", padding: "16px", borderRadius: "4px", height: "90px" }}>Item 6</div>
+  </Masonry>
+</ComponentPreview>
+
+```tsx
+<Masonry columns={3} gutter={[16, 8]}>
+  <div>Item 1</div>
+  <div>Item 2</div>
+  ...
+</Masonry>
+```
+
+### Responsive Columns
+
+Pass a breakpoint object to adjust columns at different screen sizes.
+
+```tsx
+<Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} gutter={12}>
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+</Masonry>
+```
+
+## API
+
+### MasonryProps
+
+- `columns` — `number | ResponsiveObject` — Number of columns (default: `2`)
+- `gutter` — `number | [number, number]` — Gap between items, or [horizontal, vertical] (default: `0`)
+- `items` — `any[]` — Array of data items (used with `itemRender`)
+- `itemRender` — `(item: any, index: number) => ReactNode` — Custom render function for items
+- `sequential` — `boolean` — Whether to render items sequentially (default: `false`)
+- `className` — `string` — Custom CSS class
+- `style` — `CSSProperties` — Inline styles

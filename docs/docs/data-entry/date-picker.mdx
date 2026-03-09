@@ -1,0 +1,100 @@
+---
+title: DatePicker
+---
+
+import { DatePicker } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# DatePicker
+
+Select dates, weeks, months, quarters, or years from a calendar popup.
+
+## When to Use
+
+- For selecting a single date or date range
+- When you need date input with calendar UI
+- For filtering or scheduling by date
+
+## Import
+
+```tsx
+import { DatePicker } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <DatePicker style={{ width: "200px" }} />
+</ComponentPreview>
+
+```tsx
+<DatePicker onChange={(date) => console.log(date)} />
+```
+
+### Date Range
+
+<ComponentPreview>
+  <DatePicker.RangePicker style={{ width: "300px" }} />
+</ComponentPreview>
+
+```tsx
+<DatePicker.RangePicker onChange={(dates) => console.log(dates)} />
+```
+
+### Month & Year Picker
+
+<ComponentPreview>
+  <DatePicker picker="month" style={{ width: "200px" }} />
+  <DatePicker picker="year" style={{ width: "200px" }} />
+</ComponentPreview>
+
+```tsx
+<DatePicker picker="month" />
+<DatePicker picker="year" />
+```
+
+### With Time
+
+<ComponentPreview>
+  <DatePicker showTime style={{ width: "250px" }} />
+</ComponentPreview>
+
+```tsx
+<DatePicker showTime onChange={(dateTime) => console.log(dateTime)} />
+```
+
+### Disabled
+
+<ComponentPreview>
+  <DatePicker disabled style={{ width: "200px" }} />
+</ComponentPreview>
+
+```tsx
+<DatePicker disabled />
+```
+
+## API
+
+### DatePickerProps
+
+- `value` — `Date` — Selected date (controlled)
+- `defaultValue` — `Date` — Default date
+- `onChange` — `(date: Date, dateString: string) => void` — Change handler
+- `picker` — `"date" | "week" | "month" | "quarter" | "year"` — Picker type (default: `"date"`)
+- `format` — `string` — Display format (default: `"YYYY-MM-DD"`)
+- `showTime` — `boolean | TimePickerProps` — Include time selection
+- `disabled` — `boolean` — Disable the picker
+- `disabledDate` — `(date: Date) => boolean` — Disable specific dates
+- `presets` — `{ label: string; value: Date }[]` — Preset date options
+- `placeholder` — `string` — Placeholder text
+- `size` — `"small" | "middle" | "large"` — Picker size
+- `status` — `"error" | "warning"` — Validation status
+- `allowClear` — `boolean` — Show clear button (default: `true`)
+
+### DatePicker.RangePicker Props
+
+Same as DatePickerProps with range-specific additions:
+- `value` — `[Date, Date]` — Selected range
+- `onChange` — `(dates, dateStrings) => void` — Range change handler

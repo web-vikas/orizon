@@ -1,0 +1,98 @@
+---
+title: Modal
+---
+
+import { Modal, Button } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Modal
+
+A dialog overlay for confirmations, forms, or detailed content.
+
+## When to Use
+
+- For confirmation dialogs before destructive actions
+- To display forms or detailed content in an overlay
+- For quick info, success, error, or warning messages
+
+## Import
+
+```tsx
+import { Modal } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+```tsx
+import { useState } from "react";
+
+function App() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button type="primary" onClick={() => setOpen(true)}>
+        Open Modal
+      </Button>
+      <Modal
+        title="Basic Modal"
+        open={open}
+        onOk={() => setOpen(false)}
+        onCancel={() => setOpen(false)}
+      >
+        <p>Some content...</p>
+      </Modal>
+    </>
+  );
+}
+```
+
+### Confirmation
+
+```tsx
+Modal.confirm({
+  title: "Delete this item?",
+  content: "This action cannot be undone.",
+  onOk: () => console.log("Deleted"),
+});
+```
+
+### Static Methods
+
+```tsx
+Modal.success({ title: "Success", content: "Operation completed." });
+Modal.error({ title: "Error", content: "Something went wrong." });
+Modal.info({ title: "Info", content: "Here is some information." });
+Modal.warning({ title: "Warning", content: "Proceed with caution." });
+```
+
+## API
+
+### ModalProps
+
+- `open` — `boolean` — Whether visible (controlled)
+- `title` — `ReactNode` — Modal title
+- `footer` — `ReactNode | null` — Footer buttons (null to hide)
+- `onOk` — `() => void` — OK button callback
+- `onCancel` — `() => void` — Cancel/close callback
+- `width` — `string | number` — Modal width (default: `520`)
+- `centered` — `boolean` — Center vertically (default: `false`)
+- `closable` — `boolean` — Show close button (default: `true`)
+- `confirmLoading` — `boolean` — OK button loading state
+- `maskClosable` — `boolean` — Close on mask click (default: `true`)
+- `okText` — `string` — OK button text (default: `"OK"`)
+- `cancelText` — `string` — Cancel button text (default: `"Cancel"`)
+- `okType` — `ButtonType` — OK button type (default: `"primary"`)
+- `destroyOnClose` — `boolean` — Unmount children on close (default: `false`)
+- `afterClose` — `() => void` — Called after close animation
+- `zIndex` — `number` — Z-index value
+
+### Static Methods
+
+- `Modal.confirm(config)` — Confirmation dialog
+- `Modal.info(config)` — Information dialog
+- `Modal.success(config)` — Success dialog
+- `Modal.error(config)` — Error dialog
+- `Modal.warning(config)` — Warning dialog

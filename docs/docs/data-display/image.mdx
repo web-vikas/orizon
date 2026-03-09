@@ -1,0 +1,96 @@
+---
+title: Image
+---
+
+import { Image } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Image
+
+Display images with built-in preview, fallback, and placeholder support.
+
+## When to Use
+
+- For images that should support click-to-preview with zoom
+- When you need fallback handling for broken images
+- For image galleries with grouped preview navigation
+
+## Import
+
+```tsx
+import { Image } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Image
+    width={200}
+    src="https://picsum.photos/200/200"
+    alt="Sample image"
+  />
+</ComponentPreview>
+
+```tsx
+<Image width={200} src="https://picsum.photos/200/200" />
+```
+
+### With Fallback
+
+Display a fallback image when the source fails to load.
+
+```tsx
+<Image
+  width={200}
+  src="broken-url.png"
+  fallback="https://via.placeholder.com/200"
+/>
+```
+
+### Preview Group
+
+Group multiple images for batch preview navigation.
+
+<ComponentPreview>
+  <Image.PreviewGroup>
+    <Image width={100} src="https://picsum.photos/200/200?random=1" />
+    <Image width={100} src="https://picsum.photos/200/200?random=2" />
+    <Image width={100} src="https://picsum.photos/200/200?random=3" />
+  </Image.PreviewGroup>
+</ComponentPreview>
+
+```tsx
+<Image.PreviewGroup>
+  <Image width={100} src="image1.png" />
+  <Image width={100} src="image2.png" />
+  <Image width={100} src="image3.png" />
+</Image.PreviewGroup>
+```
+
+## API
+
+### ImageProps
+
+- `src` — `string` — Image source URL
+- `alt` — `string` — Alt text
+- `width` — `string | number` — Image width
+- `height` — `string | number` — Image height
+- `preview` — `boolean | PreviewConfig` — Enable preview (default: `true`)
+- `fallback` — `string` — Fallback image URL on error
+- `placeholder` — `ReactNode` — Placeholder while loading
+- `rootClassName` — `string` — Root element CSS class
+
+### PreviewConfig
+
+- `visible` — `boolean` — Controlled preview visibility
+- `onVisibleChange` — `(visible: boolean) => void` — Visibility callback
+- `scaleStep` — `number` — Zoom step size
+- `minScale` — `number` — Minimum zoom level
+- `maxScale` — `number` — Maximum zoom level
+
+### Image.PreviewGroup Props
+
+- `preview` — `boolean | GroupPreviewConfig` — Group preview config
+- `items` — `string[]` — Image URLs for the group

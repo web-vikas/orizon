@@ -1,0 +1,88 @@
+---
+title: Message
+---
+
+# Message
+
+Global feedback messages that appear at the top of the page.
+
+## When to Use
+
+- For lightweight operation feedback (save success, delete complete)
+- When feedback should auto-dismiss after a few seconds
+- For non-blocking, non-intrusive notifications
+
+## Import
+
+```tsx
+import { message } from "orizon";
+```
+
+## Examples
+
+### Basic Usage
+
+```tsx
+import { message, Button } from "orizon";
+
+function App() {
+  return (
+    <Button onClick={() => message.success("Operation successful!")}>
+      Show Success
+    </Button>
+  );
+}
+```
+
+### Message Types
+
+```tsx
+message.success("Success message");
+message.error("Error message");
+message.info("Info message");
+message.warning("Warning message");
+message.loading("Loading...");
+```
+
+### Custom Duration
+
+```tsx
+// Display for 10 seconds
+message.success({ content: "Long message", duration: 10 });
+
+// Display until manually closed
+message.loading({ content: "Processing...", duration: 0, key: "loading" });
+
+// Later, close it:
+message.destroy("loading");
+```
+
+## API
+
+### Methods
+
+- `message.success(content | config)` — Success message
+- `message.error(content | config)` — Error message
+- `message.info(content | config)` — Info message
+- `message.warning(content | config)` — Warning message
+- `message.loading(content | config)` — Loading message
+- `message.destroy(key?)` — Close message(s)
+
+### MessageConfig
+
+- `content` — `ReactNode` — Message text
+- `duration` — `number` — Auto-close delay in seconds (default: `3`, `0` for persistent)
+- `type` — `"success" | "error" | "info" | "warning" | "loading"` — Message type
+- `icon` — `ReactNode` — Custom icon
+- `key` — `string | number` — Unique key for updating/closing
+- `onClose` — `() => void` — Close callback
+
+### Global Config
+
+```tsx
+message.config({
+  top: 100,        // Distance from top (px)
+  maxCount: 3,     // Max visible messages
+  duration: 2,     // Default duration (seconds)
+});
+```

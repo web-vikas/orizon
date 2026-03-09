@@ -1,0 +1,92 @@
+---
+title: Rate
+---
+
+import { Rate } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Rate
+
+A star rating component for collecting user feedback.
+
+## When to Use
+
+- For product or service reviews
+- To collect user satisfaction scores
+- For any 1-5 scale rating input
+
+## Import
+
+```tsx
+import { Rate } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Rate defaultValue={3} />
+</ComponentPreview>
+
+```tsx
+<Rate defaultValue={3} />
+```
+
+### Half Stars
+
+<ComponentPreview>
+  <Rate allowHalf defaultValue={2.5} />
+</ComponentPreview>
+
+```tsx
+<Rate allowHalf defaultValue={2.5} />
+```
+
+### Read Only
+
+<ComponentPreview>
+  <Rate disabled defaultValue={4} />
+</ComponentPreview>
+
+```tsx
+<Rate disabled defaultValue={4} />
+```
+
+### With Tooltips
+
+<ComponentPreview>
+  <Rate tooltips={["Terrible", "Bad", "Normal", "Good", "Excellent"]} defaultValue={3} />
+</ComponentPreview>
+
+```tsx
+<Rate
+  tooltips={["Terrible", "Bad", "Normal", "Good", "Excellent"]}
+  defaultValue={3}
+/>
+```
+
+### Custom Count
+
+<ComponentPreview>
+  <Rate count={10} defaultValue={6} />
+</ComponentPreview>
+
+```tsx
+<Rate count={10} defaultValue={6} />
+```
+
+## API
+
+### RateProps
+
+- `value` — `number` — Current rating (controlled)
+- `defaultValue` — `number` — Default rating (default: `0`)
+- `count` — `number` — Total number of stars (default: `5`)
+- `allowHalf` — `boolean` — Allow half-star selections (default: `false`)
+- `allowClear` — `boolean` — Allow clearing by clicking again (default: `true`)
+- `character` — `ReactNode | (info) => ReactNode` — Custom star character
+- `disabled` — `boolean` — Read-only mode (default: `false`)
+- `tooltips` — `string[]` — Tooltip text for each star
+- `onChange` — `(value: number) => void` — Rating change callback
+- `onHoverChange` — `(value: number) => void` — Hover value callback

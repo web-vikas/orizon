@@ -1,0 +1,134 @@
+---
+title: Breadcrumb
+---
+
+import { Breadcrumb } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Breadcrumb
+
+A navigation aid showing the user's current location in a page hierarchy.
+
+## When to Use
+
+- To show the current page's position in the site hierarchy
+- To provide quick navigation back to parent pages
+- For multi-level page structures
+
+## Import
+
+```tsx
+import { Breadcrumb } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+A simple breadcrumb trail.
+
+<ComponentPreview>
+  <Breadcrumb
+    items={[
+      { title: "Home", href: "#" },
+      { title: "Components", href: "#" },
+      { title: "Breadcrumb" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Breadcrumb
+  items={[
+    { title: "Home", href: "#" },
+    { title: "Components", href: "#" },
+    { title: "Breadcrumb" },
+  ]}
+/>
+```
+
+### Custom Separator
+
+Use a custom separator between items.
+
+<ComponentPreview>
+  <Breadcrumb
+    separator=">"
+    items={[
+      { title: "Home", href: "#" },
+      { title: "Navigation", href: "#" },
+      { title: "Breadcrumb" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Breadcrumb
+  separator=">"
+  items={[
+    { title: "Home", href: "#" },
+    { title: "Navigation", href: "#" },
+    { title: "Breadcrumb" },
+  ]}
+/>
+```
+
+### With Dropdown Menu
+
+Add a dropdown menu to a breadcrumb item for sibling navigation.
+
+<ComponentPreview>
+  <Breadcrumb
+    items={[
+      { title: "Home", href: "#" },
+      {
+        title: "Components",
+        href: "#",
+        menu: {
+          items: [
+            { key: "general", label: "General" },
+            { key: "layout", label: "Layout" },
+            { key: "navigation", label: "Navigation" },
+          ],
+        },
+      },
+      { title: "Breadcrumb" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Breadcrumb
+  items={[
+    { title: "Home", href: "#" },
+    {
+      title: "Components",
+      menu: {
+        items: [
+          { key: "general", label: "General" },
+          { key: "layout", label: "Layout" },
+          { key: "navigation", label: "Navigation" },
+        ],
+      },
+    },
+    { title: "Breadcrumb" },
+  ]}
+/>
+```
+
+## API
+
+### BreadcrumbProps
+
+- `items` — `BreadcrumbItemType[]` — Breadcrumb item data array
+- `separator` — `ReactNode` — Separator between items (default: `"/"`)
+- `className` — `string` — Custom CSS class
+
+### BreadcrumbItemType
+
+- `title` — `ReactNode` — Display text
+- `href` — `string` — Link URL
+- `menu` — `{ items: MenuItem[] }` — Dropdown menu configuration
+- `onClick` — `(e: MouseEvent) => void` — Click handler
+- `path` — `string` — Route path
+- `className` — `string` — Custom CSS class

@@ -1,0 +1,215 @@
+---
+title: Steps
+---
+
+import { Steps } from "orizon";
+import { User, FileText, CheckCircle } from "lucide-react";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Steps
+
+Guide users through a multi-step process with visual progress indication.
+
+## When to Use
+
+- For multi-step forms or wizards
+- To show progress in a sequential workflow
+- For onboarding or setup processes
+
+## Import
+
+```tsx
+import { Steps } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+A horizontal step indicator.
+
+<ComponentPreview>
+  <Steps
+    current={1}
+    items={[
+      { title: "Account", description: "Create your account" },
+      { title: "Profile", description: "Fill in your profile" },
+      { title: "Complete", description: "All done!" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Steps
+  current={1}
+  items={[
+    { title: "Account", description: "Create your account" },
+    { title: "Profile", description: "Fill in your profile" },
+    { title: "Complete", description: "All done!" },
+  ]}
+/>
+```
+
+### Vertical
+
+A vertical step layout for sidebar placement.
+
+<ComponentPreview>
+  <Steps
+    direction="vertical"
+    current={1}
+    items={[
+      { title: "Step 1", description: "Description for step 1" },
+      { title: "Step 2", description: "Description for step 2" },
+      { title: "Step 3", description: "Description for step 3" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Steps
+  direction="vertical"
+  current={1}
+  items={[
+    { title: "Step 1", description: "Description for step 1" },
+    { title: "Step 2", description: "Description for step 2" },
+    { title: "Step 3", description: "Description for step 3" },
+  ]}
+/>
+```
+
+### Small Size
+
+A compact version for tight spaces.
+
+<ComponentPreview>
+  <Steps
+    size="small"
+    current={1}
+    items={[
+      { title: "Login" },
+      { title: "Verification" },
+      { title: "Done" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Steps
+  size="small"
+  current={1}
+  items={[
+    { title: "Login" },
+    { title: "Verification" },
+    { title: "Done" },
+  ]}
+/>
+```
+
+### Dot Style
+
+A minimal dot indicator style.
+
+<ComponentPreview>
+  <Steps
+    type="dot"
+    current={1}
+    items={[
+      { title: "Step 1", description: "Description" },
+      { title: "Step 2", description: "Description" },
+      { title: "Step 3", description: "Description" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Steps
+  type="dot"
+  current={1}
+  items={[
+    { title: "Step 1", description: "Description" },
+    { title: "Step 2", description: "Description" },
+    { title: "Step 3", description: "Description" },
+  ]}
+/>
+```
+
+### Error Status
+
+Show an error on the current step.
+
+<ComponentPreview>
+  <Steps
+    current={1}
+    status="error"
+    items={[
+      { title: "Account", description: "Complete" },
+      { title: "Verification", description: "Failed" },
+      { title: "Done", description: "Waiting" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Steps
+  current={1}
+  status="error"
+  items={[
+    { title: "Account", description: "Complete" },
+    { title: "Verification", description: "Failed" },
+    { title: "Done", description: "Waiting" },
+  ]}
+/>
+```
+
+### Custom Icons
+
+<ComponentPreview>
+  <Steps
+    current={1}
+    items={[
+      { title: "Account", icon: <User size={16} /> },
+      { title: "Profile", icon: <FileText size={16} /> },
+      { title: "Complete", icon: <CheckCircle size={16} /> },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+import { User, FileText, CheckCircle } from "lucide-react";
+
+<Steps
+  current={1}
+  items={[
+    { title: "Account", icon: <User size={16} /> },
+    { title: "Profile", icon: <FileText size={16} /> },
+    { title: "Complete", icon: <CheckCircle size={16} /> },
+  ]}
+/>
+```
+
+## API
+
+### StepsProps
+
+- `current` — `number` — Current step index (zero-based)
+- `items` — `StepItem[]` — Step configuration array
+- `direction` — `"horizontal" | "vertical"` — Layout direction (default: `"horizontal"`)
+- `type` — `"default" | "navigation" | "dot" | "inline"` — Visual style (default: `"default"`)
+- `status` — `"wait" | "process" | "finish" | "error"` — Status of current step (default: `"process"`)
+- `size` — `"small" | "default"` — Step size (default: `"default"`)
+- `initial` — `number` — Starting step index (default: `0`)
+- `labelPlacement` — `"horizontal" | "vertical"` — Label position
+- `progressDot` — `boolean | ((dot, info) => ReactNode)` — Use dot style or custom render
+- `percent` — `number` — Progress percentage for current step
+- `responsive` — `boolean` — Auto vertical on small screens (default: `true`)
+- `onChange` — `(current: number) => void` — Step change callback
+
+### StepItem
+
+- `title` — `ReactNode` — Step title
+- `description` — `ReactNode` — Step description
+- `subTitle` — `ReactNode` — Step subtitle
+- `icon` — `ReactNode` — Custom icon
+- `status` — `"wait" | "process" | "finish" | "error"` — Override step status
+- `disabled` — `boolean` — Disable clicking this step

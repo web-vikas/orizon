@@ -1,0 +1,178 @@
+---
+title: Splitter
+---
+
+import { Splitter } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Splitter
+
+Resizable split panels for creating adjustable multi-pane layouts.
+
+## When to Use
+
+- To divide content into resizable sections (e.g., code editor + preview)
+- For side-by-side comparisons with adjustable widths
+- To create dashboard panels that users can resize
+
+## Import
+
+```tsx
+import { Splitter } from "orizon";
+```
+
+## Examples
+
+### Horizontal Splitter
+
+Drag the divider to resize panels.
+
+<ComponentPreview>
+  <div style={{ width: "100%", height: "200px" }}>
+    <Splitter>
+      <Splitter.Panel defaultSize="50%">
+        <div style={{ padding: "16px", height: "100%", background: "#f0fdfa" }}>Panel 1</div>
+      </Splitter.Panel>
+      <Splitter.Panel>
+        <div style={{ padding: "16px", height: "100%", background: "#ccfbf1" }}>Panel 2</div>
+      </Splitter.Panel>
+    </Splitter>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Splitter>
+  <Splitter.Panel defaultSize="50%">
+    <div>Panel 1</div>
+  </Splitter.Panel>
+  <Splitter.Panel>
+    <div>Panel 2</div>
+  </Splitter.Panel>
+</Splitter>
+```
+
+### Vertical Splitter
+
+Set `layout="vertical"` for top/bottom panels.
+
+<ComponentPreview>
+  <div style={{ width: "100%", height: "250px" }}>
+    <Splitter layout="vertical">
+      <Splitter.Panel defaultSize="40%">
+        <div style={{ padding: "16px", height: "100%", background: "#f0fdfa" }}>Top Panel</div>
+      </Splitter.Panel>
+      <Splitter.Panel>
+        <div style={{ padding: "16px", height: "100%", background: "#ccfbf1" }}>Bottom Panel</div>
+      </Splitter.Panel>
+    </Splitter>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Splitter layout="vertical">
+  <Splitter.Panel defaultSize="40%">Top Panel</Splitter.Panel>
+  <Splitter.Panel>Bottom Panel</Splitter.Panel>
+</Splitter>
+```
+
+### Three Panels
+
+Multiple panels can be arranged together.
+
+<ComponentPreview>
+  <div style={{ width: "100%", height: "200px" }}>
+    <Splitter>
+      <Splitter.Panel defaultSize="30%">
+        <div style={{ padding: "16px", height: "100%", background: "#f0fdfa" }}>Left</div>
+      </Splitter.Panel>
+      <Splitter.Panel defaultSize="40%">
+        <div style={{ padding: "16px", height: "100%", background: "#ccfbf1" }}>Center</div>
+      </Splitter.Panel>
+      <Splitter.Panel>
+        <div style={{ padding: "16px", height: "100%", background: "#f0fdfa" }}>Right</div>
+      </Splitter.Panel>
+    </Splitter>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Splitter>
+  <Splitter.Panel defaultSize="30%">Left</Splitter.Panel>
+  <Splitter.Panel defaultSize="40%">Center</Splitter.Panel>
+  <Splitter.Panel>Right</Splitter.Panel>
+</Splitter>
+```
+
+### With Min/Max Constraints
+
+Limit how far panels can be resized.
+
+<ComponentPreview>
+  <div style={{ width: "100%", height: "200px" }}>
+    <Splitter>
+      <Splitter.Panel defaultSize="50%" min="20%" max="80%">
+        <div style={{ padding: "16px", height: "100%", background: "#f0fdfa" }}>Min 20% / Max 80%</div>
+      </Splitter.Panel>
+      <Splitter.Panel>
+        <div style={{ padding: "16px", height: "100%", background: "#ccfbf1" }}>Flexible</div>
+      </Splitter.Panel>
+    </Splitter>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Splitter>
+  <Splitter.Panel defaultSize="50%" min="20%" max="80%">
+    Min 20% / Max 80%
+  </Splitter.Panel>
+  <Splitter.Panel>Flexible</Splitter.Panel>
+</Splitter>
+```
+
+### Collapsible
+
+Panels can be collapsed to their minimum size.
+
+<ComponentPreview>
+  <div style={{ width: "100%", height: "200px" }}>
+    <Splitter>
+      <Splitter.Panel defaultSize="50%" collapsible>
+        <div style={{ padding: "16px", height: "100%", background: "#f0fdfa" }}>Collapsible Panel</div>
+      </Splitter.Panel>
+      <Splitter.Panel>
+        <div style={{ padding: "16px", height: "100%", background: "#ccfbf1" }}>Fixed Panel</div>
+      </Splitter.Panel>
+    </Splitter>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Splitter>
+  <Splitter.Panel defaultSize="50%" collapsible>
+    Collapsible Panel
+  </Splitter.Panel>
+  <Splitter.Panel>Fixed Panel</Splitter.Panel>
+</Splitter>
+```
+
+## API
+
+### SplitterProps
+
+- `layout` — `"horizontal" | "vertical"` — Split direction (default: `"horizontal"`)
+- `lazy` — `boolean` — Lazy render panels during resize (default: `false`)
+- `onResize` — `(sizes: number[]) => void` — Callback during resize
+- `onResizeStart` — `(sizes: number[]) => void` — Callback when resize starts
+- `onResizeEnd` — `(sizes: number[]) => void` — Callback when resize ends
+- `className` — `string` — Custom CSS class
+- `style` — `CSSProperties` — Inline styles
+
+### Splitter.Panel Props
+
+- `defaultSize` — `number | string` — Initial panel size
+- `min` — `number | string` — Minimum panel size
+- `max` — `number | string` — Maximum panel size
+- `collapsible` — `boolean` — Whether panel can be collapsed (default: `false`)
+- `resizable` — `boolean` — Whether panel can be resized (default: `true`)
+- `className` — `string` — Custom CSS class
+- `style` — `CSSProperties` — Inline styles

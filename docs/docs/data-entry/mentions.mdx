@@ -1,0 +1,66 @@
+---
+title: Mentions
+---
+
+import { Mentions } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Mentions
+
+A textarea with @-mention autocomplete for tagging users or references.
+
+## When to Use
+
+- For comment or messaging inputs with user tagging
+- When users need to reference others with @ syntax
+- For any input that needs trigger-based suggestions
+
+## Import
+
+```tsx
+import { Mentions } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Mentions
+    options={[
+      { value: "john", label: "John Brown" },
+      { value: "jane", label: "Jane Smith" },
+      { value: "bob", label: "Bob Wilson" },
+    ]}
+    placeholder="Type @ to mention someone"
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Mentions
+  options={[
+    { value: "john", label: "John Brown" },
+    { value: "jane", label: "Jane Smith" },
+    { value: "bob", label: "Bob Wilson" },
+  ]}
+  placeholder="Type @ to mention someone"
+/>
+```
+
+## API
+
+### MentionsProps
+
+- `options` — `{ value: string; label?: ReactNode }[]` — Mention suggestions
+- `value` — `string` — Input value (controlled)
+- `defaultValue` — `string` — Default value
+- `onChange` — `(text: string) => void` — Text change handler
+- `onSearch` — `(text: string, prefix: string) => void` — Search handler
+- `onSelect` — `(option, prefix: string) => void` — Selection handler
+- `prefix` — `string | string[]` — Trigger character(s) (default: `"@"`)
+- `placement` — `"top" | "bottom"` — Suggestion position (default: `"bottom"`)
+- `autoSize` — `boolean | { minRows, maxRows }` — Auto-resize
+- `allowClear` — `boolean` — Show clear button
+- `disabled` — `boolean` — Disable input
+- `status` — `"error" | "warning"` — Validation status

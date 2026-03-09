@@ -1,0 +1,102 @@
+---
+title: Notification
+---
+
+# Notification
+
+Rich notification panels that slide in from the edge of the screen.
+
+## When to Use
+
+- For important notifications with title and description
+- When feedback needs more detail than a simple message
+- For system-level alerts that require user attention
+
+## Import
+
+```tsx
+import { notification } from "orizon";
+```
+
+## Examples
+
+### Basic Usage
+
+```tsx
+import { notification, Button } from "orizon";
+
+function App() {
+  return (
+    <Button
+      onClick={() =>
+        notification.open({
+          message: "Notification Title",
+          description: "This is the content of the notification.",
+        })
+      }
+    >
+      Open Notification
+    </Button>
+  );
+}
+```
+
+### Types
+
+```tsx
+notification.success({
+  message: "Success",
+  description: "Operation completed successfully.",
+});
+notification.error({
+  message: "Error",
+  description: "Something went wrong.",
+});
+notification.info({
+  message: "Info",
+  description: "Here is some information.",
+});
+notification.warning({
+  message: "Warning",
+  description: "Please check your input.",
+});
+```
+
+### Placement
+
+```tsx
+notification.open({
+  message: "Top Right",
+  placement: "topRight",
+});
+notification.open({
+  message: "Bottom Left",
+  placement: "bottomLeft",
+});
+```
+
+## API
+
+### Methods
+
+- `notification.success(config)` — Success notification
+- `notification.error(config)` — Error notification
+- `notification.info(config)` — Info notification
+- `notification.warning(config)` — Warning notification
+- `notification.open(config)` — Custom notification
+- `notification.destroy(key?)` — Close notification(s)
+
+### NotificationConfig
+
+- `message` — `ReactNode` — Notification title
+- `description` — `ReactNode` — Notification body
+- `duration` — `number | null` — Auto-close delay in seconds (default: `4.5`, `null` for persistent)
+- `type` — `"success" | "error" | "info" | "warning"` — Notification type
+- `placement` — `"topLeft" | "topRight" | "bottomLeft" | "bottomRight" | "top" | "bottom"` — Position
+- `closable` — `boolean` — Show close button (default: `true`)
+- `actions` — `ReactNode` — Action buttons
+- `showProgress` — `boolean` — Show auto-close progress bar
+- `pauseOnHover` — `boolean` — Pause auto-close on hover (default: `true`)
+- `key` — `string` — Unique key for updates
+- `icon` — `ReactNode` — Custom icon
+- `onClose` — `() => void` — Close callback

@@ -1,0 +1,98 @@
+---
+title: ColorPicker
+---
+
+import { ColorPicker } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# ColorPicker
+
+A color selection control with hex, RGB, and HSB format support.
+
+## When to Use
+
+- For theme customization or branding settings
+- When users need to choose a specific color
+- For design tools or visual editors
+
+## Import
+
+```tsx
+import { ColorPicker } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <ColorPicker defaultValue="#0d9488" />
+</ComponentPreview>
+
+```tsx
+<ColorPicker defaultValue="#0d9488" onChange={(color) => console.log(color)} />
+```
+
+### With Text
+
+<ComponentPreview>
+  <ColorPicker defaultValue="#0d9488" showText />
+</ComponentPreview>
+
+```tsx
+<ColorPicker defaultValue="#0d9488" showText />
+```
+
+### Presets
+
+<ComponentPreview>
+  <ColorPicker
+    presets={[
+      {
+        label: "Brand",
+        colors: ["#0d9488", "#14b8a6", "#0f766e", "#115e59", "#134e4a"],
+      },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<ColorPicker
+  presets={[
+    {
+      label: "Brand",
+      colors: ["#0d9488", "#14b8a6", "#0f766e", "#115e59"],
+    },
+  ]}
+/>
+```
+
+### Sizes
+
+<ComponentPreview>
+  <ColorPicker size="small" defaultValue="#0d9488" />
+  <ColorPicker defaultValue="#14b8a6" />
+  <ColorPicker size="large" defaultValue="#0f766e" />
+</ComponentPreview>
+
+```tsx
+<ColorPicker size="small" />
+<ColorPicker />
+<ColorPicker size="large" />
+```
+
+## API
+
+### ColorPickerProps
+
+- `value` — `string | Color` — Selected color (controlled)
+- `defaultValue` — `string | Color` — Default color
+- `onChange` — `(value: Color, hex: string) => void` — Change handler
+- `format` — `"hex" | "rgb" | "hsb"` — Color format
+- `showText` — `boolean | (color) => ReactNode` — Show color text
+- `presets` — `{ label: string; colors: string[] }[]` — Preset color groups
+- `disabledAlpha` — `boolean` — Disable alpha channel (default: `false`)
+- `allowClear` — `boolean` — Allow clearing the color
+- `size` — `"small" | "middle" | "large"` — Trigger size
+- `trigger` — `"click" | "hover"` — Open trigger (default: `"click"`)
+- `disabled` — `boolean` — Disable the picker

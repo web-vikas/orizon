@@ -1,0 +1,106 @@
+---
+title: Cascader
+---
+
+import { Cascader } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Cascader
+
+A hierarchical selector for multi-level data like locations or categories.
+
+## When to Use
+
+- For selecting from nested option trees (country > state > city)
+- When options have a clear parent-child hierarchy
+- For category or department selection
+
+## Import
+
+```tsx
+import { Cascader } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Cascader
+    options={[
+      {
+        value: "us",
+        label: "United States",
+        children: [
+          { value: "ny", label: "New York", children: [{ value: "nyc", label: "New York City" }] },
+          { value: "ca", label: "California", children: [{ value: "sf", label: "San Francisco" }] },
+        ],
+      },
+      {
+        value: "uk",
+        label: "United Kingdom",
+        children: [
+          { value: "london", label: "London" },
+        ],
+      },
+    ]}
+    placeholder="Select location"
+    style={{ width: "300px" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Cascader
+  options={[
+    {
+      value: "us",
+      label: "United States",
+      children: [
+        { value: "ny", label: "New York" },
+        { value: "ca", label: "California" },
+      ],
+    },
+  ]}
+  placeholder="Select location"
+  onChange={(value) => console.log(value)}
+/>
+```
+
+### Multiple Selection
+
+```tsx
+<Cascader multiple options={options} placeholder="Select categories" />
+```
+
+### Searchable
+
+```tsx
+<Cascader showSearch options={options} placeholder="Search..." />
+```
+
+## API
+
+### CascaderProps
+
+- `options` — `CascaderOption[]` — Hierarchical option data
+- `value` — `string[][]` — Selected path(s) (controlled)
+- `defaultValue` — `string[][]` — Default selection
+- `onChange` — `(value, selectedOptions) => void` — Selection handler
+- `multiple` — `boolean` — Allow multiple selections (default: `false`)
+- `showSearch` — `boolean` — Enable search (default: `false`)
+- `expandTrigger` — `"click" | "hover"` — How sub-menus expand (default: `"click"`)
+- `changeOnSelect` — `boolean` — Allow selecting parent nodes (default: `false`)
+- `loadData` — `(selectedOptions) => void` — Async data loading
+- `placeholder` — `string` — Placeholder text
+- `disabled` — `boolean` — Disable the cascader
+- `size` — `"small" | "middle" | "large"` — Size
+- `status` — `"error" | "warning"` — Validation status
+- `allowClear` — `boolean` — Show clear button (default: `true`)
+
+### CascaderOption
+
+- `value` — `string | number` — Option value
+- `label` — `ReactNode` — Display text
+- `children` — `CascaderOption[]` — Child options
+- `disabled` — `boolean` — Disable option
+- `isLeaf` — `boolean` — Mark as leaf node (no children to load)

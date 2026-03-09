@@ -1,0 +1,84 @@
+---
+title: Popover
+---
+
+import { Popover, Button } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Popover
+
+A floating card triggered by hover or click for richer content than a tooltip.
+
+## When to Use
+
+- To show detailed information in a popup card
+- When tooltip content needs a title and structured body
+- For contextual details or mini forms
+
+## Import
+
+```tsx
+import { Popover } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Popover title="Title" content="This is the popover content.">
+    <Button>Hover me</Button>
+  </Popover>
+</ComponentPreview>
+
+```tsx
+<Popover title="Title" content="This is the popover content.">
+  <Button>Hover me</Button>
+</Popover>
+```
+
+### Click Trigger
+
+<ComponentPreview>
+  <Popover title="Click Popover" content="Opened by clicking." trigger="click">
+    <Button>Click me</Button>
+  </Popover>
+</ComponentPreview>
+
+```tsx
+<Popover title="Click Popover" content="Opened by clicking." trigger="click">
+  <Button>Click me</Button>
+</Popover>
+```
+
+### Placements
+
+<ComponentPreview>
+  <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+    <Popover title="Top" content="Content" placement="top"><Button>Top</Button></Popover>
+    <Popover title="Bottom" content="Content" placement="bottom"><Button>Bottom</Button></Popover>
+    <Popover title="Left" content="Content" placement="left"><Button>Left</Button></Popover>
+    <Popover title="Right" content="Content" placement="right"><Button>Right</Button></Popover>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Popover title="Top" content="Content" placement="top">
+  <Button>Top</Button>
+</Popover>
+```
+
+## API
+
+### PopoverProps
+
+- `content` — `ReactNode` — Popover body content
+- `title` — `ReactNode` — Popover header title
+- `trigger` — `"hover" | "focus" | "click"` — Trigger mode (default: `"hover"`)
+- `placement` — `"top" | "topLeft" | "topRight" | "bottom" | "bottomLeft" | "bottomRight" | "left" | "leftTop" | "leftBottom" | "right" | "rightTop" | "rightBottom"` — Position
+- `open` — `boolean` — Controlled visibility
+- `onOpenChange` — `(open: boolean) => void` — Visibility callback
+- `arrow` — `boolean` — Show arrow (default: `true`)
+- `overlayClassName` — `string` — Custom overlay CSS class
+- `mouseEnterDelay` — `number` — Delay before showing (seconds)
+- `mouseLeaveDelay` — `number` — Delay before hiding (seconds)

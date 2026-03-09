@@ -1,0 +1,65 @@
+---
+title: Calendar
+---
+
+import { Calendar } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Calendar
+
+A full-featured calendar for date display and selection.
+
+## When to Use
+
+- To display a calendar with event markers
+- For date selection in dashboards
+- As a scheduling interface
+
+## Import
+
+```tsx
+import { Calendar } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Calendar fullscreen={false} />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Calendar />
+```
+
+### Card Mode
+
+A compact calendar suitable for sidebar placement.
+
+<ComponentPreview>
+  <div style={{ width: "300px" }}>
+    <Calendar fullscreen={false} />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Calendar fullscreen={false} />
+```
+
+## API
+
+### CalendarProps
+
+- `value` — `Date` — Current date (controlled)
+- `defaultValue` — `Date` — Default selected date
+- `mode` — `"month" | "year"` — Display mode (default: `"month"`)
+- `fullscreen` — `boolean` — Full-size calendar (default: `true`)
+- `cellRender` — `(date, info) => ReactNode` — Custom cell content
+- `headerRender` — `(config) => ReactNode` — Custom header
+- `disabledDate` — `(date: Date) => boolean` — Disable specific dates
+- `onChange` — `(date: Date) => void` — Date change callback
+- `onPanelChange` — `(date: Date, mode: string) => void` — Panel mode change
+- `onSelect` — `(date: Date, info) => void` — Date select callback

@@ -204,8 +204,8 @@ export async function init() {
   console.log(
     pc.bold(pc.cyan("  ⬡ Orizon")) + pc.dim(" — project setup wizard"),
   );
+  console.log(pc.dim("  " + "─".repeat(54)));
   console.log();
-  log.divider();
 
   // -----------------------------------------------------------------------
   // Pre-flight: Detect project or scaffold a new one
@@ -613,26 +613,30 @@ export async function init() {
   // Done!
   // =======================================================================
   console.log();
-  log.divider();
+  console.log(pc.dim("  " + "─".repeat(54)));
   console.log();
   console.log(pc.green(pc.bold("  ✓ Orizon setup complete!")));
   console.log();
 
   if (scaffolded) {
-    console.log("  Get started:");
-    console.log(pc.cyan(`    cd ${projectName}`));
-    console.log(pc.cyan("    npm run dev"));
+    console.log(pc.bold("  Get started:"));
+    console.log(`    ${pc.cyan("$")} ${pc.bold(`cd ${projectName}`)}`);
+    console.log(`    ${pc.cyan("$")} ${pc.bold("npm run dev")}`);
     console.log();
   }
 
-  console.log("  Import components:");
+  console.log(pc.bold("  Import components:"));
   console.log(
-    pc.cyan('    import { Button, Form, Input, Select } from "orizon";'),
+    `    ${pc.cyan('import { Button, Form, Input, Select } from')} ${pc.green('"orizon"')}${pc.cyan(";")}`,
   );
   console.log();
-  console.log("  Example with Form + Zod:");
+  console.log(pc.bold("  Example with Form + Zod:"));
   console.log(
-    pc.dim("    const [form] = Form.useForm({ schema: myZodSchema });"),
+    `    ${pc.dim("const [form] = Form.useForm({ schema: myZodSchema });")}`,
+  );
+  console.log();
+  console.log(
+    pc.dim("  Docs: https://orizon.dev  |  68 components ready to use"),
   );
   console.log();
 }

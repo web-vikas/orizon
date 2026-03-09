@@ -1,0 +1,93 @@
+---
+title: Slider
+---
+
+import { Slider } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Slider
+
+A draggable slider for selecting a value or range from a continuous scale.
+
+## When to Use
+
+- For numeric value selection within a range
+- For volume, brightness, or similar continuous controls
+- When visual feedback of the selected range is helpful
+
+## Import
+
+```tsx
+import { Slider } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <div style={{ width: "100%", padding: "0 16px" }}>
+    <Slider defaultValue={30} />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Slider defaultValue={30} onChange={(value) => console.log(value)} />
+```
+
+### Range
+
+<ComponentPreview>
+  <div style={{ width: "100%", padding: "0 16px" }}>
+    <Slider range defaultValue={[20, 50]} />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Slider range defaultValue={[20, 50]} />
+```
+
+### With Marks
+
+<ComponentPreview>
+  <div style={{ width: "100%", padding: "0 16px" }}>
+    <Slider marks={{ 0: "0°C", 26: "26°C", 37: "37°C", 100: "100°C" }} defaultValue={37} />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Slider
+  marks={{ 0: "0°C", 26: "26°C", 37: "37°C", 100: "100°C" }}
+  defaultValue={37}
+/>
+```
+
+### Disabled
+
+<ComponentPreview>
+  <div style={{ width: "100%", padding: "0 16px" }}>
+    <Slider disabled defaultValue={50} />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Slider disabled defaultValue={50} />
+```
+
+## API
+
+### SliderProps
+
+- `value` — `number | [number, number]` — Current value (controlled)
+- `defaultValue` — `number | [number, number]` — Default value
+- `onChange` — `(value) => void` — Change handler (during drag)
+- `onChangeComplete` — `(value) => void` — Handler after drag ends
+- `min` — `number` — Minimum value (default: `0`)
+- `max` — `number` — Maximum value (default: `100`)
+- `step` — `number | null` — Value increment (default: `1`, null for marks only)
+- `range` — `boolean` — Enable range selection (default: `false`)
+- `marks` — `{ [value]: ReactNode }` — Mark labels on the track
+- `dots` — `boolean` — Show dots at each step (default: `false`)
+- `disabled` — `boolean` — Disable the slider
+- `vertical` — `boolean` — Vertical orientation (default: `false`)
+- `tooltip` — `{ open, formatter }` — Tooltip configuration

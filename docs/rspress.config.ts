@@ -1,0 +1,138 @@
+import { defineConfig } from "@rspress/core";
+import path from "path";
+
+export default defineConfig({
+  root: "docs",
+  title: "Orizon",
+  description:
+    "Ant Design API on shadcn/ui primitives. 68 components for React with Tailwind CSS.",
+  globalStyles: path.join(__dirname, "styles/index.css"),
+  themeConfig: {
+    darkMode: true,
+    nav: [
+      { text: "Docs", link: "/getting-started" },
+      { text: "Playground", link: "/playground" },
+      {
+        text: "GitHub",
+        link: "https://github.com/nicepkg/orizon",
+      },
+    ],
+    sidebar: {
+      "/": [
+        { text: "Getting Started", link: "/getting-started" },
+        { text: "CLI", link: "/cli" },
+        { text: "Playground", link: "/playground" },
+        {
+          text: "General",
+          items: [
+            { text: "Button", link: "/general/button" },
+            { text: "Typography", link: "/general/typography" },
+            { text: "Space", link: "/general/space" },
+            { text: "Divider", link: "/general/divider" },
+            { text: "FloatButton", link: "/general/float-button" },
+          ],
+        },
+        {
+          text: "Layout",
+          items: [
+            { text: "Grid", link: "/layout/grid" },
+            { text: "Layout", link: "/layout/layout" },
+            { text: "Flex", link: "/layout/flex" },
+            { text: "Splitter", link: "/layout/splitter" },
+            { text: "Affix", link: "/layout/affix" },
+            { text: "Masonry", link: "/layout/masonry" },
+          ],
+        },
+        {
+          text: "Navigation",
+          items: [
+            { text: "Menu", link: "/navigation/menu" },
+            { text: "Breadcrumb", link: "/navigation/breadcrumb" },
+            { text: "Pagination", link: "/navigation/pagination" },
+            { text: "Steps", link: "/navigation/steps" },
+            { text: "Tabs", link: "/navigation/tabs" },
+            { text: "Dropdown", link: "/navigation/dropdown" },
+            { text: "Anchor", link: "/navigation/anchor" },
+            { text: "Tour", link: "/navigation/tour" },
+          ],
+        },
+        {
+          text: "Data Display",
+          items: [
+            { text: "Table", link: "/data-display/table" },
+            { text: "Card", link: "/data-display/card" },
+            { text: "List", link: "/data-display/list" },
+            { text: "Tree", link: "/data-display/tree" },
+            { text: "Collapse", link: "/data-display/collapse" },
+            { text: "Carousel", link: "/data-display/carousel" },
+            { text: "Descriptions", link: "/data-display/descriptions" },
+            { text: "Badge", link: "/data-display/badge" },
+            { text: "Avatar", link: "/data-display/avatar" },
+            { text: "Tag", link: "/data-display/tag" },
+            { text: "Tooltip", link: "/data-display/tooltip" },
+            { text: "Popover", link: "/data-display/popover" },
+            { text: "Statistic", link: "/data-display/statistic" },
+            { text: "Timeline", link: "/data-display/timeline" },
+            { text: "Calendar", link: "/data-display/calendar" },
+            { text: "Image", link: "/data-display/image" },
+            { text: "Empty", link: "/data-display/empty" },
+            { text: "QRCode", link: "/data-display/qrcode" },
+            { text: "Rate", link: "/data-display/rate" },
+            { text: "Progress", link: "/data-display/progress" },
+            { text: "Segmented", link: "/data-display/segmented" },
+          ],
+        },
+        {
+          text: "Data Entry",
+          items: [
+            { text: "Form", link: "/data-entry/form" },
+            { text: "Input", link: "/data-entry/input" },
+            { text: "InputNumber", link: "/data-entry/input-number" },
+            { text: "Select", link: "/data-entry/select" },
+            { text: "Checkbox", link: "/data-entry/checkbox" },
+            { text: "Radio", link: "/data-entry/radio" },
+            { text: "Switch", link: "/data-entry/switch" },
+            { text: "DatePicker", link: "/data-entry/date-picker" },
+            { text: "TimePicker", link: "/data-entry/time-picker" },
+            { text: "ColorPicker", link: "/data-entry/color-picker" },
+            { text: "Slider", link: "/data-entry/slider" },
+            { text: "Upload", link: "/data-entry/upload" },
+            { text: "AutoComplete", link: "/data-entry/auto-complete" },
+            { text: "Cascader", link: "/data-entry/cascader" },
+            { text: "Mentions", link: "/data-entry/mentions" },
+            { text: "Transfer", link: "/data-entry/transfer" },
+            { text: "TreeSelect", link: "/data-entry/tree-select" },
+          ],
+        },
+        {
+          text: "Feedback",
+          items: [
+            { text: "Modal", link: "/feedback/modal" },
+            { text: "Alert", link: "/feedback/alert" },
+            { text: "Message", link: "/feedback/message" },
+            { text: "Notification", link: "/feedback/notification" },
+            { text: "Drawer", link: "/feedback/drawer" },
+            { text: "Popconfirm", link: "/feedback/popconfirm" },
+            { text: "Result", link: "/feedback/result" },
+            { text: "Skeleton", link: "/feedback/skeleton" },
+            { text: "Spin", link: "/feedback/spin" },
+          ],
+        },
+        {
+          text: "Other",
+          items: [
+            { text: "App", link: "/other/app" },
+            { text: "Watermark", link: "/other/watermark" },
+          ],
+        },
+      ],
+    },
+    socialLinks: [
+      {
+        icon: "github",
+        mode: "link",
+        content: "https://github.com/nicepkg/orizon",
+      },
+    ],
+  },
+});

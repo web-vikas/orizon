@@ -1,0 +1,69 @@
+---
+title: App
+---
+
+# App
+
+A root provider component that enables context-based imperative APIs for message, notification, and modal.
+
+## When to Use
+
+- Wrap your application root to enable `App.useApp()` hook
+- For accessing message, notification, and modal APIs within React context
+- To ensure proper DOM mounting for imperative feedback components
+
+## Import
+
+```tsx
+import { App } from "orizon";
+```
+
+## Examples
+
+### Basic Setup
+
+```tsx
+import { App, Button } from "orizon";
+
+function MyPage() {
+  const { message, notification, modal } = App.useApp();
+
+  return (
+    <Button
+      onClick={() => {
+        message.success("Saved!");
+        notification.info({
+          message: "Info",
+          description: "Check your settings.",
+        });
+      }}
+    >
+      Trigger Feedback
+    </Button>
+  );
+}
+
+function Root() {
+  return (
+    <App>
+      <MyPage />
+    </App>
+  );
+}
+```
+
+## API
+
+### AppProps
+
+- `children` — `ReactNode` — Application content
+- `className` — `string` — Root element CSS class
+- `style` — `CSSProperties` — Root element styles
+- `component` — `string | false` — Root HTML element (default: `"div"`, `false` for fragment)
+
+### App.useApp()
+
+Returns an object with context-aware imperative APIs:
+- `message` — Message API (success, error, info, warning, loading)
+- `notification` — Notification API (success, error, info, warning, open)
+- `modal` — Modal API (confirm, info, success, error, warning)

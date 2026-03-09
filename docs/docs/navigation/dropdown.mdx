@@ -1,0 +1,219 @@
+---
+title: Dropdown
+---
+
+import { Dropdown, Button } from "orizon";
+import { ChevronDown, Edit, Trash2, Copy, MoreHorizontal } from "lucide-react";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Dropdown
+
+A floating menu triggered by hover or click on an element.
+
+## When to Use
+
+- For contextual menus on buttons or other elements
+- To show a list of actions without cluttering the interface
+- For split-button patterns with a primary action and more options
+
+## Import
+
+```tsx
+import { Dropdown } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+Hover to show a dropdown menu.
+
+<ComponentPreview>
+  <Dropdown
+    menu={{
+      items: [
+        { key: "1", label: "Action 1" },
+        { key: "2", label: "Action 2" },
+        { key: "3", label: "Action 3" },
+      ],
+    }}
+  >
+    <Button>Hover me <ChevronDown size={14} /></Button>
+  </Dropdown>
+</ComponentPreview>
+
+```tsx
+<Dropdown
+  menu={{
+    items: [
+      { key: "1", label: "Action 1" },
+      { key: "2", label: "Action 2" },
+      { key: "3", label: "Action 3" },
+    ],
+  }}
+>
+  <Button>Hover me</Button>
+</Dropdown>
+```
+
+### With Icons
+
+Add icons to menu items.
+
+<ComponentPreview>
+  <Dropdown
+    menu={{
+      items: [
+        { key: "edit", label: "Edit", icon: <Edit size={14} /> },
+        { key: "copy", label: "Copy", icon: <Copy size={14} /> },
+        { key: "delete", label: "Delete", icon: <Trash2 size={14} />, danger: true },
+      ],
+    }}
+  >
+    <Button>Actions <ChevronDown size={14} /></Button>
+  </Dropdown>
+</ComponentPreview>
+
+```tsx
+import { Edit, Copy, Trash2 } from "lucide-react";
+
+<Dropdown
+  menu={{
+    items: [
+      { key: "edit", label: "Edit", icon: <Edit size={14} /> },
+      { key: "copy", label: "Copy", icon: <Copy size={14} /> },
+      { key: "delete", label: "Delete", icon: <Trash2 size={14} />, danger: true },
+    ],
+  }}
+>
+  <Button>Actions</Button>
+</Dropdown>
+```
+
+### Click Trigger
+
+Open on click instead of hover.
+
+<ComponentPreview>
+  <Dropdown
+    trigger={["click"]}
+    menu={{
+      items: [
+        { key: "1", label: "Option A" },
+        { key: "2", label: "Option B" },
+        { key: "3", label: "Option C" },
+      ],
+    }}
+  >
+    <Button>Click me <ChevronDown size={14} /></Button>
+  </Dropdown>
+</ComponentPreview>
+
+```tsx
+<Dropdown
+  trigger={["click"]}
+  menu={{
+    items: [
+      { key: "1", label: "Option A" },
+      { key: "2", label: "Option B" },
+      { key: "3", label: "Option C" },
+    ],
+  }}
+>
+  <Button>Click me</Button>
+</Dropdown>
+```
+
+### Disabled Items
+
+<ComponentPreview>
+  <Dropdown
+    menu={{
+      items: [
+        { key: "1", label: "Available" },
+        { key: "2", label: "Disabled", disabled: true },
+        { key: "3", label: "Delete", danger: true },
+      ],
+    }}
+  >
+    <Button>Menu <ChevronDown size={14} /></Button>
+  </Dropdown>
+</ComponentPreview>
+
+```tsx
+<Dropdown
+  menu={{
+    items: [
+      { key: "1", label: "Available" },
+      { key: "2", label: "Disabled", disabled: true },
+      { key: "3", label: "Delete", danger: true },
+    ],
+  }}
+>
+  <Button>Menu</Button>
+</Dropdown>
+```
+
+### Dropdown.Button
+
+A split button with a primary action and a dropdown for more options.
+
+<ComponentPreview>
+  <Dropdown.Button
+    menu={{
+      items: [
+        { key: "1", label: "Option A" },
+        { key: "2", label: "Option B" },
+      ],
+    }}
+  >
+    Submit
+  </Dropdown.Button>
+</ComponentPreview>
+
+```tsx
+<Dropdown.Button
+  menu={{
+    items: [
+      { key: "1", label: "Option A" },
+      { key: "2", label: "Option B" },
+    ],
+  }}
+>
+  Submit
+</Dropdown.Button>
+```
+
+## API
+
+### DropdownProps
+
+- `menu` — `{ items: MenuItem[] }` — Menu configuration
+- `trigger` — `("hover" | "click" | "contextMenu")[]` — How to open (default: `["hover"]`)
+- `placement` — `"top" | "topLeft" | "topRight" | "bottom" | "bottomLeft" | "bottomRight"` — Menu position (default: `"bottomLeft"`)
+- `open` — `boolean` — Controlled open state
+- `onOpenChange` — `(open: boolean) => void` — Open state callback
+- `disabled` — `boolean` — Disable the dropdown
+- `arrow` — `boolean` — Show arrow pointing to trigger
+- `overlayClassName` — `string` — Custom CSS class for the overlay
+- `destroyPopupOnHide` — `boolean` — Unmount popup when hidden
+- `autoAdjustOverflow` — `boolean` — Auto-adjust position to fit viewport (default: `true`)
+
+### Dropdown.Button Props
+
+- `icon` — `ReactNode` — Custom dropdown arrow icon
+- `size` — `"small" | "middle" | "large"` — Button size
+- `type` — `"primary" | "default" | "dashed" | "text" | "link"` — Button type
+- `danger` — `boolean` — Danger styling
+- `loading` — `boolean` — Loading state
+- `onClick` — `() => void` — Primary button click handler
+
+### MenuItem
+
+- `key` — `string` — Unique identifier
+- `label` — `ReactNode` — Item text
+- `icon` — `ReactNode` — Item icon
+- `disabled` — `boolean` — Disable the item
+- `danger` — `boolean` — Danger styling
+- `children` — `MenuItem[]` — Sub-menu items
+- `type` — `"divider"` — Render as a divider

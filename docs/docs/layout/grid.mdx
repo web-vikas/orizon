@@ -1,0 +1,192 @@
+---
+title: Grid
+---
+
+import { Row, Col } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Grid
+
+A 24-column responsive grid system based on flexbox for building page layouts.
+
+## When to Use
+
+- To create multi-column layouts with flexible widths
+- For responsive designs that adapt to different screen sizes
+- To align content with consistent gutters and offsets
+
+## Import
+
+```tsx
+import { Row, Col } from "orizon";
+```
+
+## Examples
+
+### Basic Grid
+
+Columns span across a 24-column grid.
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Row gutter={[8, 8]}>
+      <Col span={12}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-12</div></Col>
+      <Col span={12}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-12</div></Col>
+    </Row>
+    <Row gutter={[8, 8]} style={{ marginTop: "8px" }}>
+      <Col span={8}><div style={{ background: "#14b8a6", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-8</div></Col>
+      <Col span={8}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-8</div></Col>
+      <Col span={8}><div style={{ background: "#14b8a6", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-8</div></Col>
+    </Row>
+    <Row gutter={[8, 8]} style={{ marginTop: "8px" }}>
+      <Col span={6}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-6</div></Col>
+      <Col span={6}><div style={{ background: "#14b8a6", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-6</div></Col>
+      <Col span={6}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-6</div></Col>
+      <Col span={6}><div style={{ background: "#14b8a6", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-6</div></Col>
+    </Row>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Row>
+  <Col span={12}>col-12</Col>
+  <Col span={12}>col-12</Col>
+</Row>
+<Row>
+  <Col span={8}>col-8</Col>
+  <Col span={8}>col-8</Col>
+  <Col span={8}>col-8</Col>
+</Row>
+<Row>
+  <Col span={6}>col-6</Col>
+  <Col span={6}>col-6</Col>
+  <Col span={6}>col-6</Col>
+  <Col span={6}>col-6</Col>
+</Row>
+```
+
+### Gutter Spacing
+
+Set horizontal and vertical gutter between columns.
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Row gutter={[16, 16]}>
+      <Col span={6}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-6</div></Col>
+      <Col span={6}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-6</div></Col>
+      <Col span={6}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-6</div></Col>
+      <Col span={6}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-6</div></Col>
+    </Row>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Row gutter={[16, 16]}>
+  <Col span={6}>col-6</Col>
+  <Col span={6}>col-6</Col>
+  <Col span={6}>col-6</Col>
+  <Col span={6}>col-6</Col>
+</Row>
+```
+
+### Offset
+
+Move columns to the right using `offset`.
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Row>
+      <Col span={8}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-8</div></Col>
+      <Col span={8} offset={8}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-8 offset-8</div></Col>
+    </Row>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Row>
+  <Col span={8}>col-8</Col>
+  <Col span={8} offset={8}>col-8 offset-8</Col>
+</Row>
+```
+
+### Flex Alignment
+
+Use `justify` and `align` props on Row for alignment.
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Row justify="center">
+      <Col span={4}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-4</div></Col>
+      <Col span={4}><div style={{ background: "#14b8a6", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-4</div></Col>
+      <Col span={4}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-4</div></Col>
+    </Row>
+    <Row justify="space-between" style={{ marginTop: "8px" }}>
+      <Col span={4}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-4</div></Col>
+      <Col span={4}><div style={{ background: "#14b8a6", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-4</div></Col>
+      <Col span={4}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>col-4</div></Col>
+    </Row>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Row justify="center">
+  <Col span={4}>col-4</Col>
+  <Col span={4}>col-4</Col>
+  <Col span={4}>col-4</Col>
+</Row>
+<Row justify="space-between">
+  <Col span={4}>col-4</Col>
+  <Col span={4}>col-4</Col>
+  <Col span={4}>col-4</Col>
+</Row>
+```
+
+### Responsive Columns
+
+Columns adapt to different breakpoints using responsive props.
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Row gutter={[8, 8]}>
+      <Col xs={24} sm={12} md={8} lg={6}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>Responsive</div></Col>
+      <Col xs={24} sm={12} md={8} lg={6}><div style={{ background: "#14b8a6", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>Responsive</div></Col>
+      <Col xs={24} sm={12} md={8} lg={6}><div style={{ background: "#0d9488", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>Responsive</div></Col>
+      <Col xs={24} sm={12} md={8} lg={6}><div style={{ background: "#14b8a6", color: "white", padding: "8px", textAlign: "center", borderRadius: "4px" }}>Responsive</div></Col>
+    </Row>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Row gutter={[8, 8]}>
+  <Col xs={24} sm={12} md={8} lg={6}>Responsive</Col>
+  <Col xs={24} sm={12} md={8} lg={6}>Responsive</Col>
+  <Col xs={24} sm={12} md={8} lg={6}>Responsive</Col>
+  <Col xs={24} sm={12} md={8} lg={6}>Responsive</Col>
+</Row>
+```
+
+## API
+
+### Row Props
+
+- `gutter` — `number | [number, number] | ResponsiveObject` — Horizontal (or [horizontal, vertical]) spacing between columns (default: `0`)
+- `align` — `"top" | "middle" | "bottom" | "stretch"` — Vertical alignment of columns (default: `"top"`)
+- `justify` — `"start" | "end" | "center" | "space-around" | "space-between" | "space-evenly"` — Horizontal distribution (default: `"start"`)
+- `wrap` — `boolean` — Whether columns wrap to next line (default: `true`)
+- `className` — `string` — Custom CSS class
+- `style` — `CSSProperties` — Inline styles
+
+### Col Props
+
+- `span` — `number` — Number of cells to occupy (0-24)
+- `offset` — `number` — Number of cells to skip from the left
+- `push` — `number` — Number of cells to push right
+- `pull` — `number` — Number of cells to pull left
+- `order` — `number` — Flex order
+- `flex` — `string | number` — Flex grow/shrink/basis shorthand
+- `xs` — `number | object` — Screen < 576px
+- `sm` — `number | object` — Screen >= 576px
+- `md` — `number | object` — Screen >= 768px
+- `lg` — `number | object` — Screen >= 992px
+- `xl` — `number | object` — Screen >= 1200px
+- `xxl` — `number | object` — Screen >= 1600px

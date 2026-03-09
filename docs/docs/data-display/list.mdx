@@ -1,0 +1,129 @@
+---
+title: List
+---
+
+import { List, Avatar } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# List
+
+A flexible component for rendering data as simple or complex list items.
+
+## When to Use
+
+- To display a collection of similar items (articles, contacts, tasks)
+- When items need a consistent layout with avatar, title, and description
+- For paginated data feeds
+
+## Import
+
+```tsx
+import { List } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <List
+    bordered
+    dataSource={["Item 1", "Item 2", "Item 3", "Item 4"]}
+    renderItem={(item) => <List.Item>{item}</List.Item>}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<List
+  bordered
+  dataSource={["Item 1", "Item 2", "Item 3"]}
+  renderItem={(item) => <List.Item>{item}</List.Item>}
+/>
+```
+
+### With Meta
+
+<ComponentPreview>
+  <List
+    itemLayout="horizontal"
+    dataSource={[
+      { title: "John Brown", description: "Software Engineer" },
+      { title: "Jane Smith", description: "Product Designer" },
+      { title: "Bob Wilson", description: "Data Scientist" },
+    ]}
+    renderItem={(item) => (
+      <List.Item>
+        <List.Item.Meta
+          avatar={<Avatar>{item.title[0]}</Avatar>}
+          title={item.title}
+          description={item.description}
+        />
+      </List.Item>
+    )}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<List
+  itemLayout="horizontal"
+  dataSource={data}
+  renderItem={(item) => (
+    <List.Item>
+      <List.Item.Meta
+        avatar={<Avatar src={item.avatar} />}
+        title={item.title}
+        description={item.description}
+      />
+    </List.Item>
+  )}
+/>
+```
+
+### Sizes
+
+<ComponentPreview>
+  <List
+    size="small"
+    header="Small List"
+    bordered
+    dataSource={["Item A", "Item B", "Item C"]}
+    renderItem={(item) => <List.Item>{item}</List.Item>}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<List size="small" header="Small List" bordered dataSource={data}
+  renderItem={(item) => <List.Item>{item}</List.Item>}
+/>
+```
+
+## API
+
+### ListProps
+
+- `dataSource` — `any[]` — Data array
+- `renderItem` — `(item, index) => ReactNode` — Item render function
+- `header` — `ReactNode` — List header
+- `footer` — `ReactNode` — List footer
+- `bordered` — `boolean` — Show border (default: `false`)
+- `loading` — `boolean` — Show loading state
+- `pagination` — `false | PaginationProps` — Pagination config
+- `size` — `"default" | "large" | "small"` — List size
+- `grid` — `{ column, gutter, xs, sm, md, lg, xl, xxl }` — Grid layout config
+- `itemLayout` — `"horizontal" | "vertical"` — Item layout direction (default: `"horizontal"`)
+- `split` — `boolean` — Show dividers between items (default: `true`)
+- `rowKey` — `string | (item) => string` — Row key
+
+### List.Item Props
+
+- `actions` — `ReactNode[]` — Action elements
+- `extra` — `ReactNode` — Extra content area
+
+### List.Item.Meta Props
+
+- `avatar` — `ReactNode` — Avatar element
+- `title` — `ReactNode` — Item title
+- `description` — `ReactNode` — Item description

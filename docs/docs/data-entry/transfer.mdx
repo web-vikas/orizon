@@ -1,0 +1,83 @@
+---
+title: Transfer
+---
+
+import { Transfer } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Transfer
+
+A dual-panel list for moving items between source and target.
+
+## When to Use
+
+- For assigning users to groups or roles
+- When items need to be moved between two lists
+- For permission or feature selection interfaces
+
+## Import
+
+```tsx
+import { Transfer } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Transfer
+    dataSource={[
+      { key: "1", title: "Item 1" },
+      { key: "2", title: "Item 2" },
+      { key: "3", title: "Item 3" },
+      { key: "4", title: "Item 4" },
+      { key: "5", title: "Item 5" },
+    ]}
+    targetKeys={["3", "4"]}
+    render={(item) => item.title}
+  />
+</ComponentPreview>
+
+```tsx
+<Transfer
+  dataSource={[
+    { key: "1", title: "Item 1" },
+    { key: "2", title: "Item 2" },
+    { key: "3", title: "Item 3" },
+  ]}
+  targetKeys={targetKeys}
+  onChange={(newTargetKeys) => setTargetKeys(newTargetKeys)}
+  render={(item) => item.title}
+/>
+```
+
+### With Search
+
+```tsx
+<Transfer showSearch dataSource={data} targetKeys={targetKeys}
+  onChange={setTargetKeys} render={(item) => item.title}
+/>
+```
+
+## API
+
+### TransferProps
+
+- `dataSource` — `TransferItem[]` — All available items
+- `targetKeys` — `string[]` — Keys of items in the right panel
+- `selectedKeys` — `string[]` — Currently selected keys
+- `onChange` — `(targetKeys, direction, moveKeys) => void` — Transfer handler
+- `onSelectChange` — `(sourceSelectedKeys, targetSelectedKeys) => void` — Selection handler
+- `render` — `(item) => ReactNode` — Item render function
+- `showSearch` — `boolean` — Show search input (default: `false`)
+- `titles` — `[string, string]` — Panel titles
+- `operations` — `[string, string]` — Button labels
+- `pagination` — `boolean | { pageSize }` — Enable pagination
+- `disabled` — `boolean` — Disable the transfer
+
+### TransferItem
+
+- `key` — `string` — Unique identifier
+- `title` — `string` — Item display text
+- `disabled` — `boolean` — Disable the item

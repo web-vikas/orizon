@@ -1,0 +1,118 @@
+---
+title: Tag
+---
+
+import { Tag } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Tag
+
+Small labels for categorizing, filtering, or marking items.
+
+## When to Use
+
+- To categorize or label content
+- For status indicators or filters
+- As removable tags in multi-select scenarios
+
+## Import
+
+```tsx
+import { Tag } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Tag>Default</Tag>
+  <Tag color="blue">Blue</Tag>
+  <Tag color="green">Green</Tag>
+  <Tag color="red">Red</Tag>
+  <Tag color="orange">Orange</Tag>
+  <Tag color="purple">Purple</Tag>
+</ComponentPreview>
+
+```tsx
+<Tag>Default</Tag>
+<Tag color="blue">Blue</Tag>
+<Tag color="green">Green</Tag>
+<Tag color="red">Red</Tag>
+<Tag color="orange">Orange</Tag>
+<Tag color="purple">Purple</Tag>
+```
+
+### Closable
+
+<ComponentPreview>
+  <Tag closable>Closable</Tag>
+  <Tag closable color="blue">Blue</Tag>
+  <Tag closable color="green">Green</Tag>
+</ComponentPreview>
+
+```tsx
+<Tag closable onClose={(e) => console.log("closed")}>
+  Closable
+</Tag>
+```
+
+### Borderless
+
+<ComponentPreview>
+  <Tag bordered={false} color="blue">Blue</Tag>
+  <Tag bordered={false} color="green">Green</Tag>
+  <Tag bordered={false} color="red">Red</Tag>
+  <Tag bordered={false} color="orange">Orange</Tag>
+</ComponentPreview>
+
+```tsx
+<Tag bordered={false} color="blue">Blue</Tag>
+<Tag bordered={false} color="green">Green</Tag>
+```
+
+### Status Tags
+
+<ComponentPreview>
+  <Tag color="success">Success</Tag>
+  <Tag color="processing">Processing</Tag>
+  <Tag color="error">Error</Tag>
+  <Tag color="warning">Warning</Tag>
+  <Tag color="default">Default</Tag>
+</ComponentPreview>
+
+```tsx
+<Tag color="success">Success</Tag>
+<Tag color="processing">Processing</Tag>
+<Tag color="error">Error</Tag>
+<Tag color="warning">Warning</Tag>
+```
+
+### Checkable
+
+<ComponentPreview>
+  <Tag.CheckableTag checked>Checked</Tag.CheckableTag>
+  <Tag.CheckableTag checked={false}>Unchecked</Tag.CheckableTag>
+</ComponentPreview>
+
+```tsx
+<Tag.CheckableTag checked={checked} onChange={setChecked}>
+  Toggleable
+</Tag.CheckableTag>
+```
+
+## API
+
+### TagProps
+
+- `color` — `string` — Tag color (preset or custom hex)
+- `closable` — `boolean` — Show close button (default: `false`)
+- `bordered` — `boolean` — Show border (default: `true`)
+- `icon` — `ReactNode` — Icon before text
+- `closeIcon` — `ReactNode` — Custom close icon
+- `onClose` — `(e: MouseEvent) => void` — Close callback
+
+### Tag.CheckableTag Props
+
+- `checked` — `boolean` — Checked state
+- `onChange` — `(checked: boolean) => void` — Toggle callback

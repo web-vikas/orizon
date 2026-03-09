@@ -1,0 +1,169 @@
+---
+title: Space
+---
+
+import { Space, Button, Input } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Space
+
+Set spacing between inline or block elements with flexible alignment and wrapping.
+
+## When to Use
+
+- To add consistent spacing between a series of components
+- To align elements horizontally or vertically with flexible gap control
+- To group form controls with `Space.Compact` for connected styling
+
+## Import
+
+```tsx
+import { Space } from "orizon";
+```
+
+## Examples
+
+### Basic Horizontal
+
+The default layout arranges children horizontally with `middle` spacing.
+
+<ComponentPreview>
+  <Space>
+    <Button type="primary">Primary</Button>
+    <Button>Default</Button>
+    <Button type="dashed">Dashed</Button>
+  </Space>
+</ComponentPreview>
+
+```tsx
+import { Button, Space } from "orizon";
+
+<Space>
+  <Button type="primary">Primary</Button>
+  <Button>Default</Button>
+  <Button type="dashed">Dashed</Button>
+</Space>
+```
+
+### Vertical
+
+Set `direction="vertical"` for a vertical stack.
+
+<ComponentPreview>
+  <Space direction="vertical">
+    <Button type="primary" block>First</Button>
+    <Button block>Second</Button>
+    <Button type="dashed" block>Third</Button>
+  </Space>
+</ComponentPreview>
+
+```tsx
+import { Button, Space } from "orizon";
+
+<Space direction="vertical">
+  <Button type="primary" block>First</Button>
+  <Button block>Second</Button>
+  <Button type="dashed" block>Third</Button>
+</Space>
+```
+
+### Sizes
+
+Choose from preset sizes or provide a custom pixel value.
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+    <Space size="small">
+      <Button>Small</Button>
+      <Button>Gap</Button>
+    </Space>
+    <Space size="middle">
+      <Button>Middle</Button>
+      <Button>Gap</Button>
+    </Space>
+    <Space size="large">
+      <Button>Large</Button>
+      <Button>Gap</Button>
+    </Space>
+  </div>
+</ComponentPreview>
+
+```tsx
+import { Button, Space } from "orizon";
+
+<Space size="small">
+  <Button>Small</Button>
+  <Button>Gap</Button>
+</Space>
+
+<Space size="large">
+  <Button>Large</Button>
+  <Button>Gap</Button>
+</Space>
+```
+
+### Wrap Mode
+
+Enable wrapping for items that may overflow the container.
+
+<ComponentPreview>
+  <Space wrap>
+    <Button>A</Button>
+    <Button>B</Button>
+    <Button>C</Button>
+    <Button>D</Button>
+    <Button>E</Button>
+    <Button>F</Button>
+    <Button>G</Button>
+    <Button>H</Button>
+  </Space>
+</ComponentPreview>
+
+```tsx
+import { Button, Space } from "orizon";
+
+<Space wrap>
+  <Button>A</Button>
+  <Button>B</Button>
+  <Button>C</Button>
+  <Button>D</Button>
+  <Button>E</Button>
+</Space>
+```
+
+### Compact
+
+`Space.Compact` groups controls with connected borders, similar to input groups.
+
+<ComponentPreview>
+  <Space.Compact>
+    <Input placeholder="Search..." />
+    <Button type="primary">Go</Button>
+  </Space.Compact>
+</ComponentPreview>
+
+```tsx
+import { Button, Input, Space } from "orizon";
+
+<Space.Compact>
+  <Input placeholder="Search..." />
+  <Button type="primary">Go</Button>
+</Space.Compact>
+```
+
+## API
+
+### SpaceProps
+
+- `direction` — `"horizontal" | "vertical"` — Layout direction (default: `"horizontal"`)
+- `size` — `"small" | "middle" | "large" | number` — Gap between items (default: `"middle"`)
+- `align` — `"start" | "end" | "center" | "baseline"` — Cross-axis alignment
+- `wrap` — `boolean` — Whether to wrap overflowing items (default: `false`)
+- `split` — `ReactNode` — Separator element between items
+- `className` — `string` — Custom CSS class
+
+### Space.Compact Props
+
+- `direction` — `"horizontal" | "vertical"` — Layout direction (default: `"horizontal"`)
+- `size` — `"small" | "middle" | "large"` — Size for all children (default: `"middle"`)
+- `block` — `boolean` — Full-width compact group (default: `false`)

@@ -1,0 +1,108 @@
+---
+title: TreeSelect
+---
+
+import { TreeSelect } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# TreeSelect
+
+A tree-based dropdown selector for hierarchical data.
+
+## When to Use
+
+- For selecting from a tree structure (departments, categories)
+- When options have parent-child relationships
+- As an alternative to Cascader with a tree view
+
+## Import
+
+```tsx
+import { TreeSelect } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <TreeSelect
+    treeData={[
+      {
+        title: "Engineering",
+        value: "engineering",
+        children: [
+          { title: "Frontend", value: "frontend" },
+          { title: "Backend", value: "backend" },
+          { title: "DevOps", value: "devops" },
+        ],
+      },
+      {
+        title: "Design",
+        value: "design",
+        children: [
+          { title: "UI Design", value: "ui" },
+          { title: "UX Research", value: "ux" },
+        ],
+      },
+    ]}
+    placeholder="Select department"
+    style={{ width: "300px" }}
+    treeDefaultExpandAll
+  />
+</ComponentPreview>
+
+```tsx
+<TreeSelect
+  treeData={[
+    {
+      title: "Engineering",
+      value: "engineering",
+      children: [
+        { title: "Frontend", value: "frontend" },
+        { title: "Backend", value: "backend" },
+      ],
+    },
+  ]}
+  placeholder="Select department"
+  onChange={(value) => console.log(value)}
+/>
+```
+
+### Multiple with Checkboxes
+
+```tsx
+<TreeSelect
+  treeCheckable
+  multiple
+  treeData={treeData}
+  placeholder="Select teams"
+  style={{ width: 300 }}
+/>
+```
+
+### Searchable
+
+```tsx
+<TreeSelect showSearch treeData={treeData} placeholder="Search..." />
+```
+
+## API
+
+### TreeSelectProps
+
+- `treeData` — `TreeNode[]` — Tree option data
+- `value` — `string | string[]` — Selected value(s) (controlled)
+- `defaultValue` — `string | string[]` — Default value
+- `onChange` — `(value, label, extra) => void` — Selection handler
+- `multiple` — `boolean` — Allow multiple selections (default: `false`)
+- `treeCheckable` — `boolean` — Show checkboxes (default: `false`)
+- `showSearch` — `boolean` — Enable search (default: `false`)
+- `treeDefaultExpandAll` — `boolean` — Expand all nodes (default: `false`)
+- `loadData` — `(node) => Promise` — Async data loading
+- `fieldNames` — `{ label, value, children }` — Custom field mapping
+- `placeholder` — `string` — Placeholder text
+- `disabled` — `boolean` — Disable the selector
+- `size` — `"small" | "middle" | "large"` — Size
+- `status` — `"error" | "warning"` — Validation status
+- `allowClear` — `boolean` — Show clear button (default: `true`)

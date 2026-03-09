@@ -1,0 +1,91 @@
+---
+title: Checkbox
+---
+
+import { Checkbox } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Checkbox
+
+Binary toggle controls for selecting multiple options.
+
+## When to Use
+
+- For selecting multiple items from a list
+- For boolean on/off toggles
+- For agree/disagree confirmations
+
+## Import
+
+```tsx
+import { Checkbox } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Checkbox>Remember me</Checkbox>
+</ComponentPreview>
+
+```tsx
+<Checkbox>Remember me</Checkbox>
+```
+
+### Group
+
+<ComponentPreview>
+  <Checkbox.Group
+    options={["Apple", "Banana", "Orange"]}
+    defaultValue={["Apple"]}
+  />
+</ComponentPreview>
+
+```tsx
+<Checkbox.Group
+  options={["Apple", "Banana", "Orange"]}
+  defaultValue={["Apple"]}
+  onChange={(values) => console.log(values)}
+/>
+```
+
+### Disabled
+
+<ComponentPreview>
+  <Checkbox disabled>Disabled</Checkbox>
+  <Checkbox disabled checked>Disabled Checked</Checkbox>
+</ComponentPreview>
+
+```tsx
+<Checkbox disabled>Disabled</Checkbox>
+<Checkbox disabled checked>Disabled Checked</Checkbox>
+```
+
+### Indeterminate
+
+Use indeterminate state for "check all" patterns.
+
+```tsx
+<Checkbox indeterminate={indeterminate} onChange={onCheckAll}>
+  Check All
+</Checkbox>
+```
+
+## API
+
+### CheckboxProps
+
+- `checked` — `boolean` — Checked state (controlled)
+- `defaultChecked` — `boolean` — Default checked state
+- `indeterminate` — `boolean` — Indeterminate (partial) state
+- `onChange` — `(e: CheckboxChangeEvent) => void` — Change handler
+- `disabled` — `boolean` — Disable the checkbox
+
+### Checkbox.Group Props
+
+- `options` — `(string | { label, value, disabled })[]` — Option list
+- `value` — `string[]` — Checked values (controlled)
+- `defaultValue` — `string[]` — Default checked values
+- `onChange` — `(checkedValues: string[]) => void` — Change handler
+- `disabled` — `boolean` — Disable all checkboxes

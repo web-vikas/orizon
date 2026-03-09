@@ -1,0 +1,143 @@
+---
+title: Badge
+---
+
+import { Badge, Button, Avatar, Card } from "orizon";
+import { Bell } from "lucide-react";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Badge
+
+A small indicator displayed over another element for notifications and status.
+
+## When to Use
+
+- To show notification counts on icons or avatars
+- For status indicators (online, processing, error)
+- To mark items with a dot or ribbon decoration
+
+## Import
+
+```tsx
+import { Badge } from "orizon";
+```
+
+## Examples
+
+### Basic Count
+
+<ComponentPreview>
+  <Badge count={5}>
+    <Avatar shape="square" size="large" />
+  </Badge>
+  <Badge count={0} showZero>
+    <Avatar shape="square" size="large" />
+  </Badge>
+  <Badge count={99}>
+    <Avatar shape="square" size="large" />
+  </Badge>
+  <Badge count={100} overflowCount={99}>
+    <Avatar shape="square" size="large" />
+  </Badge>
+</ComponentPreview>
+
+```tsx
+<Badge count={5}>
+  <Avatar shape="square" size="large" />
+</Badge>
+<Badge count={0} showZero>
+  <Avatar shape="square" size="large" />
+</Badge>
+<Badge count={100} overflowCount={99}>
+  <Avatar shape="square" size="large" />
+</Badge>
+```
+
+### Dot Indicator
+
+<ComponentPreview>
+  <Badge dot>
+    <Bell size={20} />
+  </Badge>
+  <Badge dot>
+    <Avatar shape="square" size="large" />
+  </Badge>
+</ComponentPreview>
+
+```tsx
+<Badge dot>
+  <Bell size={20} />
+</Badge>
+```
+
+### Status Badges
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+    <Badge status="success" text="Success" />
+    <Badge status="processing" text="Processing" />
+    <Badge status="error" text="Error" />
+    <Badge status="warning" text="Warning" />
+    <Badge status="default" text="Default" />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Badge status="success" text="Success" />
+<Badge status="processing" text="Processing" />
+<Badge status="error" text="Error" />
+<Badge status="warning" text="Warning" />
+<Badge status="default" text="Default" />
+```
+
+### Colors
+
+<ComponentPreview>
+  <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+    <Badge color="blue" count={5}><Avatar shape="square" /></Badge>
+    <Badge color="green" count={5}><Avatar shape="square" /></Badge>
+    <Badge color="red" count={5}><Avatar shape="square" /></Badge>
+    <Badge color="orange" count={5}><Avatar shape="square" /></Badge>
+    <Badge color="purple" count={5}><Avatar shape="square" /></Badge>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Badge color="blue" count={5}><Avatar /></Badge>
+<Badge color="green" count={5}><Avatar /></Badge>
+<Badge color="red" count={5}><Avatar /></Badge>
+```
+
+### Ribbon
+
+<ComponentPreview>
+  <Badge.Ribbon text="New">
+    <Card title="Card with Ribbon" style={{ width: 300 }}>Ribbon decoration</Card>
+  </Badge.Ribbon>
+</ComponentPreview>
+
+```tsx
+<Badge.Ribbon text="New">
+  <Card title="Card with Ribbon">Ribbon decoration</Card>
+</Badge.Ribbon>
+```
+
+## API
+
+### BadgeProps
+
+- `count` — `ReactNode | number` — Badge count
+- `dot` — `boolean` — Show dot instead of count (default: `false`)
+- `status` — `"success" | "processing" | "error" | "warning" | "default"` — Status indicator
+- `color` — `string` — Custom or preset color
+- `size` — `"default" | "small"` — Badge size
+- `showZero` — `boolean` — Show badge when count is zero (default: `false`)
+- `overflowCount` — `number` — Max display count (default: `99`)
+- `offset` — `[number, number]` — Position offset [x, y]
+- `text` — `ReactNode` — Text next to status dot
+
+### Badge.Ribbon Props
+
+- `text` — `ReactNode` — Ribbon text
+- `color` — `string` — Ribbon color
+- `placement` — `"start" | "end"` — Ribbon position (default: `"end"`)

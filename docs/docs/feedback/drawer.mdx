@@ -1,0 +1,96 @@
+---
+title: Drawer
+---
+
+import { Drawer, Button } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Drawer
+
+A panel that slides in from the edge of the screen for secondary content.
+
+## When to Use
+
+- For detail panels or editing forms without leaving the page
+- For navigation menus on mobile
+- For filter panels or settings sidebars
+
+## Import
+
+```tsx
+import { Drawer } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+```tsx
+import { useState } from "react";
+
+function App() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>Open Drawer</Button>
+      <Drawer
+        title="Drawer Title"
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        <p>Drawer content goes here.</p>
+      </Drawer>
+    </>
+  );
+}
+```
+
+### Placement
+
+```tsx
+<Drawer placement="left" title="Left Drawer" open={open} onClose={onClose}>
+  Content from the left
+</Drawer>
+<Drawer placement="top" title="Top Drawer" open={open} onClose={onClose}>
+  Content from the top
+</Drawer>
+```
+
+### With Footer
+
+```tsx
+<Drawer
+  title="Edit Item"
+  open={open}
+  onClose={onClose}
+  footer={
+    <div style={{ textAlign: "right" }}>
+      <Button onClick={onClose} style={{ marginRight: 8 }}>Cancel</Button>
+      <Button type="primary" onClick={onSubmit}>Submit</Button>
+    </div>
+  }
+>
+  <Form>...</Form>
+</Drawer>
+```
+
+## API
+
+### DrawerProps
+
+- `open` — `boolean` — Whether visible (controlled)
+- `title` — `ReactNode` — Drawer title
+- `onClose` — `() => void` — Close callback
+- `placement` — `"left" | "right" | "top" | "bottom"` — Slide-in direction (default: `"right"`)
+- `width` — `number | string` — Width for left/right drawers (default: `378`)
+- `height` — `number | string` — Height for top/bottom drawers (default: `378`)
+- `footer` — `ReactNode` — Footer content
+- `size` — `"default" | "large"` — Drawer size
+- `closable` — `boolean` — Show close button (default: `true`)
+- `maskClosable` — `boolean` — Close on mask click (default: `true`)
+- `destroyOnHidden` — `boolean` — Unmount on close (default: `false`)
+- `loading` — `boolean` — Show loading state
+- `push` — `boolean | { distance: number }` — Push parent drawer
+- `zIndex` — `number` — Z-index value
+- `extra` — `ReactNode` — Extra content in header

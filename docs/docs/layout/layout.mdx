@@ -1,0 +1,130 @@
+---
+title: Layout
+---
+
+import { Layout } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Layout
+
+High-level page structure components for Header, Sider, Content, and Footer arrangements.
+
+## When to Use
+
+- To define the overall page structure with header, footer, content, and sidebar
+- For admin dashboards and application shells
+- When you need a collapsible sidebar layout
+
+## Import
+
+```tsx
+import { Layout } from "orizon";
+
+const { Header, Sider, Content, Footer } = Layout;
+```
+
+## Examples
+
+### Basic Layout
+
+A simple header-content-footer layout.
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Layout>
+      <Layout.Header style={{ background: "#0d9488", color: "white", textAlign: "center", padding: "0 16px", lineHeight: "64px" }}>Header</Layout.Header>
+      <Layout.Content style={{ background: "#99f6e4", minHeight: "120px", lineHeight: "120px", textAlign: "center" }}>Content</Layout.Content>
+      <Layout.Footer style={{ background: "#0d9488", color: "white", textAlign: "center" }}>Footer</Layout.Footer>
+    </Layout>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Layout>
+  <Layout.Header>Header</Layout.Header>
+  <Layout.Content>Content</Layout.Content>
+  <Layout.Footer>Footer</Layout.Footer>
+</Layout>
+```
+
+### Layout with Sider
+
+Add a sidebar alongside the content area.
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Layout>
+      <Layout.Header style={{ background: "#0d9488", color: "white", textAlign: "center", padding: "0 16px", lineHeight: "64px" }}>Header</Layout.Header>
+      <Layout>
+        <Layout.Sider style={{ background: "#0f766e", color: "white", textAlign: "center", lineHeight: "120px" }}>Sider</Layout.Sider>
+        <Layout.Content style={{ background: "#99f6e4", minHeight: "120px", lineHeight: "120px", textAlign: "center" }}>Content</Layout.Content>
+      </Layout>
+      <Layout.Footer style={{ background: "#0d9488", color: "white", textAlign: "center" }}>Footer</Layout.Footer>
+    </Layout>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Layout>
+  <Layout.Header>Header</Layout.Header>
+  <Layout>
+    <Layout.Sider>Sider</Layout.Sider>
+    <Layout.Content>Content</Layout.Content>
+  </Layout>
+  <Layout.Footer>Footer</Layout.Footer>
+</Layout>
+```
+
+### Header-Content-Footer
+
+A common pattern with the sidebar on the left spanning the full height.
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Layout>
+      <Layout.Sider style={{ background: "#0f766e", color: "white", textAlign: "center", lineHeight: "200px" }}>Sider</Layout.Sider>
+      <Layout>
+        <Layout.Header style={{ background: "#0d9488", color: "white", textAlign: "center", padding: "0 16px", lineHeight: "64px" }}>Header</Layout.Header>
+        <Layout.Content style={{ background: "#99f6e4", minHeight: "120px", lineHeight: "120px", textAlign: "center" }}>Content</Layout.Content>
+        <Layout.Footer style={{ background: "#0d9488", color: "white", textAlign: "center" }}>Footer</Layout.Footer>
+      </Layout>
+    </Layout>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Layout>
+  <Layout.Sider>Sider</Layout.Sider>
+  <Layout>
+    <Layout.Header>Header</Layout.Header>
+    <Layout.Content>Content</Layout.Content>
+    <Layout.Footer>Footer</Layout.Footer>
+  </Layout>
+</Layout>
+```
+
+## API
+
+### Layout Props
+
+- `hasSider` — `boolean` — Whether contains a Sider (auto-detected)
+- `className` — `string` — Custom CSS class
+- `style` — `CSSProperties` — Inline styles
+
+### Layout.Header / Layout.Footer / Layout.Content
+
+- `className` — `string` — Custom CSS class
+- `style` — `CSSProperties` — Inline styles
+
+### Layout.Sider Props
+
+- `collapsed` — `boolean` — Current collapsed state
+- `collapsible` — `boolean` — Whether can be collapsed (default: `false`)
+- `collapsedWidth` — `number` — Width when collapsed (default: `80`)
+- `width` — `number | string` — Width of the sidebar (default: `200`)
+- `breakpoint` — `"xs" | "sm" | "md" | "lg" | "xl" | "xxl"` — Breakpoint for auto-collapse
+- `theme` — `"light" | "dark"` — Color theme (default: `"light"`)
+- `trigger` — `ReactNode` — Custom collapse trigger element
+- `reverseArrow` — `boolean` — Reverse collapse arrow direction (default: `false`)
+- `onCollapse` — `(collapsed: boolean, type: string) => void` — Collapse callback
+- `onBreakpoint` — `(broken: boolean) => void` — Breakpoint trigger callback

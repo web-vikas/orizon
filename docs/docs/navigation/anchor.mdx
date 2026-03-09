@@ -1,0 +1,157 @@
+---
+title: Anchor
+---
+
+import { Anchor } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Anchor
+
+A scroll-spy navigation that highlights the current section in view.
+
+## When to Use
+
+- For long pages with multiple sections to provide in-page navigation
+- As a sidebar table of contents that tracks scroll position
+- For documentation pages with section anchors
+
+## Import
+
+```tsx
+import { Anchor } from "orizon";
+```
+
+## Examples
+
+### Vertical
+
+The default vertical anchor navigation.
+
+<ComponentPreview>
+  <Anchor
+    items={[
+      { key: "section-1", href: "#section-1", title: "Section 1" },
+      { key: "section-2", href: "#section-2", title: "Section 2" },
+      { key: "section-3", href: "#section-3", title: "Section 3" },
+      { key: "section-4", href: "#section-4", title: "Section 4" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Anchor
+  items={[
+    { key: "section-1", href: "#section-1", title: "Section 1" },
+    { key: "section-2", href: "#section-2", title: "Section 2" },
+    { key: "section-3", href: "#section-3", title: "Section 3" },
+    { key: "section-4", href: "#section-4", title: "Section 4" },
+  ]}
+/>
+```
+
+### Horizontal
+
+A horizontal anchor bar.
+
+<ComponentPreview>
+  <Anchor
+    direction="horizontal"
+    items={[
+      { key: "overview", href: "#overview", title: "Overview" },
+      { key: "features", href: "#features", title: "Features" },
+      { key: "pricing", href: "#pricing", title: "Pricing" },
+      { key: "faq", href: "#faq", title: "FAQ" },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Anchor
+  direction="horizontal"
+  items={[
+    { key: "overview", href: "#overview", title: "Overview" },
+    { key: "features", href: "#features", title: "Features" },
+    { key: "pricing", href: "#pricing", title: "Pricing" },
+    { key: "faq", href: "#faq", title: "FAQ" },
+  ]}
+/>
+```
+
+### Nested Items
+
+Hierarchical anchor with child sections.
+
+<ComponentPreview>
+  <Anchor
+    items={[
+      {
+        key: "getting-started",
+        href: "#getting-started",
+        title: "Getting Started",
+        children: [
+          { key: "installation", href: "#installation", title: "Installation" },
+          { key: "usage", href: "#usage", title: "Usage" },
+        ],
+      },
+      {
+        key: "api",
+        href: "#api",
+        title: "API Reference",
+        children: [
+          { key: "props", href: "#props", title: "Props" },
+          { key: "events", href: "#events", title: "Events" },
+        ],
+      },
+    ]}
+  />
+</ComponentPreview>
+
+```tsx
+<Anchor
+  items={[
+    {
+      key: "getting-started",
+      href: "#getting-started",
+      title: "Getting Started",
+      children: [
+        { key: "installation", href: "#installation", title: "Installation" },
+        { key: "usage", href: "#usage", title: "Usage" },
+      ],
+    },
+    {
+      key: "api",
+      href: "#api",
+      title: "API Reference",
+      children: [
+        { key: "props", href: "#props", title: "Props" },
+        { key: "events", href: "#events", title: "Events" },
+      ],
+    },
+  ]}
+/>
+```
+
+## API
+
+### AnchorProps
+
+- `items` — `AnchorItem[]` — Anchor link configuration
+- `direction` — `"horizontal" | "vertical"` — Layout direction (default: `"vertical"`)
+- `affix` — `boolean` — Whether to use Affix for positioning (default: `true`)
+- `offsetTop` — `number` — Pixels from top when using affix
+- `targetOffset` — `number` — Offset from top to determine active anchor
+- `bounds` — `number` — Bounding distance for anchor detection (default: `5`)
+- `replace` — `boolean` — Replace URL hash instead of pushing (default: `false`)
+- `getCurrentAnchor` — `(activeLink: string) => string` — Custom active anchor logic
+- `getContainer` — `() => HTMLElement | Window` — Scroll container
+- `onChange` — `(currentActiveLink: string) => void` — Active link change callback
+- `onClick` — `(e: MouseEvent, link: { title: ReactNode; href: string }) => void` — Click handler
+
+### AnchorItem
+
+- `key` — `string` — Unique identifier
+- `href` — `string` — Target element selector
+- `title` — `ReactNode` — Display text
+- `target` — `string` — Link target
+- `children` — `AnchorItem[]` — Nested items
+- `className` — `string` — Custom CSS class

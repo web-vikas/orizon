@@ -1,0 +1,77 @@
+---
+title: Getting Started
+---
+
+# Getting Started
+
+## Installation
+
+```bash
+npm install orizon
+```
+
+## Setup
+
+Add Orizon's CSS preset to your app's main CSS file:
+
+```css title="src/app.css"
+@import "tailwindcss";
+@import "orizon/preset.css";
+@source "../node_modules/orizon/dist";
+```
+
+The `@source` directive tells Tailwind to scan Orizon's compiled JavaScript for utility classes used by the components.
+
+## Usage
+
+```tsx title="App.tsx"
+import { Button, Input, Modal } from "orizon";
+
+function App() {
+  return (
+    <div>
+      <Button type="primary">Click Me</Button>
+      <Input placeholder="Type something..." />
+    </div>
+  );
+}
+```
+
+## Component Categories
+
+Orizon provides **68 components** organized into categories:
+
+- **General** — Button, Typography, Space, Divider, FloatButton
+- **Layout** — Grid, Layout, Flex, Splitter, Affix, Masonry
+- **Navigation** — Menu, Breadcrumb, Pagination, Steps, Tabs, Dropdown, Anchor, Tour
+- **Data Entry** — Form, Input, Select, Checkbox, Radio, Switch, DatePicker, TimePicker, ColorPicker, InputNumber, Upload, Mentions, AutoComplete, Rate, Cascader, TreeSelect, Slider, Transfer
+- **Data Display** — Table, Card, List, Tree, Timeline, Descriptions, Statistic, Empty, Image, Carousel, Collapse, Tag, Badge, Avatar, QRCode, Calendar
+- **Feedback** — Modal, Alert, Message, Notification, Popover, Popconfirm, Tooltip, Result, Spin, Drawer, Skeleton, Progress
+- **Other** — App, Watermark, Segmented
+
+## Ant Design Compatibility
+
+Orizon uses the same prop names and patterns as Ant Design. If you're familiar with Ant Design, you already know how to use Orizon:
+
+```tsx
+// Compound components
+<Input.Password placeholder="Password" />
+<Form.Item label="Name" name="name">
+  <Input />
+</Form.Item>
+
+// Static methods
+Modal.confirm({ title: "Are you sure?" });
+message.success("Operation completed!");
+```
+
+## Theming
+
+Orizon uses CSS custom properties for theming. Override them in your CSS to customize the design:
+
+```css
+:root {
+  --primary: oklch(0.6 0.104 184.7);
+  --radius: 0.375rem;
+}
+```

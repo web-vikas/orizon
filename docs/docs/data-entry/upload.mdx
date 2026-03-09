@@ -1,0 +1,84 @@
+---
+title: Upload
+---
+
+import { Upload, Button } from "orizon";
+import { UploadCloud } from "lucide-react";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Upload
+
+File upload component with drag-and-drop and file list management.
+
+## When to Use
+
+- For file attachments in forms
+- For image or document uploads
+- When drag-and-drop upload is needed
+
+## Import
+
+```tsx
+import { Upload } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Upload>
+    <Button icon={<UploadCloud size={16} />}>Click to Upload</Button>
+  </Upload>
+</ComponentPreview>
+
+```tsx
+<Upload action="/api/upload" onChange={({ fileList }) => setFiles(fileList)}>
+  <Button icon={<UploadCloud size={16} />}>Click to Upload</Button>
+</Upload>
+```
+
+### Drag and Drop
+
+<ComponentPreview>
+  <Upload.Dragger style={{ width: "100%" }}>
+    <p style={{ fontSize: "32px", marginBottom: "8px" }}><UploadCloud size={32} /></p>
+    <p>Click or drag files to this area to upload</p>
+  </Upload.Dragger>
+</ComponentPreview>
+
+```tsx
+<Upload.Dragger action="/api/upload">
+  <p><UploadCloud size={32} /></p>
+  <p>Click or drag files to this area to upload</p>
+</Upload.Dragger>
+```
+
+### Picture Card
+
+```tsx
+<Upload listType="picture-card" action="/api/upload">
+  + Upload
+</Upload>
+```
+
+## API
+
+### UploadProps
+
+- `action` — `string | (file) => Promise<string>` — Upload URL
+- `fileList` — `UploadFile[]` — Managed file list (controlled)
+- `onChange` — `({ file, fileList }) => void` — File status change handler
+- `multiple` — `boolean` — Allow multiple files (default: `false`)
+- `maxCount` — `number` — Maximum number of files
+- `beforeUpload` — `(file) => boolean | Promise` — Pre-upload validation
+- `customRequest` — `(options) => void` — Custom upload implementation
+- `listType` — `"text" | "picture" | "picture-card"` — File list display style
+- `accept` — `string` — Accepted file types
+- `disabled` — `boolean` — Disable upload
+- `showUploadList` — `boolean` — Show file list (default: `true`)
+- `directory` — `boolean` — Upload entire directory
+
+### Upload.Dragger Props
+
+Same as UploadProps, rendered as a drag-and-drop area.

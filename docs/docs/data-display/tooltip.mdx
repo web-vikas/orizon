@@ -1,0 +1,85 @@
+---
+title: Tooltip
+---
+
+import { Tooltip, Button } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Tooltip
+
+A simple popup shown on hover to provide additional context.
+
+## When to Use
+
+- To show brief help text on hover
+- For icon-only buttons that need labels
+- To display extra information without cluttering the UI
+
+## Import
+
+```tsx
+import { Tooltip } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Tooltip title="This is a tooltip">
+    <Button>Hover me</Button>
+  </Tooltip>
+</ComponentPreview>
+
+```tsx
+<Tooltip title="This is a tooltip">
+  <Button>Hover me</Button>
+</Tooltip>
+```
+
+### Placements
+
+<ComponentPreview>
+  <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+    <Tooltip title="Top" placement="top"><Button>Top</Button></Tooltip>
+    <Tooltip title="Bottom" placement="bottom"><Button>Bottom</Button></Tooltip>
+    <Tooltip title="Left" placement="left"><Button>Left</Button></Tooltip>
+    <Tooltip title="Right" placement="right"><Button>Right</Button></Tooltip>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Tooltip title="Top" placement="top"><Button>Top</Button></Tooltip>
+<Tooltip title="Bottom" placement="bottom"><Button>Bottom</Button></Tooltip>
+<Tooltip title="Left" placement="left"><Button>Left</Button></Tooltip>
+<Tooltip title="Right" placement="right"><Button>Right</Button></Tooltip>
+```
+
+### Color
+
+<ComponentPreview>
+  <Tooltip title="Custom color" color="#0d9488">
+    <Button>Teal Tooltip</Button>
+  </Tooltip>
+</ComponentPreview>
+
+```tsx
+<Tooltip title="Custom color" color="#0d9488">
+  <Button>Teal Tooltip</Button>
+</Tooltip>
+```
+
+## API
+
+### TooltipProps
+
+- `title` — `ReactNode` — Tooltip content
+- `placement` — `"top" | "topLeft" | "topRight" | "bottom" | "bottomLeft" | "bottomRight" | "left" | "leftTop" | "leftBottom" | "right" | "rightTop" | "rightBottom"` — Position
+- `trigger` — `"hover" | "focus" | "click"` — Trigger mode (default: `"hover"`)
+- `open` — `boolean` — Controlled visibility
+- `onOpenChange` — `(open: boolean) => void` — Visibility callback
+- `color` — `string` — Background color
+- `arrow` — `boolean` — Show arrow (default: `true`)
+- `overlayClassName` — `string` — Custom overlay CSS class
+- `mouseEnterDelay` — `number` — Delay before showing (seconds)
+- `mouseLeaveDelay` — `number` — Delay before hiding (seconds)

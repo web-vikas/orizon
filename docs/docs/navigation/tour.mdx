@@ -1,0 +1,135 @@
+---
+title: Tour
+---
+
+import { Tour, Button } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Tour
+
+An interactive guided tour that highlights UI elements and walks users through features.
+
+## When to Use
+
+- For onboarding new users to your application
+- To highlight new features after an update
+- For step-by-step tutorials within the interface
+
+## Import
+
+```tsx
+import { Tour } from "orizon";
+```
+
+## Examples
+
+### Basic Usage
+
+A simple tour is controlled by `open` state and a list of steps.
+
+```tsx
+import { useRef, useState } from "react";
+import { Tour, Button } from "orizon";
+
+function App() {
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const [open, setOpen] = useState(false);
+
+  const steps = [
+    {
+      title: "Welcome",
+      description: "This is the main action button.",
+      target: ref1,
+    },
+    {
+      title: "Settings",
+      description: "Configure your preferences here.",
+      target: ref2,
+    },
+  ];
+
+  return (
+    <>
+      <Button ref={ref1} type="primary">Action</Button>
+      <Button ref={ref2}>Settings</Button>
+      <Button onClick={() => setOpen(true)}>Start Tour</Button>
+      <Tour open={open} onClose={() => setOpen(false)} steps={steps} />
+    </>
+  );
+}
+```
+
+### Primary Type
+
+Use `type="primary"` for a more prominent tour overlay.
+
+```tsx
+<Tour
+  open={open}
+  onClose={() => setOpen(false)}
+  type="primary"
+  steps={[
+    {
+      title: "Step 1",
+      description: "This is highlighted with primary styling.",
+      target: ref1,
+    },
+  ]}
+/>
+```
+
+### Centered Step (No Target)
+
+Steps without a `target` are displayed centered on the screen.
+
+```tsx
+<Tour
+  open={open}
+  onClose={() => setOpen(false)}
+  steps={[
+    {
+      title: "Welcome!",
+      description: "This tour will show you around.",
+      // No target — shown centered
+    },
+    {
+      title: "Main Feature",
+      description: "Click here to get started.",
+      target: ref1,
+    },
+  ]}
+/>
+```
+
+:::note
+Tour is a stateful component that requires `useRef` and `useState` for full interactivity. The examples above show the component API — try it in your own app with real refs.
+:::
+
+## API
+
+### TourProps
+
+- `steps` — `TourStepConfig[]` — Array of tour step configurations (required)
+- `open` — `boolean` — Whether the tour is visible (controlled)
+- `current` — `number` — Current step index (controlled)
+- `type` — `"default" | "primary"` — Tour visual style (default: `"default"`)
+- `mask` — `boolean` — Show background mask overlay (default: `true`)
+- `arrow` — `boolean` — Show arrow pointing to target (default: `true`)
+- `zIndex` — `number` — Z-index of the tour overlay (default: `1001`)
+- `indicatorsRender` — `(current: number, total: number) => ReactNode` — Custom step indicators
+- `onChange` — `(current: number) => void` — Step change callback
+- `onClose` — `() => void` — Close callback
+- `onFinish` — `() => void` — Callback when tour completes
+
+### TourStepConfig
+
+- `target` — `RefObject | (() => HTMLElement) | null` — Element to highlight
+- `title` — `ReactNode` — Step title
+- `description` — `ReactNode` — Step description
+- `cover` — `ReactNode` — Cover image or content
+- `placement` — `"top" | "bottom" | "left" | "right" | "topLeft" | "topRight" | "bottomLeft" | "bottomRight" | "center"` — Tooltip position
+- `mask` — `boolean` — Override global mask setting
+- `maskStyle` — `CSSProperties` — Custom mask styles
+- `nextButtonProps` — `ButtonProps` — Customize the Next button
+- `prevButtonProps` — `ButtonProps` — Customize the Prev button

@@ -1,0 +1,123 @@
+---
+title: Divider
+---
+
+import { Divider } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Divider
+
+A visual separator for grouping and organizing content sections.
+
+## When to Use
+
+- To separate sections of content within a page
+- To add horizontal or vertical dividers between inline elements
+- To divide items in a list with labeled dividers
+
+## Import
+
+```tsx
+import { Divider } from "orizon";
+```
+
+## Examples
+
+### Horizontal Divider
+
+The default divider is a horizontal line.
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <p>Content above</p>
+    <Divider />
+    <p>Content below</p>
+  </div>
+</ComponentPreview>
+
+```tsx
+<p>Content above</p>
+<Divider />
+<p>Content below</p>
+```
+
+### With Text
+
+Add a label to the divider with the `children` prop. Control text position with `orientation`.
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Divider>Center Text</Divider>
+    <Divider orientation="left">Left Text</Divider>
+    <Divider orientation="right">Right Text</Divider>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Divider>Center Text</Divider>
+<Divider orientation="left">Left Text</Divider>
+<Divider orientation="right">Right Text</Divider>
+```
+
+### Dashed
+
+Use the `dashed` prop for a dashed line style.
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Divider dashed />
+    <Divider dashed>Dashed with Text</Divider>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Divider dashed />
+<Divider dashed>Dashed with Text</Divider>
+```
+
+### Vertical Divider
+
+Set `type="vertical"` for an inline vertical separator.
+
+<ComponentPreview>
+  <span>Link 1</span>
+  <Divider type="vertical" />
+  <span>Link 2</span>
+  <Divider type="vertical" />
+  <span>Link 3</span>
+</ComponentPreview>
+
+```tsx
+<span>Link 1</span>
+<Divider type="vertical" />
+<span>Link 2</span>
+<Divider type="vertical" />
+<span>Link 3</span>
+```
+
+### Plain Style
+
+Use `plain` to render text without the default bold styling.
+
+<ComponentPreview>
+  <div style={{ width: "100%" }}>
+    <Divider plain>Plain text divider</Divider>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Divider plain>Plain text divider</Divider>
+```
+
+## API
+
+### DividerProps
+
+- `type` — `"horizontal" | "vertical"` — Direction of the divider (default: `"horizontal"`)
+- `dashed` — `boolean` — Whether the line is dashed (default: `false`)
+- `orientation` — `"left" | "right" | "center"` — Position of the title text (default: `"center"`)
+- `orientationMargin` — `string | number` — Margin between title and the closest border
+- `plain` — `boolean` — Whether to use plain styling for text (default: `false`)
+- `children` — `ReactNode` — Text content displayed in the divider
+- `className` — `string` — Custom CSS class
+- `style` — `CSSProperties` — Inline styles

@@ -1,0 +1,95 @@
+---
+title: Result
+---
+
+import { Result, Button } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Result
+
+A feedback page for displaying operation outcomes.
+
+## When to Use
+
+- For success/error pages after form submission
+- For 404, 403, or 500 error pages
+- To communicate the result of a process
+
+## Import
+
+```tsx
+import { Result } from "orizon";
+```
+
+## Examples
+
+### Success
+
+<ComponentPreview>
+  <Result
+    status="success"
+    title="Successfully Submitted"
+    subTitle="Your request has been processed."
+    extra={<Button type="primary">Back Home</Button>}
+  />
+</ComponentPreview>
+
+```tsx
+<Result
+  status="success"
+  title="Successfully Submitted"
+  subTitle="Your request has been processed."
+  extra={<Button type="primary">Back Home</Button>}
+/>
+```
+
+### Error
+
+<ComponentPreview>
+  <Result
+    status="error"
+    title="Submission Failed"
+    subTitle="Please check your input and try again."
+    extra={<Button type="primary">Try Again</Button>}
+  />
+</ComponentPreview>
+
+```tsx
+<Result
+  status="error"
+  title="Submission Failed"
+  subTitle="Please check your input and try again."
+/>
+```
+
+### Info & Warning
+
+<ComponentPreview>
+  <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+    <Result status="info" title="Info" subTitle="Here is some information." />
+    <Result status="warning" title="Warning" subTitle="There are some issues." />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Result status="info" title="Info" />
+<Result status="warning" title="Warning" />
+```
+
+### HTTP Error Pages
+
+```tsx
+<Result status="404" title="404" subTitle="Page not found." />
+<Result status="403" title="403" subTitle="Access denied." />
+<Result status="500" title="500" subTitle="Server error." />
+```
+
+## API
+
+### ResultProps
+
+- `status` — `"success" | "error" | "info" | "warning" | "404" | "403" | "500"` — Result type
+- `title` — `ReactNode` — Title text
+- `subTitle` — `ReactNode` — Subtitle text
+- `icon` — `ReactNode` — Custom icon (overrides status icon)
+- `extra` — `ReactNode` — Action area (buttons, links)

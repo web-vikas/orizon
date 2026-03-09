@@ -1,0 +1,83 @@
+---
+title: TimePicker
+---
+
+import { TimePicker } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# TimePicker
+
+Select a specific time from a dropdown panel.
+
+## When to Use
+
+- For selecting hours, minutes, and seconds
+- For scheduling and time-based inputs
+- When combined with DatePicker for date-time selection
+
+## Import
+
+```tsx
+import { TimePicker } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <TimePicker style={{ width: "150px" }} />
+</ComponentPreview>
+
+```tsx
+<TimePicker onChange={(time) => console.log(time)} />
+```
+
+### 12-Hour Format
+
+<ComponentPreview>
+  <TimePicker use12Hours style={{ width: "180px" }} />
+</ComponentPreview>
+
+```tsx
+<TimePicker use12Hours format="h:mm a" />
+```
+
+### Range Picker
+
+<ComponentPreview>
+  <TimePicker.RangePicker style={{ width: "250px" }} />
+</ComponentPreview>
+
+```tsx
+<TimePicker.RangePicker />
+```
+
+### Disabled
+
+<ComponentPreview>
+  <TimePicker disabled style={{ width: "150px" }} />
+</ComponentPreview>
+
+```tsx
+<TimePicker disabled />
+```
+
+## API
+
+### TimePickerProps
+
+- `value` — `Date` — Selected time (controlled)
+- `defaultValue` — `Date` — Default time
+- `onChange` — `(time: Date, timeString: string) => void` — Change handler
+- `format` — `string` — Display format (default: `"HH:mm:ss"`)
+- `use12Hours` — `boolean` — 12-hour mode with AM/PM (default: `false`)
+- `hourStep` — `number` — Hour increment step (default: `1`)
+- `minuteStep` — `number` — Minute increment step (default: `1`)
+- `secondStep` — `number` — Second increment step (default: `1`)
+- `disabled` — `boolean` — Disable the picker
+- `disabledTime` — `() => DisabledTimes` — Disable specific times
+- `placeholder` — `string` — Placeholder text
+- `size` — `"small" | "middle" | "large"` — Size
+- `allowClear` — `boolean` — Show clear button (default: `true`)
+- `status` — `"error" | "warning"` — Validation status

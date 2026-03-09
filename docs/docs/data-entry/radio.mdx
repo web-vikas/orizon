@@ -1,0 +1,115 @@
+---
+title: Radio
+---
+
+import { Radio } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Radio
+
+Single-select controls for choosing one option from a set.
+
+## When to Use
+
+- When users must select exactly one option from a small list
+- As an alternative to a select dropdown for 2-5 options
+- For settings or preference toggles
+
+## Import
+
+```tsx
+import { Radio } from "orizon";
+```
+
+## Examples
+
+### Basic Group
+
+<ComponentPreview>
+  <Radio.Group defaultValue="a">
+    <Radio value="a">Option A</Radio>
+    <Radio value="b">Option B</Radio>
+    <Radio value="c">Option C</Radio>
+  </Radio.Group>
+</ComponentPreview>
+
+```tsx
+<Radio.Group defaultValue="a" onChange={(e) => console.log(e.target.value)}>
+  <Radio value="a">Option A</Radio>
+  <Radio value="b">Option B</Radio>
+  <Radio value="c">Option C</Radio>
+</Radio.Group>
+```
+
+### Button Style
+
+<ComponentPreview>
+  <Radio.Group defaultValue="a" optionType="button">
+    <Radio.Button value="a">Daily</Radio.Button>
+    <Radio.Button value="b">Weekly</Radio.Button>
+    <Radio.Button value="c">Monthly</Radio.Button>
+  </Radio.Group>
+</ComponentPreview>
+
+```tsx
+<Radio.Group defaultValue="a" optionType="button">
+  <Radio.Button value="a">Daily</Radio.Button>
+  <Radio.Button value="b">Weekly</Radio.Button>
+  <Radio.Button value="c">Monthly</Radio.Button>
+</Radio.Group>
+```
+
+### Solid Button Style
+
+<ComponentPreview>
+  <Radio.Group defaultValue="a" optionType="button" buttonStyle="solid">
+    <Radio.Button value="a">Small</Radio.Button>
+    <Radio.Button value="b">Medium</Radio.Button>
+    <Radio.Button value="c">Large</Radio.Button>
+  </Radio.Group>
+</ComponentPreview>
+
+```tsx
+<Radio.Group optionType="button" buttonStyle="solid">
+  <Radio.Button value="a">Small</Radio.Button>
+  <Radio.Button value="b">Medium</Radio.Button>
+  <Radio.Button value="c">Large</Radio.Button>
+</Radio.Group>
+```
+
+### Disabled
+
+<ComponentPreview>
+  <Radio.Group defaultValue="a" disabled>
+    <Radio value="a">Option A</Radio>
+    <Radio value="b">Option B</Radio>
+  </Radio.Group>
+</ComponentPreview>
+
+```tsx
+<Radio.Group defaultValue="a" disabled>
+  <Radio value="a">Option A</Radio>
+  <Radio value="b">Option B</Radio>
+</Radio.Group>
+```
+
+## API
+
+### RadioProps
+
+- `checked` — `boolean` — Checked state (controlled)
+- `defaultChecked` — `boolean` — Default checked state
+- `value` — `any` — Radio value
+- `onChange` — `(e: RadioChangeEvent) => void` — Change handler
+- `disabled` — `boolean` — Disable the radio
+
+### Radio.Group Props
+
+- `options` — `(string | { label, value, disabled })[]` — Option list
+- `value` — `any` — Selected value (controlled)
+- `defaultValue` — `any` — Default value
+- `onChange` — `(e: RadioChangeEvent) => void` — Change handler
+- `optionType` — `"default" | "button"` — Radio style (default: `"default"`)
+- `buttonStyle` — `"outline" | "solid"` — Button style (default: `"outline"`)
+- `size` — `"small" | "middle" | "large"` — Size (button mode only)
+- `disabled` — `boolean` — Disable all radios

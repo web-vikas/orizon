@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import "orizon/preset.css";
+@source "../../node_modules/orizon/dist";
+
+/* Collapsed sidebar menu: center icons, full width, no bg mismatch */
+ul.playground-menu-collapsed {
+  width: 100% !important;
+  align-items: center;
+  background: transparent !important;
+}
+.playground-menu-collapsed li {
+  width: 40px !important;
+  justify-content: center !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

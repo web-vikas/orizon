@@ -1,0 +1,128 @@
+---
+title: Card
+---
+
+import { Card, Button } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Card
+
+A container for displaying content with an optional header, cover, and actions.
+
+## When to Use
+
+- To group related information in a box
+- For product listings, profile cards, or summaries
+- When content needs a header with title and actions
+
+## Import
+
+```tsx
+import { Card } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Card title="Card Title" extra={<a href="#">More</a>} style={{ width: 300 }}>
+    <p>Card content</p>
+    <p>More card content</p>
+  </Card>
+</ComponentPreview>
+
+```tsx
+<Card title="Card Title" extra={<a href="#">More</a>} style={{ width: 300 }}>
+  <p>Card content</p>
+  <p>More card content</p>
+</Card>
+```
+
+### No Border
+
+<ComponentPreview>
+  <div style={{ background: "var(--rp-c-bg-soft)", padding: "24px" }}>
+    <Card title="No Border" bordered={false} style={{ width: 300 }}>
+      <p>Card without border</p>
+    </Card>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Card title="No Border" bordered={false} style={{ width: 300 }}>
+  <p>Card without border</p>
+</Card>
+```
+
+### Hoverable
+
+<ComponentPreview>
+  <Card hoverable style={{ width: 240 }}>
+    <Card.Meta title="Hoverable Card" description="Hover to see the effect" />
+  </Card>
+</ComponentPreview>
+
+```tsx
+<Card hoverable style={{ width: 240 }}>
+  <Card.Meta title="Hoverable Card" description="Hover to see the effect" />
+</Card>
+```
+
+### Loading
+
+<ComponentPreview>
+  <Card loading title="Loading Card" style={{ width: 300 }}>
+    Content is loading...
+  </Card>
+</ComponentPreview>
+
+```tsx
+<Card loading title="Loading Card" style={{ width: 300 }}>
+  Content is loading...
+</Card>
+```
+
+### With Actions
+
+<ComponentPreview>
+  <Card
+    title="Card with Actions"
+    style={{ width: 300 }}
+    actions={[<span key="edit">Edit</span>, <span key="delete">Delete</span>]}
+  >
+    <p>Card content with action bar</p>
+  </Card>
+</ComponentPreview>
+
+```tsx
+<Card
+  title="Card with Actions"
+  style={{ width: 300 }}
+  actions={[<span key="edit">Edit</span>, <span key="delete">Delete</span>]}
+>
+  <p>Card content with action bar</p>
+</Card>
+```
+
+## API
+
+### CardProps
+
+- `title` — `ReactNode` — Card header title
+- `extra` — `ReactNode` — Extra content in header (e.g., links)
+- `cover` — `ReactNode` — Cover image at top
+- `actions` — `ReactNode[]` — Action list at bottom
+- `bordered` — `boolean` — Show border (default: `true`)
+- `hoverable` — `boolean` — Lift on hover (default: `false`)
+- `loading` — `boolean` — Show skeleton placeholder (default: `false`)
+- `size` — `"default" | "small"` — Card size (default: `"default"`)
+- `type` — `"inner"` — For nested cards
+- `bodyStyle` — `CSSProperties` — Body container styles
+- `headStyle` — `CSSProperties` — Header styles
+
+### Card.Meta Props
+
+- `title` — `ReactNode` — Meta title
+- `description` — `ReactNode` — Meta description
+- `avatar` — `ReactNode` — Avatar element

@@ -1,0 +1,207 @@
+---
+title: Button
+---
+
+import { Button } from "orizon";
+import { Download, Search, ArrowRight } from "lucide-react";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Button
+
+Trigger actions with customizable buttons in various styles, sizes, and states.
+
+## When to Use
+
+- To trigger an action or event, such as submitting a form or opening a dialog
+- As a primary call-to-action or secondary interaction point
+- To group related actions together with Button.Group
+
+## Import
+
+```tsx
+import { Button } from "orizon";
+```
+
+## Examples
+
+### Button Types
+
+Orizon provides five button types for different semantic contexts.
+
+<ComponentPreview>
+  <Button type="primary">Primary</Button>
+  <Button>Default</Button>
+  <Button type="dashed">Dashed</Button>
+  <Button type="text">Text</Button>
+  <Button type="link">Link</Button>
+</ComponentPreview>
+
+```tsx
+<Button type="primary">Primary</Button>
+<Button>Default</Button>
+<Button type="dashed">Dashed</Button>
+<Button type="text">Text</Button>
+<Button type="link">Link</Button>
+```
+
+### Sizes
+
+Three sizes are available: `small`, `middle` (default), and `large`.
+
+<ComponentPreview>
+  <Button size="large">Large</Button>
+  <Button size="middle">Middle</Button>
+  <Button size="small">Small</Button>
+</ComponentPreview>
+
+```tsx
+<Button size="large">Large</Button>
+<Button size="middle">Middle</Button>
+<Button size="small">Small</Button>
+```
+
+### With Icons
+
+Add icons before or after button text using `icon` or `iconPosition`.
+
+<ComponentPreview>
+  <Button type="primary" icon={<Search size={16} />}>Search</Button>
+  <Button icon={<Download size={16} />}>Download</Button>
+  <Button iconPosition="end" icon={<ArrowRight size={16} />}>Next</Button>
+</ComponentPreview>
+
+```tsx
+import { Download, Search, ArrowRight } from "lucide-react";
+
+<Button type="primary" icon={<Search size={16} />}>Search</Button>
+<Button icon={<Download size={16} />}>Download</Button>
+<Button iconPosition="end" icon={<ArrowRight size={16} />}>Next</Button>
+```
+
+### Danger
+
+Use the `danger` prop for destructive actions.
+
+<ComponentPreview>
+  <Button type="primary" danger>Delete</Button>
+  <Button danger>Danger Default</Button>
+  <Button type="dashed" danger>Dashed Danger</Button>
+  <Button type="text" danger>Text Danger</Button>
+  <Button type="link" danger>Link Danger</Button>
+</ComponentPreview>
+
+```tsx
+<Button type="primary" danger>Delete</Button>
+<Button danger>Danger Default</Button>
+<Button type="dashed" danger>Dashed Danger</Button>
+<Button type="text" danger>Text Danger</Button>
+<Button type="link" danger>Link Danger</Button>
+```
+
+### Ghost
+
+Ghost buttons have transparent backgrounds, suitable for colored backgrounds.
+
+<ComponentPreview>
+  <div className="bg-gray-800 p-4 rounded flex gap-3">
+    <Button type="primary" ghost>Primary Ghost</Button>
+    <Button ghost>Default Ghost</Button>
+    <Button type="dashed" ghost>Dashed Ghost</Button>
+  </div>
+</ComponentPreview>
+
+```tsx
+<div className="bg-gray-800 p-4 rounded flex gap-3">
+  <Button type="primary" ghost>Primary Ghost</Button>
+  <Button ghost>Default Ghost</Button>
+  <Button type="dashed" ghost>Dashed Ghost</Button>
+</div>
+```
+
+### Loading
+
+Show a spinner to indicate an in-progress action.
+
+<ComponentPreview>
+  <Button type="primary" loading>Loading</Button>
+  <Button loading>Loading</Button>
+</ComponentPreview>
+
+```tsx
+<Button type="primary" loading>Loading</Button>
+<Button loading>Loading</Button>
+```
+
+### Block
+
+Block buttons stretch to the full width of their parent.
+
+<ComponentPreview>
+  <div className="w-full flex flex-col gap-2">
+    <Button type="primary" block>Full Width Primary</Button>
+    <Button block>Full Width Default</Button>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Button type="primary" block>Full Width Primary</Button>
+<Button block>Full Width Default</Button>
+```
+
+### Disabled
+
+<ComponentPreview>
+  <Button disabled>Disabled Default</Button>
+  <Button type="primary" disabled>Disabled Primary</Button>
+  <Button type="dashed" disabled>Disabled Dashed</Button>
+</ComponentPreview>
+
+```tsx
+<Button disabled>Disabled Default</Button>
+<Button type="primary" disabled>Disabled Primary</Button>
+<Button type="dashed" disabled>Disabled Dashed</Button>
+```
+
+### Button Group
+
+Use `Button.Group` to group related buttons with connected styling.
+
+<ComponentPreview>
+  <Button.Group>
+    <Button>Left</Button>
+    <Button>Center</Button>
+    <Button>Right</Button>
+  </Button.Group>
+</ComponentPreview>
+
+```tsx
+<Button.Group>
+  <Button>Left</Button>
+  <Button>Center</Button>
+  <Button>Right</Button>
+</Button.Group>
+```
+
+## API
+
+### ButtonProps
+
+- `type` — `"primary" | "default" | "dashed" | "link" | "text"` — Visual style variant (default: `"default"`)
+- `size` — `"small" | "middle" | "large"` — Button size (default: `"middle"`)
+- `shape` — `"default" | "circle" | "round"` — Button shape (default: `"default"`)
+- `icon` — `ReactNode` — Icon element to display
+- `iconPosition` — `"start" | "end"` — Position of the icon (default: `"start"`)
+- `loading` — `boolean` — Show loading spinner (default: `false`)
+- `danger` — `boolean` — Apply danger/destructive styling (default: `false`)
+- `ghost` — `boolean` — Transparent background variant (default: `false`)
+- `block` — `boolean` — Full-width button (default: `false`)
+- `disabled` — `boolean` — Disable interactions (default: `false`)
+- `hint` — `string` — Tooltip text on hover
+- `href` — `string` — Renders as an anchor link
+- `htmlType` — `"button" | "submit" | "reset"` — Native button type (default: `"button"`)
+
+### ButtonGroupProps
+
+- `size` — `"small" | "middle" | "large"` — Size for all buttons in the group
+- `className` — `string` — Custom CSS class
+- `children` — `ReactNode` — Button elements

@@ -1,0 +1,152 @@
+---
+title: Input
+---
+
+import { Input } from "orizon";
+import { Search, User } from "lucide-react";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Input
+
+Text input fields for collecting user data with various formats and enhancements.
+
+## When to Use
+
+- For single-line text entry (usernames, emails, etc.)
+- For multi-line text with TextArea
+- For search inputs, password fields, and OTP inputs
+
+## Import
+
+```tsx
+import { Input } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Input placeholder="Basic input" style={{ width: "300px" }} />
+</ComponentPreview>
+
+```tsx
+<Input placeholder="Basic input" />
+```
+
+### Sizes
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "8px", width: "300px" }}>
+    <Input size="large" placeholder="Large" />
+    <Input placeholder="Default" />
+    <Input size="small" placeholder="Small" />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Input size="large" placeholder="Large" />
+<Input placeholder="Default" />
+<Input size="small" placeholder="Small" />
+```
+
+### With Prefix/Suffix
+
+<ComponentPreview>
+  <Input prefix={<User size={16} />} placeholder="Username" style={{ width: "300px" }} />
+</ComponentPreview>
+
+```tsx
+import { User } from "lucide-react";
+
+<Input prefix={<User size={16} />} placeholder="Username" />
+```
+
+### Password
+
+<ComponentPreview>
+  <Input.Password placeholder="Enter password" style={{ width: "300px" }} />
+</ComponentPreview>
+
+```tsx
+<Input.Password placeholder="Enter password" />
+```
+
+### TextArea
+
+<ComponentPreview>
+  <Input.TextArea rows={4} placeholder="Enter description..." style={{ width: "100%" }} />
+</ComponentPreview>
+
+```tsx
+<Input.TextArea rows={4} placeholder="Enter description..." />
+```
+
+### Search
+
+<ComponentPreview>
+  <Input.Search placeholder="Search..." enterButton style={{ width: "300px" }} />
+</ComponentPreview>
+
+```tsx
+<Input.Search placeholder="Search..." enterButton onSearch={onSearch} />
+```
+
+### Status
+
+<ComponentPreview>
+  <div style={{ display: "flex", flexDirection: "column", gap: "8px", width: "300px" }}>
+    <Input status="error" placeholder="Error" />
+    <Input status="warning" placeholder="Warning" />
+  </div>
+</ComponentPreview>
+
+```tsx
+<Input status="error" placeholder="Error" />
+<Input status="warning" placeholder="Warning" />
+```
+
+### With Character Count
+
+<ComponentPreview>
+  <Input showCount maxLength={20} placeholder="Max 20 chars" style={{ width: "300px" }} />
+</ComponentPreview>
+
+```tsx
+<Input showCount maxLength={20} placeholder="Max 20 chars" />
+```
+
+## API
+
+### InputProps
+
+- `value` — `string` — Input value (controlled)
+- `defaultValue` — `string` — Default value
+- `onChange` — `(e: ChangeEvent) => void` — Change handler
+- `size` — `"small" | "middle" | "large"` — Input size (default: `"middle"`)
+- `variant` — `"outlined" | "filled" | "borderless"` — Visual variant
+- `status` — `"error" | "warning"` — Validation status
+- `prefix` — `ReactNode` — Prefix element
+- `suffix` — `ReactNode` — Suffix element
+- `allowClear` — `boolean` — Show clear button
+- `placeholder` — `string` — Placeholder text
+- `maxLength` — `number` — Maximum character count
+- `showCount` — `boolean` — Show character count
+- `disabled` — `boolean` — Disable input
+
+### Input.Password Props
+
+Inherits all InputProps plus:
+- `visibilityToggle` — `boolean` — Show toggle button (default: `true`)
+
+### Input.TextArea Props
+
+Inherits most InputProps plus:
+- `rows` — `number` — Visible rows
+- `autoSize` — `boolean | { minRows, maxRows }` — Auto-resize
+
+### Input.Search Props
+
+Inherits all InputProps plus:
+- `enterButton` — `boolean | ReactNode` — Show search button
+- `onSearch` — `(value: string) => void` — Search callback

@@ -1,0 +1,112 @@
+---
+title: Descriptions
+---
+
+import { Descriptions } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Descriptions
+
+Display key-value pairs in a structured, labeled format.
+
+## When to Use
+
+- For detail pages showing entity attributes
+- To display read-only form data
+- For profile information or order summaries
+
+## Import
+
+```tsx
+import { Descriptions } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Descriptions
+    title="User Info"
+    items={[
+      { key: "1", label: "Name", children: "John Brown" },
+      { key: "2", label: "Phone", children: "1810000000" },
+      { key: "3", label: "Address", children: "New York, USA" },
+      { key: "4", label: "Email", children: "john@example.com" },
+    ]}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Descriptions
+  title="User Info"
+  items={[
+    { key: "1", label: "Name", children: "John Brown" },
+    { key: "2", label: "Phone", children: "1810000000" },
+    { key: "3", label: "Address", children: "New York, USA" },
+  ]}
+/>
+```
+
+### Bordered
+
+<ComponentPreview>
+  <Descriptions
+    bordered
+    title="Order Details"
+    items={[
+      { key: "1", label: "Product", children: "Orizon Pro" },
+      { key: "2", label: "Price", children: "$99.00" },
+      { key: "3", label: "Quantity", children: "1" },
+      { key: "4", label: "Status", children: "Shipped" },
+    ]}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Descriptions bordered title="Order Details" items={items} />
+```
+
+### Vertical Layout
+
+<ComponentPreview>
+  <Descriptions
+    layout="vertical"
+    items={[
+      { key: "1", label: "Name", children: "Jane Smith" },
+      { key: "2", label: "Role", children: "Designer" },
+      { key: "3", label: "Department", children: "Product" },
+    ]}
+    style={{ width: "100%" }}
+  />
+</ComponentPreview>
+
+```tsx
+<Descriptions layout="vertical" items={items} />
+```
+
+## API
+
+### DescriptionsProps
+
+- `items` — `DescriptionsItem[]` — Description item data
+- `title` — `ReactNode` — Title above the descriptions
+- `extra` — `ReactNode` — Extra content in header
+- `bordered` — `boolean` — Show borders (default: `false`)
+- `column` — `number | ResponsiveObject` — Items per row (default: `3`)
+- `layout` — `"horizontal" | "vertical"` — Label layout (default: `"horizontal"`)
+- `size` — `"default" | "middle" | "small"` — Size (default: `"default"`)
+- `colon` — `boolean` — Show colon after label (default: `true`)
+- `labelStyle` — `CSSProperties` — Label styles
+- `contentStyle` — `CSSProperties` — Content styles
+
+### DescriptionsItem
+
+- `key` — `string` — Unique identifier
+- `label` — `ReactNode` — Item label
+- `children` — `ReactNode` — Item content
+- `span` — `number` — Columns this item spans (default: `1`)
+- `labelStyle` — `CSSProperties` — Override label styles
+- `contentStyle` — `CSSProperties` — Override content styles

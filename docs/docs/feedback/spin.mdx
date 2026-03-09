@@ -1,0 +1,83 @@
+---
+title: Spin
+---
+
+import { Spin } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Spin
+
+A loading spinner for indicating content is being fetched or processed.
+
+## When to Use
+
+- To indicate a loading state for a section or the entire page
+- As an overlay on content that is being refreshed
+- For async operations in progress
+
+## Import
+
+```tsx
+import { Spin } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Spin />
+</ComponentPreview>
+
+```tsx
+<Spin />
+```
+
+### Sizes
+
+<ComponentPreview>
+  <Spin size="small" />
+  <Spin />
+  <Spin size="large" />
+</ComponentPreview>
+
+```tsx
+<Spin size="small" />
+<Spin size="default" />
+<Spin size="large" />
+```
+
+### With Tip
+
+<ComponentPreview>
+  <Spin tip="Loading...">
+    <div style={{ padding: "40px", background: "var(--rp-c-bg-soft)", borderRadius: "4px" }}>
+      Content area
+    </div>
+  </Spin>
+</ComponentPreview>
+
+```tsx
+<Spin tip="Loading...">
+  <div>Content area</div>
+</Spin>
+```
+
+### Fullscreen
+
+```tsx
+<Spin fullscreen tip="Loading application..." />
+```
+
+## API
+
+### SpinProps
+
+- `spinning` — `boolean` — Whether to show spinner (default: `true`)
+- `size` — `"small" | "default" | "large"` — Spinner size (default: `"default"`)
+- `delay` — `number` — Delay before showing (ms), prevents flicker
+- `indicator` — `ReactNode` — Custom spinner element
+- `tip` — `ReactNode` — Loading text
+- `description` — `ReactNode` — Description below tip
+- `fullscreen` — `boolean` — Cover the entire viewport (default: `false`)
+- `percent` — `number | "auto"` — Progress percentage

@@ -1,0 +1,91 @@
+---
+title: Popconfirm
+---
+
+import { Popconfirm, Button } from "orizon";
+import { ComponentPreview } from "../_components/ComponentPreview";
+
+# Popconfirm
+
+A compact confirmation dialog attached to an element.
+
+## When to Use
+
+- For quick confirmation before simple actions
+- When a full modal is too heavy for the confirmation
+- For delete or toggle confirmations
+
+## Import
+
+```tsx
+import { Popconfirm } from "orizon";
+```
+
+## Examples
+
+### Basic
+
+<ComponentPreview>
+  <Popconfirm title="Are you sure?" description="This action cannot be undone.">
+    <Button danger>Delete</Button>
+  </Popconfirm>
+</ComponentPreview>
+
+```tsx
+<Popconfirm
+  title="Are you sure?"
+  description="This action cannot be undone."
+  onConfirm={() => console.log("Confirmed")}
+  onCancel={() => console.log("Cancelled")}
+>
+  <Button danger>Delete</Button>
+</Popconfirm>
+```
+
+### Custom Buttons
+
+<ComponentPreview>
+  <Popconfirm title="Proceed?" okText="Yes" cancelText="No">
+    <Button>Action</Button>
+  </Popconfirm>
+</ComponentPreview>
+
+```tsx
+<Popconfirm title="Proceed?" okText="Yes" cancelText="No">
+  <Button>Action</Button>
+</Popconfirm>
+```
+
+### Placement
+
+<ComponentPreview>
+  <div style={{ display: "flex", gap: "8px" }}>
+    <Popconfirm title="Top confirm" placement="top"><Button>Top</Button></Popconfirm>
+    <Popconfirm title="Right confirm" placement="right"><Button>Right</Button></Popconfirm>
+    <Popconfirm title="Bottom confirm" placement="bottom"><Button>Bottom</Button></Popconfirm>
+  </div>
+</ComponentPreview>
+
+```tsx
+<Popconfirm title="Confirm?" placement="top">
+  <Button>Top</Button>
+</Popconfirm>
+```
+
+## API
+
+### PopconfirmProps
+
+- `title` — `ReactNode` — Confirmation title
+- `description` — `ReactNode` — Additional description
+- `onConfirm` — `() => void` — Confirm callback
+- `onCancel` — `() => void` — Cancel callback
+- `okText` — `string` — Confirm button text (default: `"OK"`)
+- `cancelText` — `string` — Cancel button text (default: `"Cancel"`)
+- `placement` — `"top" | "topLeft" | "topRight" | "bottom" | "bottomLeft" | "bottomRight" | "left" | "right"` — Position
+- `open` — `boolean` — Controlled visibility
+- `onOpenChange` — `(open: boolean) => void` — Visibility callback
+- `disabled` — `boolean` — Disable the popconfirm
+- `showCancel` — `boolean` — Show cancel button (default: `true`)
+- `okType` — `ButtonType` — Confirm button type (default: `"primary"`)
+- `icon` — `ReactNode` — Custom icon
